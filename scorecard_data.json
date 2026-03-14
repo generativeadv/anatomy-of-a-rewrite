@@ -1,0 +1,531 @@
+{
+  "meta": {
+    "title": "AI Content Guide Scorecard Explorer",
+    "evaluation_date": "March 14, 2026",
+    "evaluator": "Frontier AI Lab Researcher"
+  },
+  "columns_ordered": [
+    {
+      "id": "fergus_v1",
+      "label": "Fergus v1",
+      "aggregate_score": 4.3,
+      "word_count": 822,
+      "description": "The first rewrite by the client's communications agency. At 822 words it was the shortest version, replacing the original's practical guidance with an academic primer on LLM architecture and RAG systems. It was technically more literate about model internals but failed to address the actual problem: how to structure press releases for AI-mediated web search.",
+      "model_or_source": "FGS Agency (initial attempt)"
+    },
+    {
+      "id": "client_orig",
+      "label": "Client orig.",
+      "aggregate_score": 5.9,
+      "word_count": 5200,
+      "description": "The original document written by the client's internal communications team. At 5,200 words it was rich with worked examples, a section-by-section template, and a three-audience framework (AI, journalists, consumers). It contained significant technical inaccuracies and fabricated statistics but was highly practical and well-suited to its audience.",
+      "model_or_source": "Client internal team"
+    },
+    {
+      "id": "fergus_v2",
+      "label": "Fergus v2",
+      "aggregate_score": 6.1,
+      "word_count": 5865,
+      "description": "A second attempt by FGS after being prompted to evaluate every section of the original and rewrite the full document. At 5,865 words it was the longest version. It preserved the original's examples and template while attempting to fix technical errors, but carried forward the same RAG-centric framing as v1 and created internal contradictions between its corrections and its guidance language.",
+      "model_or_source": "FGS Agency (second attempt, with revision prompt)"
+    },
+    {
+      "id": "opus_4_6",
+      "label": "Opus 4.6",
+      "aggregate_score": 6.9,
+      "word_count": 1540,
+      "description": "A rewrite by Anthropic's Claude Opus 4.6 Extended. At 1,540 words it was a focused educational primer with the best prose quality and most accurate technical explanation in the set. Its two-path model (training knowledge vs. search-augmented retrieval) was elegant and correct. However, it omitted the entire operational layer \u2014 no announcement template, no section-by-section guide, no worked examples.",
+      "model_or_source": "Claude Opus 4.6 Extended (Anthropic)"
+    },
+    {
+      "id": "gpt_5_4",
+      "label": "GPT 5.4",
+      "aggregate_score": 8.3,
+      "word_count": 3700,
+      "description": "A rewrite by OpenAI's GPT 5.4 Extended Pro. At 3,700 words it was the highest-scoring individual document. It correctly identified the pipeline (crawl \u2192 index \u2192 retrieve \u2192 generate), included a technical publishing checklist, retail-specific guidance, measurement framework, myths-to-retire section, and a 21-source appendix. Its main weakness was sparse worked examples compared to the original.",
+      "model_or_source": "GPT 5.4 Extended Pro (OpenAI)"
+    }
+  ],
+  "attributes": [
+    {
+      "id": "technical_accuracy_llm",
+      "label": "Technical accuracy (LLM internals)",
+      "description": "How accurately the document describes how large language models actually work \u2014 tokenization, embeddings, attention, pattern-based generation, and the distinction between training knowledge and inference. Errors here undermine the credibility of all downstream recommendations, since practitioners may repeat incorrect claims to executives or external audiences.",
+      "scores": {
+        "fergus_v1": {
+          "score": 7,
+          "hover": "Correctly describes tokenization, embeddings, and attention mechanisms. Flags that LLMs don't use discrete classification tags. Loses points for centering the entire explanation on enterprise RAG rather than consumer AI search products.",
+          "detail": "Fergus v1 was the first document in the set to provide a technically literate description of LLM internals. It correctly explains that models process text through tokenization, convert tokens into high-dimensional embeddings, use attention mechanisms to identify relationships, and generate responses through pattern matching. It explicitly corrects the Client Original's claim that AI assigns discrete classification tags, noting that 'LLMs use continuous semantic embeddings, not categorical labels.' However, it frames the entire retrieval mechanism as enterprise RAG (chunking documents into vector databases for semantic search), which is not how Google AI Overviews, ChatGPT search, or Perplexity actually surface public web content.",
+          "example_quote": "LLMs process text through: 1. Tokenization: Breaking text into subword units. 2. Embeddings: Converting tokens into high-dimensional numerical vectors that capture semantic meaning. 3. Attention Mechanisms: Identifying relationships between different parts of the input.",
+          "composite_comparison": "The Ideal Composite uses the Opus 4.6 two-path model (training knowledge vs. search-augmented retrieval) which is both more accurate and more accessible. Rather than describing abstract architecture, it explains what the reader's content actually experiences: 'The model doesn't store our press release as a document it can look up later. Instead, it absorbs the patterns and facts from our content into its parameters.' The Composite also correctly frames the search path as web search feeding into LLM synthesis, not enterprise vector database lookups.",
+          "composite_quote": "Instead, it absorbs the patterns and facts from our content into its parameters \u2014 billions of numerical weights that collectively encode everything the model learned. When someone asks a question, the model generates a response one word at a time based on all of those learned patterns, not by retrieving a specific source."
+        },
+        "client_orig": {
+          "score": 3,
+          "hover": "Describes AI as assigning discrete 'tags' and 'topic buckets' through a deterministic six-step pipeline. This is fundamentally wrong \u2014 LLMs use continuous semantic representations, not categorical labels. The practical advice is mostly sound despite the flawed model.",
+          "detail": "The Client Original describes AI as performing 'classification (tagging)' and 'categorization (organizing)' through a deterministic six-step pipeline: classification \u2192 categorization \u2192 retrieval \u2192 ranking \u2192 citation weighting \u2192 answer generation. It claims AI assigns content to specific tags like 'Document type: Press release' and 'Industry: Retail,' then places it into 'topical buckets such as holiday, retail, consumer electronics sales.' None of this reflects how LLMs actually work \u2014 they operate on continuous semantic representations, not discrete labels. The six-step pipeline conflates search engine indexing with LLM generation in ways that are misleading. However, many of the practical behaviors this wrong model recommends (clear headlines, named entities, specific dates) are actually effective, just not for the mechanistic reasons claimed.",
+          "example_quote": "Before an AI platform can summarize, recommend, quote, or retrieve our content, it first has to understand what kind of thing it is and where it should put it. To do this, it classifies our content by looking for signals and pattern recognition across the headline, subhead, lede, named entities (TVs & More), verbs, structure and the strategic placement of key terms.",
+          "composite_comparison": "The Ideal Composite replaces the classification/categorization framework entirely with the two-path model. Instead of claiming AI 'assigns tags,' it explains that training absorbs patterns into parameters and search retrieves passages via semantic similarity. The practical recommendations survive but are now grounded in correct mechanisms.",
+          "composite_quote": "The model doesn't 'store' our press release as a document it can look up later. Instead, it absorbs the patterns and facts from our content into its parameters \u2014 billions of numerical weights that collectively encode everything the model learned."
+        },
+        "fergus_v2": {
+          "score": 6,
+          "hover": "Improved over Fergus v1 with a 'Common Misconceptions' section that corrects the original's biggest errors. But the guidance sections then revert to the same anthropomorphic language the corrections disclaim, creating internal contradictions.",
+          "detail": "Fergus v2 adds a 'Common Misconceptions' section that explicitly corrects the Client Original's claim about discrete tags ('Systems use continuous mathematical representations, not explicit tags or topic buckets') and the deterministic pipeline ('Retrieval happens through vector similarity matching'). This is a genuine improvement. However, the section-by-section guidance that follows frequently contradicts these corrections: 'AI systems expect content to switch from narrative to information delivery,' 'AI systems immediately look for a declarative answer within the first 20 words,' and 'If AI can't find a clear why this matters, it may classify our content as thin.' The document corrects the model in one section and then uses the corrected model as its explanatory framework in the next, which is confusing.",
+          "example_quote": "\u274c MYTH: AI assigns discrete 'tags' like Document type: Press release or Topic: Black Friday. \u2705 REALITY: Systems use continuous mathematical representations (embeddings) that capture semantic meaning. There are no explicit 'tags' or 'topic buckets.'",
+          "composite_comparison": "The Ideal Composite avoids this contradiction by never using anthropomorphic language. It doesn't say AI 'expects' or 'looks for' or 'classifies.' Instead it uses mechanistic language: 'The system identifies the most relevant passages using semantic similarity,' 'The headline is the primary signal AI systems use to determine topical relevance.' The corrections and the guidance are consistent throughout.",
+          "composite_quote": "This is not keyword matching. 'When does the TVs and More sale start?' and 'TVs and More Black Friday launch date' are semantically similar even though they share few exact words."
+        },
+        "opus_4_6": {
+          "score": 9,
+          "hover": "The most accurate and accessible explanation of LLM internals in the set. The two-path model (training knowledge vs. search-augmented retrieval) is both technically correct and intuitively clear for a non-technical audience.",
+          "detail": "The Opus 4.6 rewrite provides the most technically accurate explanation of how LLMs work across all five documents. It explains that models learn 'statistical patterns about language: which words tend to follow which other words, how concepts relate to each other, what kinds of answers typically follow what kinds of questions.' The critical insight \u2014 'The knowledge is there. The source attribution is gone.' \u2014 captures in eight words what other documents take pages to explain incorrectly. The four factors affecting training absorption (prevalence, clarity, consistency, recency) are all correct and practically relevant. The search-augmented retrieval section correctly describes web search feeding into passage extraction via semantic similarity, not enterprise vector database lookups.",
+          "example_quote": "A model might know that TVs and More operates more than 1,000 stores in the U.S. and offers the TVM+ membership program, but it can't 'pull up' a specific press release the way a search engine would. The knowledge is there. The source attribution is gone.",
+          "composite_comparison": "The Ideal Composite adopts the Opus 4.6 explanation nearly wholesale as its opening educational sections, including the two-path model, the four training factors, and the search-augmented retrieval pipeline. It adds a new 'How the Two Paths Interact' section explaining that the routing between paths is driven by surface-level cues and is more brittle than it sounds.",
+          "composite_quote": "The model decides which source to lean on based on cues in the prompt. Words like 'current,' 'latest,' or 'today' tend to trigger a web search, while questions about established topics are more likely to be answered from training knowledge alone. But this routing logic is more brittle than it sounds."
+        },
+        "gpt_5_4": {
+          "score": 8,
+          "hover": "Accurately describes the base model vs. retrieval layer distinction and provides a correct five-stage pipeline. Slightly less accessible than Opus 4.6's explanation but more operationally detailed, with explicit platform naming.",
+          "detail": "The GPT 5.4 rewrite correctly distinguishes between the base model ('predicts likely sequences of text from context') and the retrieval layer ('web search, file search, vector search, merchant feeds, business profiles, or other connected data sources'). Its five-stage mental model (discovery/crawl \u2192 rendering/indexing \u2192 retrieval/reranking \u2192 grounded answer generation \u2192 follow-up/navigation) is accurate and operationally useful. It explicitly notes that 'a base language model does not automatically know that your newsroom article exists, that today's sale started this morning, or that a program changed last week' \u2014 a clear, correct statement. It loses one point relative to Opus 4.6 because its explanation is more procedural and less intuitive; it tells you what the stages are rather than helping you feel how they work.",
+          "example_quote": "The simplest accurate explanation for a non-technical audience is this: the language model writes the answer, but many real products first search for or retrieve relevant content and then pass that content into the model as context.",
+          "composite_comparison": "The Ideal Composite uses the Opus 4.6 explanation for its educational foundation but draws on GPT 5.4's operational detail for the technical publishing checklist and platform-specific guidance. The GPT 5.4 five-stage pipeline is not reproduced directly, but its substance \u2014 crawl access, indexing, reranking, citation \u2014 informs the Composite's technical publishing section.",
+          "composite_quote": "If you want visibility in ChatGPT search, allow OAI-SearchBot in robots.txt. This is separate from GPTBot, which governs potential training use."
+        }
+      },
+      "edge": "Opus 4.6 \u2014 best explanation of how LLMs actually work"
+    },
+    {
+      "id": "technical_accuracy_search",
+      "label": "Technical accuracy (AI search surfaces)",
+      "description": "How accurately the document describes the specific mechanisms by which content surfaces in consumer AI products \u2014 Google AI Overviews, ChatGPT search, Perplexity, Copilot. This is distinct from LLM internals because the retrieval pipeline (crawling, indexing, ranking, snippet extraction) involves infrastructure beyond the language model itself. Getting this wrong means optimizing for the wrong system.",
+      "scores": {
+        "fergus_v1": {
+          "score": 4,
+          "hover": "Frames the entire retrieval mechanism as enterprise RAG (vector databases, chunking, semantic search) rather than web crawling and search indexing. This describes internal knowledge bases, not how public AI search products work.",
+          "detail": "Fergus v1 centers its explanation on the RAG pipeline: documents are split into 500-1500 token chunks, converted into embeddings, stored in a vector database, and retrieved via semantic similarity search. While RAG is a real technology, this description matches how enterprises deploy internal knowledge bases \u2014 not how Google AI Overviews, ChatGPT search, or Perplexity surface public web content. Those products use web crawling, traditional search indexing augmented with neural retrieval and reranking, and LLM synthesis. The document never mentions crawl access, robots.txt, sitemaps, canonical URLs, or any of the infrastructure that actually determines whether a press release gets indexed and retrieved.",
+          "example_quote": "Documents are split into manageable segments (typically 500-1500 tokens). Each chunk is converted into a semantic embedding (a numerical vector). Embeddings are stored in a vector database.",
+          "composite_comparison": "The Ideal Composite correctly describes the search path as: 'The system converts the user's question into one or more search queries and retrieves web results \u2014 typically the top 5 to 20 pages.' It includes a full technical publishing checklist covering crawl access, canonical URLs, OAI-SearchBot, and Search Console \u2014 the actual infrastructure layer that determines visibility.",
+          "composite_quote": "Allow important pages to be crawled in robots.txt. Do not accidentally block bots at the CDN, WAF, or hosting layer."
+        },
+        "client_orig": {
+          "score": 5,
+          "hover": "Doesn't describe retrieval infrastructure at all, but its intuitive model \u2014 that AI 'looks for signals' in headlines, entities, and structure \u2014 accidentally approximates how search-based retrieval values well-structured content. Right behaviors, wrong reasons.",
+          "detail": "The Client Original never describes the actual retrieval pipeline. It has no concept of crawling, indexing, or search infrastructure. Instead, it uses a metaphorical model where AI 'classifies,' 'categorizes,' and 'retrieves' through a deterministic pipeline. However, its practical intuitions about what makes content retrievable \u2014 clear headlines, named entities, specific dates, structured formatting, FAQ sections \u2014 do roughly correspond to what improves performance in search-based AI retrieval. The document gets a middling score because the behaviors it recommends are mostly correct even though the mechanism it describes is wrong.",
+          "example_quote": "If classified and categorized accurately, our content becomes eligible to be retrieved when consumers ask questions like: 'When does TVs & More's Black Friday sale start?'",
+          "composite_comparison": "The Ideal Composite preserves the Client Original's practical recommendations (clear headlines, structured formatting, FAQ sections) but grounds them in the correct mechanism (web search retrieval and passage extraction via semantic similarity) and adds the entire technical publishing layer (crawl access, canonical URLs, structured data) that the original omits.",
+          "composite_quote": "For this path, our content needs to do two things: rank in web search so it gets retrieved in the first place, and be easy to extract clear facts from so the AI uses our content accurately in its response."
+        },
+        "fergus_v2": {
+          "score": 4,
+          "hover": "Inherits the same RAG-centric framing as Fergus v1. No mention of crawl access, robots.txt, canonical URLs, Search Console, or any of the actual infrastructure that determines whether content gets indexed and retrieved by consumer AI products.",
+          "detail": "Fergus v2 describes the content journey as: 'Your published content is crawled by search engines and AI platforms \u2192 Text is processed and converted into embeddings \u2192 These embeddings are stored in vector databases \u2192 User query is converted into an embedding \u2192 The system searches for content with similar embeddings.' This is the same enterprise RAG framing as v1, slightly improved by the mention of crawling at the start. But it still misses the entire infrastructure layer \u2014 no robots.txt, no canonical URLs, no OAI-SearchBot vs. GPTBot distinction, no structured data, no Search Console. The document has no technical publishing guidance whatsoever.",
+          "example_quote": "Your published content is crawled by search engines and AI platforms. Text is processed and converted into embeddings (mathematical representations). These embeddings are stored in vector databases.",
+          "composite_comparison": "The Ideal Composite includes a full 'Technical Publishing Checklist' section with four subsections: discovery and access, canonical source management, on-page clarity and metadata, and platform-specific considerations. This operational layer is completely absent from Fergus v2.",
+          "composite_quote": "If you want visibility in ChatGPT search, allow OAI-SearchBot in robots.txt. This is separate from GPTBot, which governs potential training use. Verify the site in Google Search Console."
+        },
+        "opus_4_6": {
+          "score": 7,
+          "hover": "Correctly describes the search path as web search \u2192 passage extraction \u2192 answer generation. Mentions source authority and stable URLs in passing. Loses points for not operationalizing these into a technical checklist.",
+          "detail": "The Opus 4.6 rewrite correctly describes the retrieval path: 'The system converts the user's question into one or more search queries and retrieves web results \u2014 typically the top 5 to 20 pages.' It correctly identifies this as web search, not vector database lookup. It mentions 'source authority' (official corporate domains carry more weight) and 'stable URLs' under its practical guidelines. However, it doesn't operationalize these into specific technical guidance \u2014 no mention of robots.txt, canonical URLs, OAI-SearchBot, structured data, or Search Console. The guidance is directionally correct but stops at the principle level.",
+          "example_quote": "Content published on our corporate newsroom or investor relations page carries more weight in search results than content hosted on a third-party wire service alone. Make sure our owned channels are the definitive source.",
+          "composite_comparison": "The Ideal Composite preserves Opus 4.6's correct retrieval description as the educational foundation, then adds the GPT 5.4-derived technical publishing checklist to operationalize the principles into specific, checkable actions.",
+          "composite_quote": "Declare a preferred canonical URL for each page. Avoid unnecessary duplicates from parameters, alternate paths, or campaign URLs."
+        },
+        "gpt_5_4": {
+          "score": 9,
+          "hover": "The most complete and accurate description of how AI search products actually work. Grounded in official platform documentation, names specific products and crawler bots, and includes a full technical publishing checklist. The 21-source appendix makes every claim verifiable.",
+          "detail": "The GPT 5.4 rewrite is the only document in the set that accurately and comprehensively describes how AI search products surface content. Its five-stage pipeline (discovery/crawl \u2192 rendering/indexing \u2192 retrieval/reranking \u2192 grounded answer generation \u2192 follow-up) is correct. Its technical publishing checklist covers crawl access, indexability, status codes, internal linking, sitemaps, canonical URLs, recurring page management, HTML titles, visible dates, meta descriptions, structured data, Article/Organization markup, preview controls, Search Console, and the OAI-SearchBot vs. GPTBot distinction. It includes a 21-source appendix citing official documentation from Google Search Central, OpenAI Help, and Anthropic Docs.",
+          "example_quote": "If you want visibility in ChatGPT search, allow OAI-SearchBot. GPTBot governs potential training use and is a separate control.",
+          "composite_comparison": "The Ideal Composite draws heavily on GPT 5.4 for this dimension, adapting its technical publishing checklist and platform-specific guidance. The 21-source appendix is condensed to 12 of the most practically relevant sources.",
+          "composite_quote": "Good editorial structure cannot rescue a page that is technically hard to crawl, hard to index, or hard to excerpt. This section matters because it addresses the infrastructure layer that determines whether AI systems can even find our content."
+        }
+      },
+      "edge": "GPT 5.4 \u2014 grounded in actual platform docs"
+    },
+    {
+      "id": "fitness_for_audience",
+      "label": "Fitness for audience (comms team)",
+      "description": "How well the document speaks to its actual readers \u2014 corporate communications professionals who write press releases and blog posts. This measures whether the tone, vocabulary, and framing meet the audience where they are. A technically perfect document that reads like an ML research paper fails this dimension; a warm, practical guide that acknowledges the reader's existing expertise and anxieties succeeds.",
+      "scores": {
+        "fergus_v1": {
+          "score": 3,
+          "hover": "Reads like a technical primer for an audience that already understands communications and needs to learn about LLMs. That's the inverse of what's needed \u2014 the comms team knows how to write; they need to know what to change.",
+          "detail": "Fergus v1 explains tokenization, embeddings, and attention mechanisms at a level of abstraction that assumes technical curiosity. Terms like 'high-dimensional numerical vectors,' 'continuous semantic representations,' and 'domain-specific content' are correct but alienating for a comms audience. The document makes no effort to connect these concepts to the daily work of writing press releases. There is no acknowledgment of the reader's existing expertise, no empathy for the anxiety of being told to change how they write, and no reassurance that the changes are manageable.",
+          "example_quote": "LLMs process text through: 1. Tokenization: Breaking text into subword units. 2. Embeddings: Converting tokens into high-dimensional numerical vectors that capture semantic meaning.",
+          "composite_comparison": "The Ideal Composite explains the same concepts in language a comms professional can immediately relate to: 'The model doesn't store our press release as a document it can look up later.' It includes reassurances like 'You will not optimize every element of every announcement, and that is fine. The goal is fluency, not perfection.'",
+          "composite_quote": "You will not optimize every element of every announcement, and that is fine. The goal is fluency, not perfection. Understanding what these systems need and why allows you to make informed decisions about when and how to optimize."
+        },
+        "client_orig": {
+          "score": 8,
+          "hover": "Excels at speaking to its audience. The tone is warm, practical, and empathetic. Directly addresses the comms team's anxieties ('This does not mean writing like a robot') and frames the guide as empowering rather than prescriptive.",
+          "detail": "The Client Original demonstrates deep understanding of its audience. It opens with a strategic framing ('We are no longer competing just for coverage; we are competing to be summarized correctly') that connects AI optimization to existing professional concerns. It repeatedly reassures the reader: 'This does not mean it should feel robotic,' 'Don't force it,' 'You do not need to remember every step or nuance.' The three-audience framework (AI, journalists, consumers) gives the reader a mental model that respects their existing expertise while adding a new dimension to it. The writing is conversational and direct.",
+          "example_quote": "This does not mean it should feel robotic, we just need to feed it what it's looking for.",
+          "composite_comparison": "The Ideal Composite preserves the Client Original's empathetic tone and three-audience framework, using language like 'You will not optimize every element of every announcement, and that is fine' and 'This does not mean robotic writing. It just means leading with the news and including explicit factual signals.'",
+          "composite_quote": "This does not mean robotic writing. It just means leading with the news and including explicit factual signals."
+        },
+        "fergus_v2": {
+          "score": 7,
+          "hover": "Successfully preserves the Client Original's empathetic tone and three-audience framework. Adds helpful framing like 'The goal is fluency, not perfection.' Slightly undermined by the repetitive 'Why This Works' coda on every section.",
+          "detail": "Fergus v2 carries forward the Client Original's audience awareness effectively. It opens with the three-audience framework, includes reassurances ('You won't optimize every element of every announcement \u2014 and that's fine'), and frames the guide as building professional fluency rather than demanding perfection. The 'What This Means for Our Work' subsection explicitly acknowledges that writers will make 'strategic tradeoffs based on announcement importance, available time, and strategic communication goals.' The main deduction is the formulaic 'Why This Works' section appended to every element (nine total), which becomes patronizing by repetition.",
+          "example_quote": "The goal is fluency, not perfection. Understanding what AI systems need and why allows you to make informed decisions about when and how to optimize.",
+          "composite_comparison": "The Ideal Composite adopts Fergus v2's 'fluency, not perfection' framing and drops the repetitive 'Why This Works' codas.",
+          "composite_quote": "The goal is fluency, not perfection. Understanding what these systems need and why allows you to make informed decisions about when and how to optimize, and what you're giving up when you don't."
+        },
+        "opus_4_6": {
+          "score": 8,
+          "hover": "The warmest and most accessible explanatory voice in the set. Reads like a knowledgeable colleague explaining something complex over coffee. Never condescends. Loses a point only because it doesn't address the audience's specific professional context (press release writing).",
+          "detail": "The Opus 4.6 rewrite achieves the best tone balance in the set \u2014 technically rigorous yet conversational and never condescending. It uses concrete, relatable examples ('A model might know that TVs and More operates more than 1,000 stores') rather than abstract concepts. The 'What this means in practice' callout boxes translate technical points into plain-language implications. Its only limitation is that it doesn't explicitly address the comms professional's situation \u2014 it doesn't say 'you're now writing for three audiences' or 'this doesn't mean writing like a robot.' It explains how AI works clearly but doesn't frame why the reader should care about their specific role.",
+          "example_quote": "The knowledge is there. The source attribution is gone.",
+          "composite_comparison": "The Ideal Composite pairs the Opus 4.6 explanatory voice with the Client Original's professional framing, opening with the three-audience framework and threading reassurances throughout the operational sections.",
+          "composite_quote": "When we publish content on our corporate blog or newsroom \u2014 whether it's a product announcement, a seasonal campaign, or an evergreen explainer \u2014 we are now writing for three audiences at once."
+        },
+        "gpt_5_4": {
+          "score": 7,
+          "hover": "Professional, clear, and respectful of the audience. Frames changes as practical defaults rather than mandates ('Think of this as a default operating system, not a law'). Slightly more consultant-voiced than colleague-voiced.",
+          "detail": "The GPT 5.4 rewrite is well-calibrated for a professional audience. It avoids jargon, uses clear section headers, and includes practical framing like 'Think of this as a default operating system, not a law' and 'Use the pieces that help the news travel clearly.' Its callout boxes ('Do not overclaim') show respect for the reader's intelligence. However, it reads more like senior consultant documentation than a colleague's guidance \u2014 measured and authoritative rather than warm. It lacks the Client Original's direct empathy ('Don't force it') and doesn't explicitly address the anxiety of changing established workflows.",
+          "example_quote": "Think of this as a default operating system, not a law. Not every page needs every element. Use the pieces that help the news travel clearly.",
+          "composite_comparison": "The Ideal Composite blends GPT 5.4's professional framing with the Client Original's warmer register, achieving both authority and empathy.",
+          "composite_quote": "Think of this as a default, not a law. Not every page needs every element. Use the pieces that help the news travel clearly."
+        }
+      },
+      "edge": "Client orig. and Opus 4.6 co-lead on voice and clarity"
+    },
+    {
+      "id": "actionability",
+      "label": "Actionability / practical value",
+      "description": "Whether the document gives a communications professional enough specific, concrete guidance to change their behavior on Monday morning. A document that explains principles without showing what they look like in practice scores low; a document with templates, formatting patterns, word-count targets, and checklists scores high. This is the single most important attribute for the document's stated purpose.",
+      "scores": {
+        "fergus_v1": {
+          "score": 2,
+          "hover": "Offers generic advice ('use clear, descriptive language,' 'front-load key information') without showing what any of it looks like in a real press release. A writer would finish it understanding embeddings slightly better but unable to restructure their next announcement.",
+          "detail": "Fergus v1's practical guidance section offers advice like 'prioritize clarity over creativity,' 'anticipate stakeholder queries,' and 'structure content around likely questions' \u2014 all correct principles but none operationalized with examples, templates, or formatting patterns. There is no announcement template. No section-by-section breakdown. No worked examples of headlines, ledes, quotes, FAQs, or key highlights. No word-count targets. No formatting rules. A comms professional reading this document would agree with its advice but have no idea what their next press release should look like.",
+          "example_quote": "Use clear, descriptive language: Avoid jargon unless it's industry-standard. Front-load key information: Place critical facts early in paragraphs.",
+          "composite_comparison": "The Ideal Composite provides a full 10-section announcement template with worked examples for every element, specific word-count and bullet-count targets, the 'Label: Value' formatting pattern for key highlights, and a pre-publication checklist.",
+          "composite_quote": "Use the 'Label: Value' structure \u2014 bold the label before the colon, follow with specific facts, one idea per bullet. Aim for 5\u20138 bullets."
+        },
+        "client_orig": {
+          "score": 9,
+          "hover": "The most operationally useful document in the set. Full 10-section template, dozens of worked examples, specific formatting patterns ('Label: Value'), word-count targets for FAQs and quotes, and annotated examples showing what AI extracts from each element.",
+          "detail": "The Client Original excels at turning principles into practice. Its 10-section template covers every element of an announcement with specific guidance: headline formula ([Company] + [Action Verb] + [What] + [Timing/Scope]), key highlights in 'Label: Value' format, lede requirements (who/what/when/where/why in the first paragraph), quote construction (1-3 sentences, 20-60 words, five elements that increase visibility), FAQ targets (3-7 questions, 40-60 word answers), and more. Each section includes multiple worked examples with annotations showing what AI extracts. The document loses a point for lacking the technical publishing and measurement layers.",
+          "example_quote": "Shop your way: Online, in the app, or in stores nationwide. In this example, if a user asks 'Where can I buy [Brand] products?', AI doesn't have to summarize a whole paragraph. It finds the matching 'Shop Your Way' label and provides the benefit that comes after the colon.",
+          "composite_comparison": "The Ideal Composite preserves virtually all of the Client Original's operational guidance \u2014 the template, the formatting patterns, the worked examples \u2014 while fixing the technical foundation and adding the publishing, measurement, and retail handoff layers.",
+          "composite_quote": "When a user asks 'Where can I shop the TVs and More Black Friday sale?' the system finds the matching 'Shop your way' label and provides the value that follows \u2014 no summarization required."
+        },
+        "fergus_v2": {
+          "score": 8,
+          "hover": "Restores the Client Original's full template and worked examples. Adds a 'What Actually Improves AI Visibility' section with eight evidence-based practices. Slightly undermined by internal contradictions between corrections and guidance.",
+          "detail": "Fergus v2 recovers what Fergus v1 lost: the full 10-section template, annotated headline examples, key highlight formatting, lede construction guidance, multiple quote examples with element annotations, subsection demonstrations, seven FAQ entries, a boilerplate sample, and contact info templates. It adds an eight-point 'What Actually Improves AI Visibility' section (semantic clarity, front-loading, structured architecture, factual precision, FAQ inclusion, consistent entity references, authoritative signals, technical hygiene). The only deductions are the missing technical publishing and measurement layers, and the internal contradictions between its 'Common Misconceptions' section and its guidance language.",
+          "example_quote": "Begins November 20: Early access to Black Friday savings. Doorbusters in top tech: TVs, laptops, tablets and smart home devices. Member rewards: Earn up to $25 in bonus rewards through Nov. 29.",
+          "composite_comparison": "The Ideal Composite draws heavily on Fergus v2 (and the Client Original) for worked examples and the section-by-section template, while adding the technical and measurement layers that Fergus v2 omits.",
+          "composite_quote": "Begins November 20: Early access to Black Friday savings. Doorbusters in top tech: TVs, laptops, tablets, and smart home devices. Member rewards: Earn up to $25 in bonus rewards through Nov. 29."
+        },
+        "opus_4_6": {
+          "score": 5,
+          "hover": "Seven practical guidelines are all correct and well-stated, but they are principles, not templates. No announcement structure, no formatting patterns, no worked examples of press release sections. Teaches the 'why' brilliantly but omits the 'how.'",
+          "detail": "The Opus 4.6 rewrite provides seven practical guidelines: lead with the facts, write self-contained sentences, be specific and concrete, use clear structural formatting, include FAQ sections, maintain consistency across channels, and prioritize source authority. Each is correct, well-explained, and paired with a brief rationale. But none are operationalized into templates, formatting patterns, or worked examples at the press-release-section level. A writer who understands 'use clear structural formatting' still needs to see what that looks like in a TVs and More press release. The document is the best chapter one of a guide but is not a complete guide.",
+          "example_quote": "Each key claim should be understandable on its own, without requiring context from surrounding paragraphs. AI may extract a single sentence to use as the basis for an answer. 'The sale begins November 20 at BestBuy.com and all U.S. stores' works. 'It begins on the date announced earlier this quarter' does not.",
+          "composite_comparison": "The Ideal Composite uses the Opus 4.6 guidelines as the conceptual backbone and then layers on the full section-by-section template with worked examples, formatting patterns, and specific targets for every element.",
+          "composite_quote": "Use the 'Label: Value' structure \u2014 bold the label before the colon, follow with specific facts, one idea per bullet. Aim for 5\u20138 bullets."
+        },
+        "gpt_5_4": {
+          "score": 8,
+          "hover": "Includes the full announcement template, a technical publishing checklist, retail handoff guidance, and a measurement framework. Loses a point for sparse worked examples \u2014 the template shows structure but not enough 'this is what good looks like' demonstrations.",
+          "detail": "The GPT 5.4 rewrite provides: a full 10-section announcement template with purpose statements and guidance for each element, a condensed editorial checklist with a self-test question, a technical publishing checklist covering crawl access through structured data, a retail-specific commerce handoff section, and a measurement/monitoring framework with platform-specific tracking. These are all operationally useful additions that no other document provides. The main gap is worked examples \u2014 only two sample headlines, no sample ledes, no sample FAQs, no sample quotes, no annotated key highlights.",
+          "example_quote": "Final test before publish: if someone asked the page's core question in plain English, would the answer be obvious from the title, the first paragraph, and one supporting section? If yes, the page is usually ready.",
+          "composite_comparison": "The Ideal Composite combines GPT 5.4's operational frameworks (technical publishing, measurement, retail handoff) with the Client Original and Fergus v2's rich worked examples, achieving both structural guidance and concrete demonstrations.",
+          "composite_quote": "At publish: Inspect the live page (not the CMS preview). Confirm title, date, canonical URL, internal links, and structured data. Monthly: Run a small set of brand, offer, service, and policy questions in major AI assistants."
+        }
+      },
+      "edge": "Client orig. leads \u2014 Opus 4.6 teaches well but lacks template"
+    },
+    {
+      "id": "examples_specificity",
+      "label": "Examples and specificity",
+      "description": "The quantity and quality of worked examples \u2014 annotated headlines, sample ledes, formatted key highlights, quote demonstrations, FAQ entries, boilerplate samples. For a document designed to change practitioner behavior, examples are the bridge between understanding a principle and being able to execute it. A template without examples is a skeleton; examples without a template are fragments.",
+      "scores": {
+        "fergus_v1": {
+          "score": 1,
+          "hover": "Essentially one example in the entire document: the observation that 'revenue growth' and 'sales increase' are semantically similar. No headlines, no ledes, no quotes, no FAQs, no formatting demonstrations of any kind.",
+          "detail": "Fergus v1 contains a single illustrative example: the note that 'revenue growth' and 'sales increase' are semantically similar even with different wording. There are no sample headlines, no sample ledes, no sample quotes, no sample FAQs, no key highlight formatting demonstrations, no boilerplate samples, no annotated examples showing what AI extracts from well-structured content. The document is almost entirely abstract guidance without concrete demonstrations.",
+          "example_quote": "Example: 'revenue growth' and 'sales increase' are semantically similar.",
+          "composite_comparison": "The Ideal Composite includes: 8+ sample headlines (announcements and blogs), 5 subhead examples, 7 key highlight bullets in Label:Value format, 2 annotated ledes, an Evidence\u2192Action\u2192Result context paragraph framework with examples, 2 annotated quotes, a full subsection example with deal highlights, 5 FAQ entries, a complete boilerplate paragraph, and contact info formatting.",
+          "composite_quote": "TVs and More Launches Black Friday Sale Starting November 20. TVs and More Expands Same-Day Delivery to 500 Additional Stores. TVs and More Partners with Samsung to Offer Exclusive Smart Home Bundles."
+        },
+        "client_orig": {
+          "score": 9,
+          "hover": "The richest example set of any document: dozens of annotated headlines, multiple ledes, formatted key highlights with explanations, annotated quote examples, FAQ entries, a Walmart competitor case study, and a boilerplate sample. This is the primary reason the original drives behavior change.",
+          "detail": "The Client Original includes: 8 announcement headline examples, 8 blog headline examples, 5 annotated subhead examples, 7 key highlight bullets with two explained in detail, 2 annotated lede examples, a Walmart 'Evidence-to-Action-to-Result' case study, 3 annotated quote examples with element breakdowns, multiple subsection header examples in four formats, 4 FAQ entries, a screenshot of Walmart's FAQ and boilerplate sections, a boilerplate content checklist, and contact info formatting. Many examples include annotations showing what AI extracts ('Metric, Temporal Reference, Customer Benefit'). This density of illustration is the document's greatest strength.",
+          "example_quote": "By expanding same-day pickup to 1,000 stores, we're giving customers faster access to the tech they rely on during the holiday season,' said Corie Barry, CEO of TVs & More. \u2014 Metric, Temporal Reference, Customer Benefit",
+          "composite_comparison": "The Ideal Composite preserves the Client Original's example density across all sections while substituting the fictional TVs and More branding and fixing the technical annotations.",
+          "composite_quote": "'By expanding same-day pickup to 1,000 stores, we're giving customers faster access to the tech they rely on during the holiday season,' said Maria Chen, CEO of TVs and More."
+        },
+        "fergus_v2": {
+          "score": 8,
+          "hover": "Restores nearly all of the Client Original's examples and adds new ones (a service expansion lede, additional quote examples). The example density is close to the original's. Slightly lower because some examples are copied verbatim without improving annotations.",
+          "detail": "Fergus v2 recovers the Client Original's example library: all the headline examples, subhead examples, key highlight bullets, two annotated ledes (including a new service expansion example), the Walmart case study, three annotated quote examples, subsection header examples in multiple formats, a full subsection demonstration with deal highlights and how-it-works steps, seven FAQ entries (two more than the original), a complete boilerplate paragraph, and contact info in simple and comprehensive formats. It also adds 'Why This Works' annotations after each example set. The main deduction is that many examples are carried over verbatim without improvement.",
+          "example_quote": "MINNEAPOLIS (Nov. 20, 2025) \u2014 TVs & More today launched its annual Black Friday Sale, offering early access to major deals on holiday tech online, in stores, and in the TVs & More app. What AI extracts: Entity (TVs & More), action (launched), object (Black Friday Sale), date (Nov. 20), scope (all channels)",
+          "composite_comparison": "The Ideal Composite draws from Fergus v2's expanded example set (particularly the service expansion lede and seven FAQ entries) while dropping the repetitive 'Why This Works' codas.",
+          "composite_quote": "In this example, AI extracts: entity (TVs and More), action (launched), object (Black Friday Sale), date (Nov. 20), scope (all channels), categories (TVs, laptops, etc.), and member benefit."
+        },
+        "opus_4_6": {
+          "score": 4,
+          "hover": "Two excellent worked examples showing training knowledge vs. retrieval in practice. Both are well-crafted and pedagogically powerful. But the document has no section-level examples \u2014 no sample headlines, ledes, quotes, FAQs, or formatting demonstrations.",
+          "detail": "The Opus 4.6 rewrite contains two worked examples, both focused on the two-path distinction rather than press release construction. The first (Q3 earnings and same-day delivery) illustrates how durable facts persist in training data. The second (Black Friday sale dates) walks through the search-augmented retrieval process step by step. Both are excellent and pedagogically effective. The document also includes brief good/bad comparisons in its guidelines section ('The sale begins November 20 at BestBuy.com and all U.S. stores' works vs. 'It begins on the date announced earlier this quarter' does not). But there are no section-level examples \u2014 no sample headlines, subheads, key highlights, ledes, context paragraphs, quotes, subsections, FAQs, or boilerplate.",
+          "example_quote": "If our headline is clear, our opening paragraph states the date explicitly, and our formatting makes it easy to extract that fact, we're in a strong position. If the date is buried in paragraph four, or our headline is vague ('TVs & More Announces Holiday Plans'), the model might pull the date from a third-party article instead \u2014 or get it wrong entirely.",
+          "composite_comparison": "The Ideal Composite preserves the Opus 4.6 worked examples in the educational section and then adds the full section-level example library drawn from the Client Original and Fergus v2.",
+          "composite_quote": "If the date is buried in paragraph four, or our headline is vague ('TVs and More Announces Holiday Plans'), the model might pull the date from a third-party article instead \u2014 or get it wrong entirely."
+        },
+        "gpt_5_4": {
+          "score": 5,
+          "hover": "Has two sample headlines and a handful of generic subsection header examples, but no sample ledes, quotes, FAQs, key highlights, or boilerplate. The template tells you what each section should do but rarely shows what it looks like.",
+          "detail": "The GPT 5.4 rewrite includes: two sample headlines ('TVs & More launches early Black Friday sale on Nov. 20' and 'TVs & More expands same-day delivery to additional markets'), four generic subsection header examples ('What customers should know,' 'How the offer works'), and a condensed template table with brief descriptions of each section's content. It does not include sample ledes, sample context paragraphs, sample quotes, sample key highlights in Label:Value format, sample FAQ entries, or a sample boilerplate. For a document that aims to change writing behavior, this is a significant gap \u2014 writers need to see the pattern, not just read about it.",
+          "example_quote": "Examples: 'TVs & More launches early Black Friday sale on Nov. 20.' 'TVs & More expands same-day delivery to additional markets.'",
+          "composite_comparison": "The Ideal Composite supplements GPT 5.4's structural guidance with the full worked-example library, providing concrete demonstrations for every section of the template.",
+          "composite_quote": "'DALLAS (Nov. 20, 2025) \u2014 TVs and More today launched its annual Black Friday Sale, offering early access to major deals on holiday tech online, in stores, and in the TVs and More app.'"
+        }
+      },
+      "edge": "Client orig. dominant \u2014 richest example set by far"
+    },
+    {
+      "id": "evidentiary_integrity",
+      "label": "Statistical / evidentiary integrity",
+      "description": "Whether quantitative claims are sourced, whether unsourced statistics appear to be fabricated, and whether the document's overall relationship with evidence is honest. Fabricated statistics in an internal guide are a credibility liability \u2014 if repeated to executives or external audiences, they damage institutional trust. A document that makes no unsourced claims is safer than one that invents impressive-sounding numbers.",
+      "scores": {
+        "fergus_v1": {
+          "score": 8,
+          "hover": "Makes no unsourced quantitative claims. Avoids the Client Original's fabricated statistics entirely. Loses two points for not citing any sources at all \u2014 the claims are honest but unverifiable.",
+          "detail": "Fergus v1 wisely avoids the Client Original's most problematic fabrications. There are no percentage boosts, no citation probability formulas, no specific chunk-size claims presented as universal facts. Every assertion is either a well-established technical fact or practical advice framed as guidance. The deduction is for the absence of any sourced citations \u2014 the document makes no falsifiable quantitative claims, which is better than making fabricated ones, but it also doesn't ground its technical claims in official documentation.",
+          "example_quote": "Semantic relevance matters more than keyword density.",
+          "composite_comparison": "The Ideal Composite matches Fergus v1's restraint on unsourced claims and adds a 12-source appendix citing official platform documentation, making its technical claims verifiable.",
+          "composite_quote": "No major platform publishes a universal citation weighting formula, fixed confidence score, or deterministic boost from an FAQ, quote, or bullet list. Use those devices because they help users and improve clarity \u2014 not because they are magic switches."
+        },
+        "client_orig": {
+          "score": 2,
+          "hover": "Contains multiple fabricated statistics presented as established facts: an '80% probability boost' broken into precise sub-percentages, a '25% more likely' social handle claim, and unsourced market statistics. None are traceable to real research.",
+          "detail": "The Client Original contains several statistics that appear to be fabricated: the claim that specific quote elements produce an '80% probability boost' broken into precise sub-percentages (20% for entity naming, 25% for metrics, 15% for temporal references, 10% for causal linkage, 10% for semantic tags); the claim that AI summaries are '25% more likely' to include a brand's social perspective when handles are linked; the '540-word chunk' processing claim presented as universal; and the '65% of Google searches end without a click' and '44% of users rely on AI summaries' statistics, which are presented without attribution. The directional advice behind these numbers is often sound, but the false precision is a credibility liability.",
+          "example_quote": "Name a specific Entity: Probability boost = 20%. Include a specific Metric: Probability boost = 25%. Add a temporal reference: Probability boost = 15%.",
+          "composite_comparison": "The Ideal Composite removes all fabricated statistics. It preserves the directional advice (naming entities, including metrics, adding temporal references) but frames them as good practices rather than measured boosts: 'Even one detail increases extractability. Two details together often create a data point that doesn't exist elsewhere on the web, giving our content a uniqueness advantage.'",
+          "composite_quote": "Include at least one specific detail. A date, number, benefit, scope, entity name, or category. Even one detail increases extractability. Two details together often create a data point that doesn't exist elsewhere on the web, giving our content a uniqueness advantage."
+        },
+        "fergus_v2": {
+          "score": 3,
+          "hover": "Removes the Client Original's precise percentages but carries forward the framework that implied them. Still presents unsourced claims about social handles, chunk sizes, and contact info down-ranking as established facts. Zero external sources cited.",
+          "detail": "Fergus v2 removes the '80% probability boost' breakdown and replaces it with vaguer language ('Probability boost' without a number), which is better than false precision. However, it still carries forward several unsourced claims: 'AI considers brands with active, linked social handles to be more authoritative,' 'content without clear contact information is often flagged as AI-generated fluff and down-ranked,' 'Most AI systems chunk content into ~500-word segments,' and 'AI systems immediately look for a declarative answer within the first 20 words.' The '65%' and '44%' market statistics also appear without attribution. Zero external sources are cited anywhere in the document.",
+          "example_quote": "AI considers brands with active, linked social handles to be more 'authoritative' and 'fresh.' Brands with explicitly linked social handles in corporate metadata are more likely to have their social perspective included in AI-generated summaries.",
+          "composite_comparison": "The Ideal Composite drops all unsourced claims about social handles, chunk sizes, and down-ranking. It includes a 12-source appendix and a 'Misconceptions to Retire' section that explicitly flags fake precision as the biggest risk in AI guidance.",
+          "composite_quote": "The biggest risk in AI guidance is fake precision. These are the claims the team should stop repeating."
+        },
+        "opus_4_6": {
+          "score": 9,
+          "hover": "Zero unsourced quantitative claims. Every assertion is either a well-established technical fact or practical advice framed honestly as guidance. Loses one point only for not including a sourced appendix to make claims verifiable.",
+          "detail": "The Opus 4.6 rewrite makes no unsourced statistical claims anywhere. It does not cite percentages, probability boosts, chunk sizes, or any other quantitative figure without qualification. Every assertion is either a well-established technical fact (how LLMs generate text, how RAG works, what semantic similarity means) or practical advice framed as guidance rather than measured truth. The persuasive power comes entirely from explanation rather than manufactured evidence. The only reason it scores below a 10 is the absence of a sourced appendix \u2014 the GPT 5.4 rewrite's 21-source bibliography demonstrates what full evidentiary rigor looks like.",
+          "example_quote": "If our announcement was picked up by many outlets, the model saw the same facts repeated across multiple sources. Repetition strengthens the signal.",
+          "composite_comparison": "The Ideal Composite matches the Opus 4.6 standard of zero fabrication and adds a 12-source appendix for verifiability.",
+          "composite_quote": "This guide is anchored to public documentation from the platforms that matter most. Platform behavior changes over time; treat this as a dated snapshot."
+        },
+        "gpt_5_4": {
+          "score": 10,
+          "hover": "The gold standard for evidentiary integrity. Zero unsourced claims, plus a 21-source appendix citing official documentation from Google Search Central, OpenAI Help, and Anthropic Docs. Every substantive claim is traceable and verifiable.",
+          "detail": "The GPT 5.4 rewrite is the only document in the set that backs its claims with official source documentation. Its 21-source appendix includes: 13 Google Search Central pages covering AI features, crawling, structured data, title links, publication dates, preview controls, and more; 4 OpenAI references covering ChatGPT search, crawler bots, RAG, and web search; and 2 Anthropic references covering web search and citations. The document explicitly calls out fabricated statistics as something to stop repeating ('Public documentation does not support fixed percentage boosts of that kind') and includes a 'Myths to retire' section that systematically debunks the most problematic claims. It is dated ('Prepared March 14, 2026') and marked as a snapshot, acknowledging that platform behavior changes.",
+          "example_quote": "Do not overclaim: no major platform publishes a universal 'citation weighting' formula, fixed 'confidence score,' or deterministic boost from an FAQ, quote, or bullet list.",
+          "composite_comparison": "The Ideal Composite adopts the GPT 5.4 standard, including a 12-source appendix (condensed from the original 21) and the 'Misconceptions to Retire' section.",
+          "composite_quote": "No major platform publishes a universal citation weighting formula, fixed confidence score, or deterministic boost from an FAQ, quote, or bullet list. Use those devices because they help users and improve clarity \u2014 not because they are magic switches."
+        }
+      },
+      "edge": "GPT 5.4 (sourced appendix) and Opus 4.6 (zero fabrication)"
+    },
+    {
+      "id": "completeness",
+      "label": "Completeness of coverage",
+      "description": "Whether the document covers all the dimensions necessary to achieve its goal. A complete guide for AI content optimization should include: educational foundation (how AI works), editorial guidance (how to structure content), technical publishing (how to make content findable), measurement (how to know if it's working), and domain-specific considerations (retail commerce handoff). Most documents cover only one or two of these layers.",
+      "scores": {
+        "fergus_v1": {
+          "score": 3,
+          "hover": "Covers only the educational foundation layer (LLM architecture, RAG) and a thin practical guidance layer. Missing: announcement template, worked examples, technical publishing, measurement, retail considerations.",
+          "detail": "Fergus v1 covers two of the five necessary layers: educational foundation (LLM architecture, RAG pipeline, common misconceptions) and a thin practical guidance layer (semantic clarity, structured information, factual precision, chunking considerations). It is missing: the full announcement template, any worked examples, the technical publishing layer (crawl access, canonical URLs, structured data), the measurement layer (KPIs, monitoring rhythm), and domain-specific considerations (retail commerce handoff). At 822 words, it simply doesn't have the space to be comprehensive.",
+          "example_quote": "Prioritize clarity over creativity. Anticipate stakeholder queries. Update regularly.",
+          "composite_comparison": "The Ideal Composite covers all five layers: educational foundation (two-path model), editorial guidance (10-section template with examples), technical publishing (full checklist), measurement (operating rhythm with platform-specific tracking), and retail considerations (announcement-to-destination handoff).",
+          "composite_quote": "Pair each announcement with the next authoritative destination. A sale announcement should link to the live sale page. A product launch should link to the canonical product page."
+        },
+        "client_orig": {
+          "score": 8,
+          "hover": "Comprehensive editorial coverage: full template, worked examples, three-audience framework. Missing the technical publishing layer entirely and has no measurement or monitoring guidance.",
+          "detail": "The Client Original covers the educational foundation (incorrectly, but thoroughly) and editorial guidance (comprehensively \u2014 full template, worked examples, formatting patterns). It also touches on domain-specific considerations through its retail-focused examples. However, it completely omits the technical publishing layer (no mention of crawl access, robots.txt, canonical URLs, structured data, or Search Console) and the measurement layer (no KPIs, no monitoring rhythm, no guidance on how to know if the optimization is working).",
+          "example_quote": "Moving forward, announcements should be structured in the order below.",
+          "composite_comparison": "The Ideal Composite preserves the Client Original's editorial comprehensiveness and adds the technical publishing, measurement, and retail handoff layers drawn from GPT 5.4.",
+          "composite_quote": "At publish: Inspect the live page (not the CMS preview). Confirm title, date, canonical URL, internal links, and structured data."
+        },
+        "fergus_v2": {
+          "score": 7,
+          "hover": "Covers the educational foundation and editorial guidance layers comprehensively, including the full template and worked examples. Still missing technical publishing and measurement. Adds a 'What Actually Improves AI Visibility' section.",
+          "detail": "Fergus v2 covers the educational foundation (improved over v1, with common misconceptions corrections) and editorial guidance (full template, worked examples, formatting patterns \u2014 matching the Client Original's depth). It adds a 'What Actually Improves AI Visibility' section with eight evidence-based practices. However, like the Client Original, it omits the technical publishing layer entirely and has no measurement or monitoring guidance. The retail commerce handoff dimension is also absent.",
+          "example_quote": "Ensure content is publicly accessible (not behind paywalls). Use clean HTML structure and semantic markup. Maintain stable URLs.",
+          "composite_comparison": "The Ideal Composite adds the three layers Fergus v2 is missing: a full technical publishing checklist, a measurement/monitoring section with operating rhythm, and retail-specific guidance.",
+          "composite_quote": "Good editorial structure cannot rescue a page that is technically hard to crawl, hard to index, or hard to excerpt."
+        },
+        "opus_4_6": {
+          "score": 3,
+          "hover": "Covers the educational foundation brilliantly and provides principle-level practical guidelines. Missing: announcement template, section-by-section guide, technical publishing, measurement, retail considerations. Intentionally focused but incomplete for the task.",
+          "detail": "The Opus 4.6 rewrite covers the educational foundation more effectively than any other document, plus principle-level practical guidelines. But it omits: the full announcement template, section-by-section editorial guidance, worked examples at the press-release level, the technical publishing layer, the measurement layer, and domain-specific retail considerations. At 1,540 words it is a deliberately focused document, but for the task of providing a complete operational guide, it covers roughly 30% of what's needed.",
+          "example_quote": "Lead with the facts. Write self-contained sentences. Be specific and concrete. Use clear structural formatting. Include FAQ sections when relevant.",
+          "composite_comparison": "The Ideal Composite uses Opus 4.6 as its educational opening and then layers on all the missing dimensions: the full template, worked examples, technical publishing, measurement, and retail handoff.",
+          "composite_quote": "Users often move from an announcement to a commerce question: What's included? Is it in stock? Where can I buy it?"
+        },
+        "gpt_5_4": {
+          "score": 9,
+          "hover": "The most complete document in the set. Covers all five layers: educational foundation, editorial guidance, technical publishing, measurement/monitoring, and retail-specific considerations. The only gap is sparse worked examples.",
+          "detail": "The GPT 5.4 rewrite is the only document that covers all five necessary layers: educational foundation (five-stage mental model, base model vs. retrieval distinction), editorial guidance (10-section template with section-by-section purpose statements), technical publishing (crawl access, canonical URLs, structured data, OAI-SearchBot, Search Console), measurement (operating rhythm, platform-specific tracking, KPIs), and retail-specific considerations (announcement-to-destination handoff, Merchant Center, consistency across channels). Its only gap is the sparseness of worked examples within the editorial guidance layer.",
+          "example_quote": "Monthly: run a small set of brand, offer, service, and policy questions in major assistants and note which pages are cited.",
+          "composite_comparison": "The Ideal Composite preserves GPT 5.4's structural completeness and fills the example gap with demonstrations drawn from the Client Original and Fergus v2.",
+          "composite_quote": "Monthly: Run a small set of brand, offer, service, and policy questions in major AI assistants. Note which pages are cited and whether the answers are accurate."
+        }
+      },
+      "edge": "GPT 5.4 \u2014 covers all five necessary layers"
+    },
+    {
+      "id": "writing_quality",
+      "label": "Writing quality / polish",
+      "description": "The clarity, precision, and readability of the prose itself \u2014 independent of whether the content is accurate or complete. This includes typos, grammatical errors, tone consistency, structural repetition, and whether the document reads as professionally edited. Poor writing quality reduces adoption even when the content is good.",
+      "scores": {
+        "fergus_v1": {
+          "score": 7,
+          "hover": "Clean, well-organized prose with no typos. Reads as professionally edited. Loses points for academic dryness \u2014 correct but not engaging. Lacks the conversational voice that would help a comms audience connect with the material.",
+          "detail": "Fergus v1 is editorially clean \u2014 no typos, no grammatical errors, well-organized with clear section headers. The prose is precise and professionally structured. However, it reads as dry and academic, lacking the conversational warmth that would make a comms audience engage with it. Sentences like 'LLMs process text through tokenization, embeddings, attention mechanisms, and pattern matching' are correct but uninviting. The document feels like a briefing paper rather than a guide meant to change behavior.",
+          "example_quote": "Frontier LLMs like GPT-4, Claude, and Gemini are neural networks trained on vast text corpora.",
+          "composite_comparison": "The Ideal Composite uses the Opus 4.6 voice \u2014 warm, precise, conversational \u2014 while maintaining the editorial cleanliness of Fergus v1.",
+          "composite_quote": "AI platforms like ChatGPT, Claude, Gemini, and Perplexity don't 'understand' content the way a human reader does. They work through pattern recognition at enormous scale."
+        },
+        "client_orig": {
+          "score": 5,
+          "hover": "Has the most engaging voice and strongest internal-audience empathy. Significantly undermined by noticeable typos ('product lunch,' 'parter,' 'exampples,' 'Freashness Leader,' 'casual linkage') that reduce professionalism.",
+          "detail": "The Client Original has the most engaging voice of any document in the set \u2014 conversational, empathetic, direct. But it contains multiple typos: 'product lunch' (launch), 'parter' (partner), 'exampples' (examples), 'Freashness Leader' (Freshness), 'casual linkage' (causal), 'high-probably' (high probability), and 'What to do know' (What to know). These surface-level errors undermine the document's professionalism and credibility, particularly for a guide that positions itself as authoritative on AI optimization.",
+          "example_quote": "It looks for signals: The Who (TVs & More), The What (press release, product lunch, partnership, earnings), structural hierarchy, etc.",
+          "composite_comparison": "The Ideal Composite preserves the Client Original's engaging voice while fixing all typos and maintaining consistent editorial quality throughout.",
+          "composite_quote": "Start with the announcement, not scene-setting. If we're introducing something new \u2014 a product, service, or program \u2014 include a short definition in the first or second sentence."
+        },
+        "fergus_v2": {
+          "score": 7,
+          "hover": "Clean and professionally edited with no typos. Fixes the Client Original's surface errors. Loses points for the repetitive 'Why This Works' coda on every section (nine times) which becomes formulaic and adds length without proportional value.",
+          "detail": "Fergus v2 fixes all the Client Original's typos and maintains clean, professional prose throughout. The section structure is clear and consistent. The main writing quality issue is the formulaic 'Why This Works' section appended to every element \u2014 by the ninth repetition, the device has lost its pedagogical value and started to feel like padding. Many of these lists repeat the same points in slightly different words ('Serves all three audiences effectively,' 'Easy for AI to extract,' 'Reduces risk of misinterpretation'). This contributes to the document's length (longest of the five at 5,865 words) without proportionally adding value.",
+          "example_quote": "Why This Works: Provides verifiable, attributable facts. Easy to extract and quote. Reinforces core announcement. Serves all three audiences effectively.",
+          "composite_comparison": "The Ideal Composite drops the repetitive 'Why This Works' codas entirely, integrating the rationale into each section's guidance prose instead.",
+          "composite_quote": "For AI systems, quotes serve as high-confidence factual statements that can be safely extracted and reused. A quote from a named executive acts as a 'guarantee' of the facts."
+        },
+        "opus_4_6": {
+          "score": 10,
+          "hover": "The best prose in the set by a clear margin. Warm, precise, patient, and free of every tic that marks the other documents. No fabricated stats, no anthropomorphization, no formulaic repetition, no typos. Reads like a talented writer explaining something they know well.",
+          "detail": "The Opus 4.6 rewrite achieves the highest prose quality of any document in the set. Every sentence earns its place. The explanations are patient without being patronizing ('The model doesn't store our press release as a document it can look up later'). The callout boxes are punchy and memorable ('The knowledge is there. The source attribution is gone'). The worked examples are vivid and specific. There are no typos, no grammatical errors, no filler phrases, no formulaic structures, and no anthropomorphic tics. The prose reads like the work of a skilled writer who understands both the technical subject and the audience.",
+          "example_quote": "The knowledge is there. The source attribution is gone.",
+          "composite_comparison": "The Ideal Composite uses the Opus 4.6 prose style as its voice model throughout, particularly in the educational opening sections.",
+          "composite_quote": "The model doesn't 'store' our press release as a document it can look up later. Instead, it absorbs the patterns and facts from our content into its parameters."
+        },
+        "gpt_5_4": {
+          "score": 9,
+          "hover": "Clean, precise, and free of typos. Sentences are short and declarative. Table formatting is consistent. Callout boxes are used sparingly and effectively. Slightly more procedural than the Opus 4.6 voice but highly professional.",
+          "detail": "The GPT 5.4 rewrite is editorially impeccable \u2014 no typos, no grammatical errors, no filler. Sentences are short and declarative. The table formatting is consistent across multiple structured sections. The callout boxes ('Do not overclaim') are used sparingly and effectively. The only stylistic note is that it occasionally leans toward procedural documentation rather than conversational guidance \u2014 phrases like 'Important correction' and 'Important nuance' feel more like technical errata than colleague-to-colleague advice. But this is a minor point in an otherwise very polished document.",
+          "example_quote": "A useful operating principle is to ask: if a user or assistant saw only the page title, the lead paragraph, and one supporting section, would the essential facts still be correct?",
+          "composite_comparison": "The Ideal Composite draws on GPT 5.4's structural precision for its technical and measurement sections while using the warmer Opus 4.6 voice for its educational and editorial sections.",
+          "composite_quote": "The right question is not simply whether an announcement got a click. In AI-assisted search, the better question is whether the official source was findable, cited accurately, and useful when users chose to go deeper."
+        }
+      },
+      "edge": "Opus 4.6 \u2014 best prose in the set by a clear margin"
+    },
+    {
+      "id": "correct_mental_model",
+      "label": "Correct mental model",
+      "description": "Whether the document gives the reader an accurate intuition for how AI systems interact with their content \u2014 not just technically correct facts, but the right way to think about the problem. A correct mental model helps practitioners make good decisions in novel situations; an incorrect one leads them astray even when they follow the specific advice correctly.",
+      "scores": {
+        "fergus_v1": {
+          "score": 5,
+          "hover": "Provides a more accurate mental model than the Client Original (embeddings and semantic search vs. discrete tags), but frames it through enterprise RAG rather than consumer AI search, giving the reader the wrong picture of which system they're optimizing for.",
+          "detail": "Fergus v1 correctly shifts the reader's mental model from 'AI assigns tags and sorts into buckets' to 'AI uses continuous semantic representations.' This is a genuine improvement. However, it then frames the retrieval mechanism as enterprise RAG \u2014 chunking documents into vector databases for semantic search \u2014 which gives the reader the wrong picture of which system they're optimizing for. A comms professional who internalizes this model would focus on semantic clarity and self-contained chunks (correct) but miss the entire web crawling, indexing, and search ranking layer (incorrect).",
+          "example_quote": "Retrieval happens through semantic similarity search, not keyword matching. The system retrieves the most relevant chunks based on vector proximity.",
+          "composite_comparison": "The Ideal Composite provides the correct mental model: two paths (training knowledge and search-augmented retrieval), with the search path working through web crawling and search results rather than vector database lookups.",
+          "composite_quote": "The system converts the user's question into one or more search queries and retrieves web results \u2014 typically the top 5 to 20 pages."
+        },
+        "client_orig": {
+          "score": 3,
+          "hover": "Gives the reader a fundamentally wrong mental model: AI as a deterministic classifier that assigns tags, sorts content into buckets, and follows a fixed six-step pipeline. This leads to correct behaviors for wrong reasons, which breaks down in novel situations.",
+          "detail": "The Client Original's mental model \u2014 AI classifies content with tags, categorizes it into topic buckets, retrieves based on bucket membership, ranks by confidence scores, and generates answers \u2014 is fundamentally wrong. It anthropomorphizes AI systems as deliberate evaluators making sequential judgments. This model accidentally produces some correct behaviors (clear headlines, named entities) but breaks down in novel situations: a practitioner who believes AI 'assigns tags' will try to game the tagging rather than write clearly; one who believes in fixed 'confidence scores' will optimize for a metric that doesn't exist.",
+          "example_quote": "Think of classification as the 'tags' it assigns to our content. Document type (press release, blog post, earnings report). Industry (retail, consumer electronics). Event type (launch, expansion, sale).",
+          "composite_comparison": "The Ideal Composite replaces the classification model with the two-path framework, where the reader understands that training absorbs patterns and search retrieves passages \u2014 no tags, no buckets, no fixed pipeline.",
+          "composite_quote": "Our content reaches people through these platforms via two distinct paths, and understanding the difference shapes everything else in this guide."
+        },
+        "fergus_v2": {
+          "score": 5,
+          "hover": "Corrects the Client Original's classification model in the misconceptions section but then uses the same anthropomorphic language in its guidance. The reader receives two contradictory mental models in the same document.",
+          "detail": "Fergus v2 creates an internal contradiction. Its 'Common Misconceptions' section gives the reader the correct mental model: no discrete tags, no topic buckets, retrieval through semantic similarity. But the section-by-section guidance then reverts to the old model: 'AI systems expect content to switch from narrative to information delivery,' 'AI systems immediately look for a declarative answer within the first 20 words,' 'If AI can't find a clear why this matters, it may classify our content as thin.' A reader processing both sections absorbs two incompatible mental models, which is worse than consistently applying either one.",
+          "example_quote": "MYTH: AI assigns discrete 'tags.' REALITY: Systems use continuous mathematical representations. [But later:] AI systems expect content to switch from narrative to information delivery.",
+          "composite_comparison": "The Ideal Composite maintains a single consistent mental model throughout \u2014 the two-path framework \u2014 and never uses anthropomorphic language that contradicts its own technical explanation.",
+          "composite_quote": "This is not keyword matching. 'When does the TVs and More sale start?' and 'TVs and More Black Friday launch date' are semantically similar even though they share few exact words."
+        },
+        "opus_4_6": {
+          "score": 9,
+          "hover": "The most intuitive and accurate mental model in the set. The two-path framework (training knowledge vs. search-augmented retrieval) gives the reader the right way to think about every content decision. Consistent throughout with no contradictions.",
+          "detail": "The Opus 4.6 two-path mental model is both accurate and generative \u2014 it helps the reader make good decisions in novel situations. Understanding that durable facts work through training (prevalence, clarity, consistency) while time-sensitive facts work through search (ranking, passage extraction, citation) gives a practitioner the right framework for any content decision: 'Is this a fact I want baked into the model's memory, or is this something people will search for next week?' The model is internally consistent \u2014 no section contradicts another \u2014 and the four training factors (prevalence, clarity, consistency, recency) provide actionable sub-models within the framework.",
+          "example_quote": "Earnings results, executive leadership, store footprint, major programs \u2014 these are the kinds of facts that persist well in training data. Seasonal promotions, event dates, and breaking news are exactly where search-augmented retrieval matters most.",
+          "composite_comparison": "The Ideal Composite adopts the Opus 4.6 mental model wholesale and adds a new section explaining how the two paths interact \u2014 that routing between them is driven by surface-level cues and is more brittle than it sounds.",
+          "composite_quote": "The model decides which source to lean on based on cues in the prompt. Words like 'current,' 'latest,' or 'today' tend to trigger a web search, while questions about established topics are more likely to be answered from training knowledge alone. But this routing logic is more brittle than it sounds."
+        },
+        "gpt_5_4": {
+          "score": 9,
+          "hover": "Provides the correct mental model for the actual system: crawl \u2192 index \u2192 retrieve \u2192 rerank \u2192 generate. Explicitly names the products and platforms the reader should think about. The 'Myths to retire' section actively clears out wrong models.",
+          "detail": "The GPT 5.4 rewrite gives the reader the correct mental model from the infrastructure perspective: content is crawled, indexed, retrieved and reranked, used for grounded answer generation, and followed up on. It explicitly names the products (Google AI Overviews, ChatGPT search) and the infrastructure (OAI-SearchBot, Search Console, Merchant Center). The 'Myths to retire' section actively displaces incorrect mental models. The only reason it shares the top score with Opus 4.6 rather than exceeding it is that its model is more procedural than intuitive \u2014 it tells you the stages rather than giving you a feel for how the system behaves.",
+          "example_quote": "The biggest risk in AI guidance is fake precision. These are the claims the team should stop repeating.",
+          "composite_comparison": "The Ideal Composite combines the Opus 4.6 intuitive framework with the GPT 5.4 infrastructure specificity, and includes the 'Misconceptions to Retire' section to actively clear out wrong models.",
+          "composite_quote": "'AI assigns discrete classification tags and topic buckets to our content.' AI systems can infer likely topic, entity, and document type from a page. But no public documentation supports the claim that systems assign fixed hidden labels."
+        }
+      },
+      "edge": "GPT 5.4 and Opus 4.6 co-lead \u2014 different strengths"
+    },
+    {
+      "id": "scope_alignment",
+      "label": "Scope alignment to actual problem",
+      "description": "Whether the document solves the right problem. The actual task is: help a corporate communications team structure press releases and blog posts so they perform well in consumer AI search products (Google AI Overviews, ChatGPT, Perplexity). A document that instead explains LLM architecture for a technical audience, or optimizes for enterprise RAG systems, or provides only principles without operational guidance, is solving a different problem regardless of how well it does so.",
+      "scores": {
+        "fergus_v1": {
+          "score": 3,
+          "hover": "Solves a different problem: 'teach a technical audience about LLM architecture.' The actual problem \u2014 'help a comms team structure press releases for AI search' \u2014 requires practical, section-level guidance that this document completely omits.",
+          "detail": "Fergus v1 reads like a primer written for someone who already understands communications and needs to learn about LLMs. The actual audience has the inverse need \u2014 they already know how to write and need to know what to change. The document's scope (LLM architecture, RAG pipeline, semantic search concepts) is adjacent to the problem but doesn't address it. A comms professional who reads it will understand embeddings slightly better but will have no idea how to restructure their next announcement. The enterprise RAG framing adds a second scope error: even the technical explanation is aimed at the wrong system.",
+          "example_quote": "Version control: Maintain clear versioning to avoid outdated content in RAG systems. Access controls: Ensure sensitive information is appropriately restricted.",
+          "composite_comparison": "The Ideal Composite correctly scopes to the actual problem: helping a comms team structure owned content for consumer AI search products. Its educational section is in service of the practical guidance, not a standalone technical primer.",
+          "composite_quote": "When we publish content on our corporate blog or newsroom \u2014 whether it's a product announcement, a seasonal campaign, or an evergreen explainer \u2014 we are now writing for three audiences at once."
+        },
+        "client_orig": {
+          "score": 7,
+          "hover": "Correctly scoped to the actual problem: changing how a comms team writes press releases. The three-audience framework and section-by-section template are exactly what the audience needs. Loses points for omitting the technical publishing and measurement layers.",
+          "detail": "The Client Original is correctly scoped to the right problem and the right audience. Its three-audience framework, section-by-section template, and worked examples directly address the task of helping communications professionals restructure their announcements. The deductions are for missing the technical publishing layer (crawl access, canonical URLs, structured data) and the measurement layer (how to know if the optimization is working) \u2014 both of which are necessary for a complete solution to the stated problem.",
+          "example_quote": "How we structure and what we think about when writing external announcements and blogs must change. That does not mean writing like a robot with no emotion to feed the AI machine.",
+          "composite_comparison": "The Ideal Composite preserves the Client Original's correct scoping and adds the missing technical and measurement layers.",
+          "composite_quote": "This guide has two goals. First, provide the communications team with a foundational understanding of how AI systems actually discover, process, and use our content. Second, establish practical best practices for structure and formatting that serve all three audiences."
+        },
+        "fergus_v2": {
+          "score": 6,
+          "hover": "Better scoped than v1 \u2014 restores the full template and worked examples. But still frames the technical foundation through enterprise RAG rather than consumer AI search, and misses the technical publishing and measurement layers.",
+          "detail": "Fergus v2 recovers the correct scope from the Client Original: the full announcement template, section-by-section guidance, and worked examples all address the right problem. However, the technical foundation sections still frame the mechanism through enterprise RAG rather than consumer AI search, which means the 'why' behind the guidance points at the wrong system. The document also continues to omit the technical publishing and measurement layers that are part of a complete solution.",
+          "example_quote": "Your published content is crawled by search engines and AI platforms. Text is processed and converted into embeddings. These embeddings are stored in vector databases.",
+          "composite_comparison": "The Ideal Composite achieves full scope alignment by combining the correct educational model (two paths to consumer AI), the full editorial template, the technical publishing layer, and the measurement framework.",
+          "composite_quote": "For this path, our content needs to do two things: rank in web search so it gets retrieved in the first place, and be easy to extract clear facts from so the AI uses our content accurately in its response."
+        },
+        "opus_4_6": {
+          "score": 5,
+          "hover": "Solves half the problem brilliantly: the educational foundation. But omits the other half \u2014 the operational guidance that actually changes behavior. The two-path model is the right framework; the document just doesn't build the house on top of it.",
+          "detail": "The Opus 4.6 rewrite correctly identifies the problem space (how AI interacts with corporate content) and provides the right educational foundation (two-path model). But it stops before solving the full problem. The stated task is to help a comms team structure press releases for AI search \u2014 which requires templates, formatting patterns, worked examples, and checklists. The Opus 4.6 rewrite provides principles and explanations but no operational guidance at the section level. It is the right foundation for the right guide, but it's only the foundation.",
+          "example_quote": "Use clear structural formatting. Headlines, subheadings, and 'Key Highlights' sections help AI systems parse content and identify the most important information.",
+          "composite_comparison": "The Ideal Composite uses the Opus 4.6 foundation and builds the full operational guide on top of it \u2014 template, examples, checklists, technical publishing, measurement, and retail handoff.",
+          "composite_quote": "Use the 'Label: Value' structure \u2014 bold the label before the colon, follow with specific facts, one idea per bullet. Aim for 5\u20138 bullets."
+        },
+        "gpt_5_4": {
+          "score": 9,
+          "hover": "The best scope alignment of any document. Correctly identifies the problem (consumer AI search), the audience (comms team), and the full solution (editorial + technical + measurement + retail). Only gap is sparse examples.",
+          "detail": "The GPT 5.4 rewrite is the only document that fully aligns to the problem at every layer. It correctly identifies: the mechanism (consumer AI search via web crawling, not enterprise RAG), the audience (comms professionals who need to change their writing), the editorial solution (announcement template with section-by-section guidance), the technical solution (publishing checklist for crawl access, canonical URLs, structured data), the measurement solution (operating rhythm with platform-specific tracking), and the domain solution (retail commerce handoff). Its only scope gap is the sparseness of worked examples within the editorial layer.",
+          "example_quote": "For a retail brand, AI visibility is not only a newsroom issue. Users often move from the announcement to a commerce question.",
+          "composite_comparison": "The Ideal Composite matches GPT 5.4's full scope alignment and fills the example gap with demonstrations from the Client Original and Fergus v2.",
+          "composite_quote": "Pair each announcement with the next authoritative destination. A sale announcement should link to the live sale page. A product launch should link to the canonical product page."
+        }
+      },
+      "edge": "GPT 5.4 \u2014 solves the right problem most completely"
+    }
+  ]
+}
