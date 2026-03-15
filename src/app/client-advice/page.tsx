@@ -28,9 +28,9 @@ export default function ClientAdvicePage() {
         >
           document
         </a>
-        , produced through iterative evaluation across multiple frontier AI
-        models and pressure-tested against current platform documentation, is
-        available for download at the bottom of this page.
+        , produced through iterative evaluation using Fergus and multiple
+        frontier AI models and pressure-tested against current platform
+        documentation, is available for download at the bottom of this page.
       </p>
 
       <EmailDraft />
