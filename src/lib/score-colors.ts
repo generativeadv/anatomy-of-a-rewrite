@@ -4,11 +4,11 @@ export function getScoreColorClasses(score: number): {
   border: string;
 } {
   const map: Record<number, { bg: string; text: string; border: string }> = {
-    1: { bg: "bg-red-200", text: "text-red-900", border: "border-red-300" },
+    1: { bg: "bg-red-400", text: "text-white", border: "border-red-500" },
     2: { bg: "bg-red-300", text: "text-red-950", border: "border-red-400" },
-    3: { bg: "bg-red-400", text: "text-white", border: "border-red-500" },
-    4: { bg: "bg-amber-200", text: "text-amber-900", border: "border-amber-300" },
-    5: { bg: "bg-amber-300", text: "text-amber-900", border: "border-amber-400" },
+    3: { bg: "bg-red-200", text: "text-red-900", border: "border-red-300" },
+    4: { bg: "bg-amber-300", text: "text-amber-900", border: "border-amber-400" },
+    5: { bg: "bg-amber-200", text: "text-amber-900", border: "border-amber-300" },
     6: { bg: "bg-emerald-200", text: "text-emerald-900", border: "border-emerald-300" },
     7: { bg: "bg-emerald-300", text: "text-emerald-900", border: "border-emerald-400" },
     8: { bg: "bg-emerald-400", text: "text-emerald-950", border: "border-emerald-500" },

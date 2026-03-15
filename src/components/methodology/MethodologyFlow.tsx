@@ -446,24 +446,27 @@ function Step4Content() {
         <p className="text-sm font-medium text-stone-700 mb-3">
           Color coding
         </p>
-        <div className="flex flex-wrap gap-2.5">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((score) => {
-            const colors = getScoreColorClasses(score);
-            const zoneLabel =
-              score <= 3 ? "Poor" : score <= 5 ? "Mixed" : "Good";
-            return (
-              <div key={score} className="text-center">
+        <div className="space-y-2">
+          <div className="flex gap-0.5">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((score) => {
+              const colors = getScoreColorClasses(score);
+              return (
                 <div
-                  className={`${colors.bg} ${colors.text} w-10 h-8 rounded-md font-semibold text-xs flex items-center justify-center border ${colors.border}`}
+                  key={score}
+                  className={`${colors.bg} ${colors.text} flex-1 h-8 font-semibold text-xs flex items-center justify-center ${
+                    score === 1 ? "rounded-l-md" : ""
+                  } ${score === 10 ? "rounded-r-md" : ""}`}
                 >
                   {score}
                 </div>
-                <span className="text-[10px] text-stone-400 mt-1 block">
-                  {zoneLabel}
-                </span>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
+          <div className="flex text-[10px] text-stone-400">
+            <span className="w-[30%] text-center">1&ndash;3 Poor</span>
+            <span className="w-[20%] text-center">4&ndash;5 Mixed</span>
+            <span className="w-[50%] text-center">6&ndash;10 Good</span>
+          </div>
         </div>
       </div>
     </div>
