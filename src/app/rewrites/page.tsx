@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { documents } from "@/data/documents";
 import ScoreBadge from "@/components/detail/ScoreBadge";
+import SectionComparison from "@/components/comparison/SectionComparison";
 import ChatCTA from "@/components/chat/ChatCTA";
 import type { Metadata } from "next";
 
@@ -85,6 +86,9 @@ export default function RewritesPage() {
           </div>
         </Link>
       ))}
+
+      {/* Side-by-Side Comparison */}
+      <SectionComparison />
 
       {/* The Rewrite Desk CTA */}
       <ChatCTA />
