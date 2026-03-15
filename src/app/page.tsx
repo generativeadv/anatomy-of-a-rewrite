@@ -18,13 +18,19 @@ export default function HomePage() {
         <p className="text-stone-600 leading-relaxed">
           A client&apos;s AI-generated communications guide &mdash; classic{" "}
           <a
-            href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
+            href="https://www.betterup.com/workslop"
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-foreground"
           >
             workslop
-          </a>
+          </a>{" "}
+          (<a
+            href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-foreground"
+          >via HBR</a>)
           {" "}&mdash; was rewritten by four AI systems using identical prompts.
           Scores ranged from 3.3 to 8.2 out of 10. Explore the results below,
           read the{" "}

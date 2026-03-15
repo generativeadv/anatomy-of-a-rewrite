@@ -33,11 +33,17 @@ export default function AboutPage() {
             fundamentally incorrect, and many of its cited figures were
             fabricated. It is a textbook example of what has become known as
             &ldquo;<a
+              href="https://www.betterup.com/workslop"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-stone-900 transition-colors"
+            >workslop</a>&rdquo;
+            (<a
               href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-stone-900 transition-colors"
-            >workslop</a>&rdquo;: AI-generated output that has the appearance
+            >via HBR</a>): AI-generated output that has the appearance
             and polish of professional work but is misleading or wrong.
           </p>
           <p>
@@ -126,11 +132,17 @@ export default function AboutPage() {
             The client&apos;s candid disclosure that the document was &ldquo;put
             together largely by researching via ChatGPT, Gemini and Google
             search&rdquo; made it a textbook case of &ldquo;<a
-              href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
+              href="https://www.betterup.com/workslop"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-stone-900 transition-colors"
             >workslop</a>&rdquo;
+            (<a
+              href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-stone-900 transition-colors"
+            >via HBR</a>)
             &mdash; and the perfect candidate for a structured rewrite
             experiment. The firm used its proprietary AI tool
             (&ldquo;Fergus&rdquo;), then tested two frontier reasoning models

@@ -246,11 +246,17 @@ function Step1Content() {
       </p>
       <p>
         This is a textbook example of <strong>&ldquo;<a
+          href="https://www.betterup.com/workslop"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-stone-900 transition-colors"
+        >workslop</a>&rdquo;</strong>{" "}
+        (<a
           href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
           target="_blank"
           rel="noopener noreferrer"
           className="underline hover:text-stone-900 transition-colors"
-        >workslop</a>&rdquo;</strong>:
+        >via HBR</a>):
         AI-generated output that has the appearance and polish of professional
         work but is misleading or wrong. It demanded a full rewrite, which
         created the opportunity for a structured comparison.
