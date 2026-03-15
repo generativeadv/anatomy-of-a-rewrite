@@ -32,7 +32,12 @@ export default function AboutPage() {
             &mdash; but its technical model of how AI systems work was
             fundamentally incorrect, and many of its cited figures were
             fabricated. It is a textbook example of what has become known as
-            &ldquo;workslop&rdquo;: AI-generated output that has the appearance
+            &ldquo;<a
+              href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-stone-900 transition-colors"
+            >workslop</a>&rdquo;: AI-generated output that has the appearance
             and polish of professional work but is misleading or wrong.
           </p>
           <p>
@@ -115,7 +120,12 @@ export default function AboutPage() {
           <p className="mt-6">
             The client&apos;s candid disclosure that the document was &ldquo;put
             together largely by researching via ChatGPT, Gemini and Google
-            search&rdquo; made it a textbook case of &ldquo;workslop&rdquo;
+            search&rdquo; made it a textbook case of &ldquo;<a
+              href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-stone-900 transition-colors"
+            >workslop</a>&rdquo;
             &mdash; and the perfect candidate for a structured rewrite
             experiment. The firm used its proprietary AI tool
             (&ldquo;Fergus&rdquo;), then tested two frontier reasoning models
