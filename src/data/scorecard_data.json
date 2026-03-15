@@ -10,8 +10,8 @@
       "label": "Fergus v1",
       "aggregate_score": 4.3,
       "word_count": 822,
-      "description": "The first rewrite by the client's communications agency. At 822 words it was the shortest version, replacing the original's practical guidance with an academic primer on LLM architecture and RAG systems. Note: the prompts were designed for extended-reasoning models; Fergus uses Gemini 3.0 Flash as a first-call orchestrator and benefits from tailored prompting to fully leverage its deeper capabilities. It was technically more literate about model internals but failed to address the actual problem: how to structure press releases for AI-mediated web search.",
-      "model_or_source": "FGS Agency (initial attempt)"
+      "description": "The first rewrite by the client's communications advisory firm. At 822 words it was the shortest version, replacing the original's practical guidance with an academic primer on LLM architecture and RAG systems. Note: the prompts were designed for extended-reasoning models; Fergus uses Gemini 3.0 Flash as a first-call orchestrator and benefits from tailored prompting to fully leverage its deeper capabilities. It was technically more literate about model internals but failed to address the actual problem: how to structure press releases for AI-mediated web search.",
+      "model_or_source": "Advisory firm (initial attempt)"
     },
     {
       "id": "client_orig",
@@ -26,8 +26,8 @@
       "label": "Fergus v2",
       "aggregate_score": 6.1,
       "word_count": 5865,
-      "description": "A second attempt by FGS after being prompted to evaluate every section of the original and rewrite the full document. At 5,865 words it was the longest version. It preserved the original's examples and template while attempting to fix technical errors, but carried forward the same RAG-centric framing as v1 and created internal contradictions between its corrections and its guidance language.",
-      "model_or_source": "FGS Agency (second attempt, with revision prompt)"
+      "description": "A second attempt after being prompted to evaluate every section of the original and rewrite the full document. At 5,865 words it was the longest version. It preserved the original's examples and template while attempting to fix technical errors, but carried forward the same RAG-centric framing as v1 and created internal contradictions between its corrections and its guidance language.",
+      "model_or_source": "Advisory firm (second attempt, with revision prompt)"
     },
     {
       "id": "opus_4_6",

@@ -325,7 +325,7 @@ function Step2Content({ columns }: { columns: Column[] }) {
         </div>
 
         <p>
-          This identical two-step process was applied to the agency&apos;s
+          This identical two-step process was applied to the firm&apos;s
           proprietary AI tool (&ldquo;Fergus&rdquo;), ChatGPT 5.4 Pro, and
           Claude Opus 4.6 Extended. The prompts were oriented toward
           extended-reasoning models. Fergus uses Gemini 3.0 Flash as a
