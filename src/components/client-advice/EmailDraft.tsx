@@ -10,9 +10,9 @@ You'll find the revised guide is very close to yours in structure and goals — 
 
 1. How training data and search work together. Your guide covered how AI platforms search for and retrieve content in real time — we expanded on this to include a second pathway. AI models also draw on knowledge absorbed during training — patterns learned from the vast body of text they were trained on, which persists even without a live search. The revised guide explains both pathways and how they interact, so the team can think about optimizing content for each: making it clear and well-structured enough to be absorbed into training data over time, while also ensuring it's discoverable and well-formatted for real-time search today.
 
-2. Section-by-section guidance with clear rationale. The revised guide walks through every component of an announcement — headline, subhead, key highlights, lede, context paragraph, quote, subsections, FAQ, boilerplate, and contact information — with explanations of why each element matters to AI platforms. We found that grounding each recommendation in a clear "here's why" makes the guidance easier for the team to internalize and apply with judgment, rather than treating it as a rigid checklist.
+2. Section-by-section guidance with clear rationale. The revised guide walks through every component of an announcement — headline, subhead, key highlights, lede, context paragraph, quote, subsections, FAQ, boilerplate, and contact information — with explanations of why each element matters to AI platforms. We found that grounding each recommendation in a clear "here's why" makes the guidance easier for the team to internalize and apply with judgment, rather than treating it as a rigid checklist. Where guidance is based on a reasonable inference rather than published documentation, the guide says so — giving the team honest guardrails about what we know and what we're estimating.
 
-3. Tied to published platform documentation. We made an effort to anchor guidance to documentation published by Google, OpenAI, Anthropic, and other model providers. This gives the team a solid reference point they can hew to as the document inevitably evolves over time.
+3. Tied to published platform documentation and established SEO principles. We made an effort to anchor guidance to documentation published by Google, OpenAI, Anthropic, and other model providers. The guide also establishes a useful safety net: much of what works for AI discoverability overlaps with SEO best practices developed over the last twenty years. This gives the team a solid, familiar reference point — and a clear rule of thumb that no experimental AI optimization recommendation should come at the cost of traditional search performance.
 
 As we discuss the guide together, one idea worth exploring: rather than asking the team to internalize a lengthy reference document, we could build a CoPilot agent — an AI writing assistant grounded in this guide and the platform documentation it references — that provides real-time feedback and suggestions as the team drafts content. This would let the guidance live where the work actually happens, and it would stay current as platform behavior evolves. We're happy to walk through the revision whenever works for you, and we can explore the CoPilot concept further in that conversation.
 
@@ -146,16 +146,24 @@ export default function EmailDraft() {
             grounding each recommendation in a clear &ldquo;here&apos;s
             why&rdquo; makes the guidance easier for the team to internalize
             and apply with judgment, rather than treating it as a rigid
-            checklist.
+            checklist. Where guidance is based on a reasonable inference rather
+            than published documentation, the guide says so &mdash; giving the
+            team honest guardrails about what we know and what we&apos;re
+            estimating.
           </li>
           <li>
             <strong>
-              Tied to published platform documentation.
+              Tied to published platform documentation and established SEO
+              principles.
             </strong>{" "}
             We made an effort to anchor guidance to documentation published by
-            Google, OpenAI, Anthropic, and other model providers. This gives
-            the team a solid reference point they can hew to as the document
-            inevitably evolves over time.
+            Google, OpenAI, Anthropic, and other model providers. The guide
+            also establishes a useful safety net: much of what works for AI
+            discoverability overlaps with SEO best practices developed over the
+            last twenty years. This gives the team a solid, familiar reference
+            point &mdash; and a clear rule of thumb that no experimental AI
+            optimization recommendation should come at the cost of traditional
+            search performance.
           </li>
         </ol>
 

@@ -505,6 +505,12 @@ function Step5Content() {
         Original and Fergus v2&apos;s worked examples and templates.
       </p>
       <p>
+        The AI-generated composite then required significant human editing. Key
+        revisions included hedging unsourced claims, adding inline source
+        citations, anchoring recommendations to established SEO principles, and
+        distinguishing documented platform guidance from reasonable inferences.
+      </p>
+      <p>
         The composite is <strong>not scored</strong> &mdash; it would be grading
         its own homework &mdash; but serves as the reference benchmark against
         which each rewrite&apos;s detail pages compare.

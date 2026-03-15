@@ -89,6 +89,47 @@ export const comparisonSections: ComparisonSection[] = [
   },
 
   // ─────────────────────────────────────────────
+  // 1b. A Note on What We Know and Don't Know (Composite-only)
+  // ─────────────────────────────────────────────
+  {
+    id: "what-we-know",
+    label: "A Note on What We Know and Don't Know",
+    clientOriginal: null,
+    idealComposite: (
+      <>
+        <p>
+          The field of &ldquo;generative engine optimization&rdquo; is young and
+          evolving rapidly. The technical foundations in the next section &mdash;
+          how language models learn from training data, how search-augmented
+          retrieval works &mdash; are well-established and grounded in published
+          platform documentation. The editorial guidance that follows is based on
+          a combination of official platform recommendations (cited in the
+          appendix), longstanding principles of clear writing and structured
+          communication, and reasonable inferences from how these systems are
+          known to work. Where guidance is an inference rather than a documented
+          rule, we say so. No platform publishes a guaranteed formula for citation
+          or ranking, and anyone who claims otherwise is selling something. Our
+          goal is to make informed bets, not to chase false certainty.
+        </p>
+        <p>
+          There is an important anchor here, though: much of what works for AI
+          discoverability overlaps substantially with SEO best practices developed
+          over the last twenty years &mdash; clear titles, structured content,
+          factual precision, crawlability, canonical URLs, and authoritative
+          sourcing. This is not a coincidence. Most AI-powered search products
+          retrieve content through web search infrastructure, which means
+          traditional search ranking directly feeds downstream AI responses. When
+          in doubt, honor established SEO discipline. You should never follow an
+          experimental, inference-based GEO recommendation that could hurt your
+          PageRank score and traditional search referral traffic.
+        </p>
+      </>
+    ),
+    annotation:
+      "New section added in the revision. This sets honest guardrails for the rest of the guide — distinguishing what's grounded in platform documentation from what's a reasonable inference, and anchoring the team to twenty years of established SEO practice as a safety net.",
+  },
+
+  // ─────────────────────────────────────────────
   // 2. How AI Works
   // ─────────────────────────────────────────────
   {
@@ -226,7 +267,7 @@ export const comparisonSections: ComparisonSection[] = [
         </p>
         <ul>
           <li><strong>Prevalence.</strong> Repetition across sources strengthens the signal.</li>
-          <li><strong>Clarity.</strong> Simple, concrete statements get absorbed more reliably.</li>
+          <li><strong>Clarity.</strong> Simple, concrete statements get absorbed more reliably. If we buried a key fact in the fourth paragraph behind qualifying language, the model may have learned a fuzzier version of it.</li>
           <li><strong>Consistency.</strong> Consistent messaging across channels reduces muddled outputs.</li>
           <li><strong>Recency.</strong> Models have a training cutoff date. Content after that date is not part of built-in knowledge.</li>
         </ul>
@@ -249,16 +290,70 @@ export const comparisonSections: ComparisonSection[] = [
         <p>
           In practice, these two paths are not neatly separated. The model draws
           on both sources and decides which to lean on based on cues in the
-          prompt. This is why our content needs to work for both worlds &mdash;
+          prompt. But this routing logic is more brittle than it sounds &mdash;
+          the same underlying fact can be retrieved from completely different
+          sources depending on phrasing.
+        </p>
+        <p>
+          This is why our content needs to work for both worlds. It should be
           written clearly enough for training data absorption, and structured well
-          enough to surface in real-time search results.
+          enough to surface in real-time search results. The good news is that the
+          same practices serve both paths: clear language, specific facts, strong
+          structure, and consistent messaging across channels.
         </p>
       </>
     ),
     annotation:
-      "This is the most significant structural revision. The original walked through how AI classifies and retrieves content in a clear six-step flow. The revision expands on this to introduce a second pathway — training knowledge — and explains how both paths interact.",
+      "This is the most significant structural revision. The original walked through how AI classifies and retrieves content in a clear six-step flow. The revision expands on this to introduce a second pathway — training knowledge — and explains how both paths interact, including an honest note that the routing logic between the two paths is more brittle than it sounds.",
     annotationDetail:
       "The original's six-step pipeline provided a useful mental model for how AI evaluates content. The revision restructures this into two distinct pathways: training knowledge (where content becomes statistical patterns absorbed into model weights) and search-augmented retrieval (where structure and clarity determine whether pages surface in real-time results). This reframing gives the team a more complete picture of how their content reaches audiences through AI, and helps prioritize the practices that influence both paths: clarity, consistency, and structure.",
+  },
+
+  // ─────────────────────────────────────────────
+  // 2b. New News vs. Evergreen Content (Composite-only)
+  // ─────────────────────────────────────────────
+  {
+    id: "new-vs-evergreen",
+    label: "New News vs. Evergreen Content",
+    clientOriginal: null,
+    idealComposite: (
+      <>
+        <p>
+          Not all content has the same relationship with these AI systems, and the
+          tradeoffs in how you structure and optimize it depend on what
+          you&apos;re publishing.
+        </p>
+        <p>
+          <strong>Time-sensitive announcements</strong> (Black Friday sale,
+          product launch, earnings, new partnership) live or die on the
+          search-augmented retrieval path. The content needs to be discoverable
+          immediately, which means the technical publishing fundamentals and the
+          editorial basics matter most. Invest most of your optimization effort
+          here: get the headline, lede, and key highlights right, make sure the
+          page is technically findable, and don&apos;t worry as much about
+          long-term knowledge graph effects.
+        </p>
+        <p>
+          <strong>Evergreen content</strong> (how-to guides, service explainers,
+          membership comparisons, policy overviews) has a longer shelf life and is
+          more likely to be absorbed into training data over time. For evergreen
+          content, the training knowledge path matters more: clarity, consistency,
+          and prevalence become the priority. FAQ sections, structured
+          how-it-works blocks, and comparison formats are particularly valuable
+          here because they match the kinds of questions users ask repeatedly over
+          months and years.
+        </p>
+        <p>
+          <strong>The overlap:</strong> Both types benefit from the
+          fundamentals &mdash; clear language, named entities, specific facts,
+          good structure. The difference is where you invest your marginal effort.
+          For a breaking announcement, spend it on speed and discoverability. For
+          an evergreen guide, spend it on depth and durability.
+        </p>
+      </>
+    ),
+    annotation:
+      "New section added in the revision. Distinguishing time-sensitive announcements from evergreen content helps the team decide where to invest their optimization effort — and sets up the practical guidance that follows.",
   },
 
   // ─────────────────────────────────────────────
@@ -298,10 +393,13 @@ export const comparisonSections: ComparisonSection[] = [
     idealComposite: (
       <>
         <p>
-          There is no single mandatory layout for AI systems. That said, the
-          structure below works well across readers, journalists, search engines,
-          and AI assistants because it makes the important facts easy to find
-          quickly.
+          There is no single mandatory layout for AI systems &mdash; no platform
+          publishes a required format for content to be eligible for citation or
+          retrieval. That said, the structure below aligns with Google&apos;s
+          published guidance to &ldquo;create helpful, reliable, people-first
+          content&rdquo; (Source 3) and the general principle that well-organized,
+          clearly factual pages are easier for both humans and machines to extract
+          information from.
         </p>
         <ul>
           <li>Headline (The &ldquo;What&rdquo;)</li>
@@ -313,7 +411,7 @@ export const comparisonSections: ComparisonSection[] = [
           <li>Subsections (The &ldquo;Information Gain&rdquo;)</li>
           <li>FAQ (The &ldquo;Answer Machine&rdquo;)</li>
           <li>Boilerplate (Our Identity Anchor)</li>
-          <li>Contact Information (The Trust Signal)</li>
+          <li>Contact Information</li>
         </ul>
         <p>
           Think of this as a default, not a law. Not every page needs every
@@ -322,7 +420,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original presented a strong recommended section order. The revision preserves this structure and softens the framing to position it as a strong default rather than a strict requirement — giving the team room to adapt when the news calls for it.",
+      "The original presented a strong recommended section order. The revision preserves this structure, anchors it to Google's published guidance (Source 3), and positions it as a strong default rather than a strict requirement — giving the team room to adapt when the news calls for it.",
   },
 
   // ─────────────────────────────────────────────
@@ -390,11 +488,21 @@ export const comparisonSections: ComparisonSection[] = [
           <strong>Purpose: give the clearest possible summary of what happened.</strong>
         </p>
         <p>
-          The headline is the primary signal AI systems use to determine topical
-          relevance, identify the entity (TVs and More), understand the action,
-          and decide whether to retrieve the page. Headlines should be clean,
-          literal, and factual. AI systems struggle with figurative language and
-          clever wordplay.
+          Because search-augmented retrieval starts with a web search, the
+          headline functions much the way it always has in SEO: it is a primary
+          signal that search engines use to determine what the page is about.
+          Google&apos;s documentation on title links (Source 5) confirms that
+          visible titles, headings, and title elements should align and clearly
+          describe the page content. By extension, a headline that clearly names
+          the entity, the action, and the key detail gives the retrieval system
+          the best chance of matching our page to a relevant user query.
+        </p>
+        <p>
+          This is not a new insight &mdash; good PR headlines have always been
+          direct and factual. What has changed is the downstream consequence: a
+          vague or clever headline is now more likely to be skipped by a system
+          that is pattern-matching across dozens of candidate pages in
+          milliseconds.
         </p>
         <p>
           <strong>Optimal structure:</strong> [Company] + [Action Verb] + [What Is Being Announced] + [Key Timing or Scope]
@@ -421,7 +529,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Both versions agree on the core formula ([Company] + [Verb] + [What] + [Timing]). The revision consolidates the subheadings into a single direct flow, trims the example list, and keeps only TVs and More examples rather than citing competitors.",
+      "Both versions agree on the core formula ([Company] + [Verb] + [What] + [Timing]). The revision grounds the rationale in Google's title link documentation (Source 5) and reframes headline optimization as an extension of established SEO practice rather than a new AI-specific requirement.",
   },
 
   // ─────────────────────────────────────────────
@@ -472,10 +580,19 @@ export const comparisonSections: ComparisonSection[] = [
           <strong>Purpose: add the &ldquo;so what&rdquo; in one short line.</strong>
         </p>
         <p>
-          AI platforms compare the headline and subhead to validate topic accuracy
-          and build a richer picture of the announcement. The subhead should add
-          information not already in the headline &mdash; customer benefit, scope,
-          scale, or timing. Keep it to 8&ndash;20 words.
+          The subhead provides additional context that helps both search engines
+          and readers quickly understand the scope and significance of the
+          announcement. It should add information not already in the
+          headline &mdash; customer benefit, scope, scale, or timing. Keep it to
+          8&ndash;20 words.
+        </p>
+        <p>
+          When we mention a partner like Samsung or Meta, we create an association
+          between TVs and More and that entity in the content that search and AI
+          systems process. This can help our announcement surface in response to
+          queries about the partner &mdash; though the degree to which different
+          platforms build and maintain these entity associations varies and is not
+          well documented.
         </p>
         <p><strong>Examples:</strong></p>
         <ul className="italic">
@@ -486,7 +603,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original included useful detail about Knowledge Graph relationships and entity linking. The revision streamlines this to focus on the single most actionable point: add information the headline didn't already include, in 8 to 20 words.",
+      "The original included useful detail about Knowledge Graph relationships and entity linking. The revision preserves the entity-linking concept but adds an honest caveat — the degree to which different platforms maintain these associations is not well documented.",
   },
 
   // ─────────────────────────────────────────────
@@ -530,11 +647,21 @@ export const comparisonSections: ComparisonSection[] = [
     idealComposite: (
       <>
         <p>
-          <strong>Purpose: provide pre-formatted answers that AI systems can extract with minimal processing.</strong>
+          <strong>Purpose: provide structured, scannable facts that are easy for both humans and machines to extract.</strong>
         </p>
         <p>
-          Key Highlights are among the most AI-friendly content formats in an
-          announcement. Use the <strong>&ldquo;Label: Value&rdquo;</strong>{" "}
+          Bulleted key highlights sit near the top of the page and present the
+          most important facts in a format that doesn&apos;t require reading full
+          paragraphs. We believe this format is well-suited for AI extraction
+          because it aligns with how passage extraction works: when a retrieval
+          system is looking for the specific answer to &ldquo;Where can I shop the
+          TVs and More sale?&rdquo; a labeled, self-contained bullet is a cleaner
+          match than a fact embedded mid-paragraph. No platform has published
+          guidance confirming that bullet points receive preferential treatment,
+          but the logic follows from how semantic similarity matching works.
+        </p>
+        <p>
+          Use the <strong>&ldquo;Label: Value&rdquo;</strong>{" "}
           structure &mdash; bold the label before the colon, follow with specific
           facts, one idea per bullet. Aim for 5&ndash;8 bullets.
         </p>
@@ -551,7 +678,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Substantively similar — the examples are nearly identical. The revision streamlines the instructions into two concise sentences and consolidates the framing.",
+      "Substantively similar — the examples are nearly identical. The revision adds honest hedging: no platform has confirmed bullet points receive preferential treatment, but the logic follows from how semantic similarity matching works. This gives the team the reasoning behind the recommendation.",
   },
 
   // ─────────────────────────────────────────────
@@ -595,11 +722,22 @@ export const comparisonSections: ComparisonSection[] = [
           <strong>Purpose: provide the core factual foundation for the entire announcement.</strong>
         </p>
         <p>
-          The lede is the single most important paragraph for AI visibility. It
-          must clearly state the who (company or entity), what (action taken),
-          when (date or timeframe), where (geography or scope, if relevant), and
-          why it matters (benefit or context). Start with the announcement, not
-          scene-setting.
+          The lede is likely the most important paragraph for both search
+          visibility and AI extraction. Google&apos;s guidance emphasizes placing
+          key information prominently on the page (Source 4), and the general
+          principle that retrieval systems match user queries against page passages
+          means the opening paragraph carries disproportionate weight in
+          determining what the page is &ldquo;about.&rdquo;
+        </p>
+        <p>
+          The lede must clearly state the who (company or entity), what (action
+          taken), when (date or timeframe), where (geography or scope, if
+          relevant), and why it matters (benefit or context). Start with the
+          announcement, not scene-setting.
+        </p>
+        <p>
+          This does not mean robotic writing. It just means leading with the news
+          and including explicit factual signals.
         </p>
         <p><strong>Example:</strong></p>
         <blockquote>
@@ -615,7 +753,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Both versions agree on the who/what/when/where/why framework. The revision adds a concrete example lede the team can reference as a model.",
+      "Both versions agree on the who/what/when/where/why framework. The revision grounds the lede's importance in Google's published guidance (Source 4) and adds the reassurance that this doesn't mean robotic writing — just leading with the news.",
   },
 
   // ─────────────────────────────────────────────
@@ -651,9 +789,15 @@ export const comparisonSections: ComparisonSection[] = [
           <strong>Purpose: explain why the announcement matters.</strong>
         </p>
         <p>
-          The context paragraph provides the logical justification AI needs to
-          treat our content as high-value rather than &ldquo;thin.&rdquo; The
-          strongest framework is{" "}
+          The second paragraph answers the most likely follow-up question: why did
+          the company do this, and who benefits? This serves all three
+          audiences &mdash; journalists use it for story framing, consumers use it
+          to decide if the news is relevant to them, and AI systems that generate
+          multi-sentence responses may draw on it to provide context alongside the
+          core facts.
+        </p>
+        <p>
+          A useful framework is{" "}
           <strong>Evidence &rarr; Action &rarr; Result</strong>:
         </p>
         <ul>
@@ -664,7 +808,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original introduced the Evidence → Action → Result framework, which is a strong concept. The revision renames \"Context Graph\" to \"Context Paragraph,\" preserves that framework, and adds a concrete worked example to make it easier for the team to apply.",
+      "The original introduced the Evidence → Action → Result framework, which is a strong concept. The revision renames \"Context Graph\" to \"Context Paragraph,\" preserves that framework, and reframes the section around all three audiences — journalists, consumers, and AI systems.",
   },
 
   // ─────────────────────────────────────────────
@@ -737,19 +881,24 @@ export const comparisonSections: ComparisonSection[] = [
     idealComposite: (
       <>
         <p>
-          <strong>Purpose: state the company&apos;s point of view with clear, attributable authority.</strong>
+          <strong>Purpose: state the company&apos;s point of view with clear attribution.</strong>
         </p>
         <p>
-          For AI systems, quotes serve as high-confidence factual statements that
-          can be safely extracted and reused. A quote from a named executive acts
-          as a &ldquo;guarantee&rdquo; of the facts.
+          Quotes from named executives serve a different function in an
+          AI-mediated environment than they do in traditional media. In
+          traditional PR, quotes add color and voice. In AI-mediated contexts,
+          they are one of the few elements that come with built-in
+          attribution &mdash; a named person, a title, a company &mdash; which
+          makes them relatively easy for a system to extract and present with a
+          source. Whether this actually increases citation probability is not
+          something any platform has confirmed, but the logic is straightforward.
         </p>
         <p><strong>What matters:</strong></p>
         <ul>
           <li><strong>Clear attribution.</strong> Always include full name, title, and company.</li>
           <li><strong>Echo the core announcement.</strong> Quotes should reinforce the headline and lede, not introduce entirely new information.</li>
           <li><strong>Keep it tight.</strong> 1&ndash;3 sentences, 20&ndash;60 words. Simple grammar and direct phrasing.</li>
-          <li><strong>Pair emotion with substance.</strong> Emotion alone is weak; emotion plus a fact is strong.</li>
+          <li><strong>Pair emotion with substance.</strong> Emotion alone is generic; emotion plus a fact is distinctive.</li>
           <li><strong>Include at least one specific detail.</strong> A date, number, benefit, scope, entity name, or category.</li>
         </ul>
         <p><strong>Examples:</strong></p>
@@ -770,7 +919,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original included a detailed table of techniques for improving quote visibility. The revision replaces the table with concrete example quotes that demonstrate the same principles in action — making it easier for the team to see what a strong quote looks like.",
+      "The original included a detailed table of techniques for improving quote visibility. The revision replaces the table with concrete example quotes that demonstrate the same principles in action, and adds an honest caveat: whether quotes actually increase citation probability is not something any platform has confirmed.",
     annotationDetail:
       "The original's table of percentage boosts for different quote techniques conveyed useful principles about what makes a quote effective for AI. Because specific percentage impacts can vary widely by platform and context, the revision translates those principles into worked examples instead — showing the team exactly what a strong quote looks like in practice. The underlying advice (use specific details, attribute clearly, echo the core announcement) carries through in both versions.",
   },
@@ -806,12 +955,21 @@ export const comparisonSections: ComparisonSection[] = [
           <strong>Purpose: deliver new, specific facts that support the claims made earlier.</strong>
         </p>
         <p>
-          After the quote, AI systems expect content to shift from narrative to
-          structured information delivery. Use predictable formatting: a
-          descriptive header, 1&ndash;2 sentences stating the key fact, then
-          bulleted details with one fact per bullet.
+          After the lede, context, and quote establish the narrative, subsections
+          shift to structured information delivery. For AI systems that process
+          content in passages, well-headed subsections offer a natural extraction
+          boundary: the header signals what the section is about, and the content
+          beneath it provides the answer.
         </p>
-        <p><strong>Header examples that mirror user queries:</strong></p>
+        <p>
+          A clear subsection header like &ldquo;TVs and More Black Friday
+          Doorbusters&rdquo; also helps differentiate our content from competitors
+          making similar announcements &mdash; in theory, this makes it easier for
+          a system to attribute the right details to the right retailer, though
+          the degree to which this prevents &ldquo;information blending&rdquo;
+          across sources is not well-studied.
+        </p>
+        <p><strong>Header examples that mirror likely user queries:</strong></p>
         <ul>
           <li>TVs and More Black Friday Deal Highlights</li>
           <li>How TVs and More&apos;s Same-Day Pickup Works</li>
@@ -832,7 +990,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Closely aligned in concept. The revision adds example headers phrased as user queries and a fully worked example subsection, making the guidance easier to apply in practice.",
+      "Closely aligned in concept. The revision adds example headers phrased as user queries and notes an honest caveat — the degree to which clear headers prevent \"information blending\" across competitor sources is not well-studied.",
   },
 
   // ─────────────────────────────────────────────
@@ -869,12 +1027,22 @@ export const comparisonSections: ComparisonSection[] = [
     idealComposite: (
       <>
         <p>
-          <strong>Purpose: answer predictable follow-up questions in a format AI can use directly.</strong>
+          <strong>Purpose: answer predictable follow-up questions in a format that closely mirrors how users query AI systems.</strong>
         </p>
         <p>
-          FAQ sections are among the highest-leverage elements we can include. Use
-          3&ndash;7 questions. Keep answers to 40&ndash;60 words. Start answers
-          with a direct statement.
+          FAQ sections are well-suited for AI extraction because they are
+          structured as question-answer pairs &mdash; and AI-assisted search is
+          fundamentally a question-answering system. Google&apos;s FAQPage
+          structured data documentation (Source 8) notes that FAQ rich-result
+          eligibility is limited, so don&apos;t assume FAQ markup guarantees any
+          particular treatment &mdash; but the on-page content format is valuable
+          regardless.
+        </p>
+        <p>
+          Use 3&ndash;7 questions. Keep answers to 40&ndash;60 words. Start
+          answers with a direct statement. This format is especially valuable for
+          evergreen content like service explainers, membership comparisons, and
+          policy guides.
         </p>
         <p><strong>Examples:</strong></p>
         <p><strong>Q: When does the sale start?</strong><br />A: The Black Friday Sale begins Thursday, November 20, 2025, with deals available online, in the app, and in stores nationwide.</p>
@@ -885,7 +1053,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Closely aligned. The revision adds a fifth example question and tightens the guidance, while preserving the original's emphasis on direct, declarative answers.",
+      "Closely aligned. The revision cites Google's FAQPage documentation (Source 8), notes that FAQ markup alone doesn't guarantee rich results, and highlights that this format is especially valuable for evergreen content — giving the team a clearer picture of when to invest in FAQs.",
   },
 
   // ─────────────────────────────────────────────
@@ -920,12 +1088,16 @@ export const comparisonSections: ComparisonSection[] = [
     idealComposite: (
       <>
         <p>
-          <strong>Purpose: give consistent, current organizational context that anchors our identity.</strong>
+          <strong>Purpose: give consistent, current organizational context.</strong>
         </p>
         <p>
-          The boilerplate tells AI exactly who we are and where we sit in the
-          market. Moving forward, include it in any announcement or blog where AI
-          visibility matters.
+          The boilerplate provides a standardized description of who we are. For
+          AI systems processing our content, a consistent boilerplate across all
+          our published material reinforces the association between our company
+          name and our key attributes. It also helps disambiguate us from
+          unrelated content that might use similar phrasing. Moving forward,
+          consider including it in any announcement or blog where AI visibility
+          matters.
         </p>
         <p><strong>Example:</strong></p>
         <blockquote>
@@ -943,7 +1115,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original listed the required fields clearly as bullets. The revision builds on this by adding a complete example boilerplate paragraph the team can adapt directly.",
+      "The original listed the required fields clearly as bullets. The revision softens the framing (\"provides a standardized description\" rather than \"identity verification\") and notes that consistency across publications helps disambiguate us from unrelated content.",
   },
 
   // ─────────────────────────────────────────────
@@ -969,12 +1141,14 @@ export const comparisonSections: ComparisonSection[] = [
     idealComposite: (
       <>
         <p>
-          <strong>Purpose: provide a verifiable trust signal and a path to the next authoritative source.</strong>
+          <strong>Purpose: provide a clear path to the next authoritative source.</strong>
         </p>
         <p>
           Include a professional media contact under the boilerplate. Link to the
-          related product page, category page, or newsroom hub so the next click
-          lands on an authoritative destination.
+          related product page, category page, or newsroom hub so the next
+          click &mdash; whether from a journalist, a consumer, or someone
+          following a link from an AI-generated citation &mdash; lands on an
+          authoritative destination.
         </p>
         <p><strong>Example:</strong></p>
         <p>
@@ -984,7 +1158,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original established the importance of contact information as a trust signal. The revision adds a concrete contact line example and the recommendation to link to an authoritative destination — making the guidance immediately actionable.",
+      "The original established the importance of contact information as a trust signal. The revision reframes this around ensuring the next click from any audience — journalists, consumers, or AI citations — lands on an authoritative destination.",
   },
 
   // ─────────────────────────────────────────────
@@ -998,38 +1172,40 @@ export const comparisonSections: ComparisonSection[] = [
       <>
         <p>
           Good editorial structure cannot rescue a page that is technically hard
-          to crawl, hard to index, or hard to excerpt.
+          to crawl, hard to index, or hard to excerpt. Unlike the editorial
+          guidance above, most of these recommendations are directly grounded in
+          published platform documentation.
         </p>
         <h4>Discovery and access</h4>
         <ul>
-          <li>Allow important pages to be crawled in robots.txt. Do not accidentally block bots at the CDN, WAF, or hosting layer.</li>
-          <li>Use indexable HTML for the main version of the content. Avoid noindex unless the page should truly stay out of search.</li>
-          <li>Link to the page from the newsroom hub, relevant category pages, and other durable internal paths.</li>
-          <li>Include important URLs in XML sitemaps and keep the sitemap current.</li>
+          <li>Allow important pages to be crawled in robots.txt. Do not accidentally block bots at the CDN, WAF, or hosting layer. (Sources 2, 9)</li>
+          <li>Use indexable HTML for the main version of the content. Avoid noindex unless the page should truly stay out of search. (Source 2)</li>
+          <li>Link to the page from the newsroom hub, relevant category pages, and other durable internal paths. (Source 2)</li>
+          <li>Include important URLs in XML sitemaps and keep the sitemap current. (Source 2)</li>
         </ul>
         <h4>Canonical source management</h4>
         <ul>
-          <li>Declare a preferred canonical URL for each page. Avoid unnecessary duplicates.</li>
-          <li>If you reuse an annual event page, update the visible title, date, metadata, and body copy thoroughly.</li>
+          <li>Declare a preferred canonical URL for each page. Avoid unnecessary duplicates from parameters, alternate paths, or campaign URLs.</li>
+          <li>If you reuse an annual event page (e.g., Black Friday), update the visible title, date, metadata, and body copy thoroughly. Do not leave stale years in the title.</li>
           <li>If a PDF or DOCX version also exists, keep the HTML page as the primary public source.</li>
         </ul>
         <h4>On-page clarity and metadata</h4>
         <ul>
-          <li>Use a descriptive title element and one obvious main heading.</li>
-          <li>Show publication and update dates clearly when they matter.</li>
-          <li>Put dates, numbers, participating channels, and availability in text &mdash; not only in images, carousels, or downloadable files.</li>
-          <li>Use only structured data (schema markup) that accurately represents the visible page.</li>
+          <li>Use a descriptive title element and one obvious main heading. (Source 5)</li>
+          <li>Show publication and update dates clearly when they matter. (Source 4)</li>
+          <li>Put dates, numbers, participating channels, and availability in text &mdash; not only in images, carousels, or downloadable files. (Source 4)</li>
+          <li>Use only structured data (schema markup) that accurately represents the visible page. (Sources 6, 7)</li>
         </ul>
         <h4>Platform-specific considerations</h4>
         <ul>
-          <li>If you want visibility in ChatGPT search, allow OAI-SearchBot in robots.txt. This is separate from GPTBot.</li>
-          <li>Verify the site in Google Search Console. Inspect important URLs and use validation tools for structured data.</li>
-          <li>Use nosnippet, max-snippet, or data-nosnippet deliberately for content you do or do not want excerpted in Google AI Overviews.</li>
+          <li>If you want visibility in ChatGPT search, allow OAI-SearchBot in robots.txt. This is separate from GPTBot, which governs potential training use. (Source 9)</li>
+          <li>Verify the site in Google Search Console. Inspect important URLs and use validation tools for structured data. (Source 4)</li>
+          <li>Use nosnippet, max-snippet, or data-nosnippet deliberately for content you do or do not want excerpted in Google AI Overviews. (Source 12)</li>
         </ul>
       </>
     ),
     annotation:
-      "New section added in the revision. Technical publishing considerations — crawlability, canonical URLs, metadata — complement the editorial guidance in the rest of the document, helping ensure well-crafted content is actually discoverable by AI systems.",
+      "New section added in the revision. Technical publishing considerations — crawlability, canonical URLs, metadata — complement the editorial guidance in the rest of the document. Inline source citations let the team verify each recommendation against official platform documentation.",
   },
 
   {
@@ -1039,19 +1215,22 @@ export const comparisonSections: ComparisonSection[] = [
     idealComposite: (
       <>
         <p>
-          Users often move from an announcement to a commerce question: What&apos;s
-          included? Is it in stock? Where can I buy it? That handoff should be
-          planned deliberately.
+          Users often move from an announcement to a commerce question:
+          What&apos;s included? Is it in stock? Where can I buy it? What are the
+          member benefits? That handoff should be planned deliberately.
         </p>
         <ul>
           <li>
             <strong>Pair each announcement with the next authoritative destination.</strong>{" "}
             A sale announcement should link to the live sale page. A product
-            launch should link to the canonical product page.
+            launch should link to the canonical product page. A membership change
+            should link to the membership detail page.
           </li>
           <li>
             <strong>Keep Merchant Center and Business Profile information current</strong>{" "}
-            when those data sources are relevant.
+            when those data sources are relevant. For Google AI search experiences,
+            these are explicitly part of the modern ecosystem for shopping and
+            local discovery. (Source 4)
           </li>
           <li>
             <strong>Maintain consistency</strong> in timing, availability, member
@@ -1063,7 +1242,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "New section added in the revision. Since AI users frequently follow an announcement with a purchasing question, this section helps the team plan the handoff from PR content to the commerce journey.",
+      "New section added in the revision. Since AI users frequently follow an announcement with a purchasing question, this section helps the team plan the handoff from PR content to the commerce journey, anchored to Google's published guidance (Source 4).",
   },
 
   {
@@ -1078,21 +1257,21 @@ export const comparisonSections: ComparisonSection[] = [
         </p>
         <ul>
           <li><strong>Headline:</strong> Does it include [Company] + [Action Verb] + [What] + [Timing or Scope]? Would it answer what a user might ask AI?</li>
-          <li><strong>Subhead:</strong> Does it add information not already in the headline? Is it 8&ndash;20 words?</li>
-          <li><strong>Key Highlights:</strong> Are they in &ldquo;Label: Value&rdquo; format with bold labels? 5&ndash;8 bullets, one idea per bullet?</li>
-          <li><strong>Lede:</strong> Does it answer who, what, when, where, and why it matters? Does it lead with the news?</li>
-          <li><strong>Context Paragraph:</strong> Does it explain why this announcement matters? Does it include evidence or metrics?</li>
-          <li><strong>Quote:</strong> Is it attributed with full name, title, and company? Does it reinforce the core announcement?</li>
-          <li><strong>Subsections:</strong> Do headers mirror what users might search for? Does each subsection add new facts?</li>
-          <li><strong>FAQ:</strong> Are there 3&ndash;7 questions with 40&ndash;60 word answers? Do answers start with a direct statement?</li>
+          <li><strong>Subhead:</strong> Does it add information not already in the headline &mdash; customer benefit, scale, scope, or timing? Is it 8&ndash;20 words?</li>
+          <li><strong>Key Highlights:</strong> Are they in &ldquo;Label: Value&rdquo; format with bold labels? Is it 5&ndash;8 bullets, one idea per bullet, with specific facts?</li>
+          <li><strong>Lede:</strong> Does it answer who, what, when, where, and why it matters? Does it lead with the news, not scene-setting?</li>
+          <li><strong>Context Paragraph:</strong> Does it explain why this announcement matters? Does it include evidence or metrics? Could it answer &ldquo;Why did we do this?&rdquo;</li>
+          <li><strong>Quote:</strong> Is it attributed with full name, title, and company? Does it reinforce the core announcement? Does it include at least one specific detail?</li>
+          <li><strong>Subsections:</strong> Do headers mirror what users might search for? Does each subsection add new facts not found earlier?</li>
+          <li><strong>FAQ:</strong> Are there 3&ndash;7 questions with 40&ndash;60 word answers? Do answers start with a direct statement? <em>(Especially important for evergreen content.)</em></li>
           <li><strong>Boilerplate:</strong> Is it current? Does it include headquarters, ticker, scale, key programs, website, and LinkedIn?</li>
           <li><strong>Contact:</strong> Is a professional media contact listed with a corporate email domain?</li>
-          <li><strong>Technical:</strong> Is the page crawlable? Does it have a canonical URL? Are key facts in text (not just images)? Are dates visible?</li>
+          <li><strong>Technical:</strong> Is the page crawlable? Does it have a canonical URL? Are key facts in text (not just images)? Are dates visible? <em>(Especially important for time-sensitive announcements.)</em></li>
         </ul>
       </>
     ),
     annotation:
-      "New section added in the revision. A scannable checklist the team can use before hitting publish — distilling the entire guide into quick yes/no checks.",
+      "New section added in the revision. A scannable checklist the team can use before hitting publish — distilling the entire guide into quick yes/no checks, with notes on which items matter most for evergreen vs. time-sensitive content.",
   },
 
   {
@@ -1104,7 +1283,8 @@ export const comparisonSections: ComparisonSection[] = [
         <p>
           <strong>Large Language Model (LLM):</strong> A neural network trained on
           massive amounts of text that generates responses by predicting the most
-          likely next word, one token at a time.
+          likely next word, one token at a time. Examples include GPT-4, Claude,
+          and Gemini.
         </p>
         <p>
           <strong>Parameters:</strong> The billions of numerical weights inside
@@ -1114,32 +1294,39 @@ export const comparisonSections: ComparisonSection[] = [
         <p>
           <strong>Retrieval-Augmented Generation (RAG):</strong> A system where AI
           searches for and retrieves external content in real time before
-          generating an answer.
+          generating an answer. This is how ChatGPT with web search, Perplexity,
+          and Google&apos;s AI Overviews work.
         </p>
         <p>
           <strong>Semantic similarity:</strong> A measure of how close two pieces
-          of text are in meaning, not just shared keywords.
+          of text are in meaning, not just shared keywords. This is how AI systems
+          match a user&apos;s question to relevant passages in our content.
         </p>
         <p>
           <strong>Embeddings:</strong> Numerical representations of text that
-          capture meaning. Similar meanings produce similar numbers.
+          capture meaning. Similar meanings produce similar numbers, which is how
+          the system measures semantic similarity.
         </p>
         <p>
           <strong>Hallucination:</strong> When a model generates something that
-          sounds plausible but is factually incorrect.
+          sounds plausible but is factually incorrect. More likely when training
+          data was vague or contradictory on a given topic.
         </p>
         <p>
           <strong>Training cutoff:</strong> The date after which the model has no
-          built-in knowledge.
+          built-in knowledge. Content published after the cutoff can still be
+          surfaced through search-augmented retrieval.
         </p>
         <p>
           <strong>Knowledge graph:</strong> A structured representation of
-          relationships between entities.
+          relationships between entities (companies, products, people, concepts).
+          AI systems build and update these relationships based on content they
+          process.
         </p>
       </>
     ),
     annotation:
-      "New section added in the revision. A quick-reference glossary for the technical terms the team will encounter when working with AI optimization.",
+      "New section added in the revision. A quick-reference glossary with expanded definitions and concrete examples, helping the team connect technical terms to the concepts they encounter in the guide.",
   },
 
   {
@@ -1151,25 +1338,25 @@ export const comparisonSections: ComparisonSection[] = [
         <p>
           This guide is anchored to public documentation from the platforms that
           matter most. Platform behavior changes over time; treat this as a dated
-          snapshot.
+          snapshot. Source numbers are referenced inline throughout the guide.
         </p>
-        <ul>
+        <ol>
           <li>Google Search Central &mdash; AI features and your website</li>
           <li>Google Search Central &mdash; In-depth guide to how Google Search works</li>
           <li>Google Search Central &mdash; Creating helpful, reliable, people-first content</li>
-          <li>Google Search Central Blog &mdash; Top ways to ensure your content performs well in AI experiences</li>
-          <li>Google Search Central &mdash; FAQPage structured data</li>
+          <li>Google Search Central Blog &mdash; Top ways to ensure your content performs well in Google&apos;s AI experiences</li>
+          <li>Google Search Central &mdash; Influencing title links</li>
           <li>Google Search Central &mdash; Article structured data</li>
           <li>Google Search Central &mdash; Organization structured data</li>
-          <li>OpenAI Help &mdash; ChatGPT search</li>
+          <li>Google Search Central &mdash; FAQPage structured data</li>
           <li>OpenAI Developers &mdash; Overview of OpenAI Crawlers</li>
-          <li>OpenAI Developers &mdash; Web search guide</li>
+          <li>OpenAI Help &mdash; ChatGPT search</li>
           <li>Anthropic Docs &mdash; Web search tool</li>
           <li>Google Search Central &mdash; Snippets and robots preview controls</li>
-        </ul>
+        </ol>
       </>
     ),
     annotation:
-      "New section added in the revision. Anchoring the guide to official platform documentation from Google, OpenAI, Anthropic, and others gives the team a verifiable foundation they can reference as AI platform behavior evolves.",
+      "New section added in the revision. A numbered source list anchors the guide to official platform documentation — and because source numbers are referenced inline throughout, the team can verify any specific claim against its original documentation.",
   },
 ];
