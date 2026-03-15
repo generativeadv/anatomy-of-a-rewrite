@@ -149,7 +149,7 @@ export default function ClientAdvicePage() {
               AI &amp; External Communications Guide (Revised)
             </p>
             <p className="text-xs text-muted mt-0.5">
-              Word document &middot; 33 KB
+              Word document &middot; 26 KB
             </p>
           </div>
           <svg
