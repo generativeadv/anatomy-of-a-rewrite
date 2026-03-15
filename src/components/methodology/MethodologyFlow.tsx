@@ -257,11 +257,99 @@ function Step1Content() {
 /* ─── Step 2: AI Rewrites ─── */
 function Step2Content({ columns }: { columns: Column[] }) {
   return (
-    <div className="space-y-3">
-      <p className="text-sm text-stone-600 leading-relaxed">
-        The same two-step prompting process was applied to four AI systems. One
-        system produced two versions after the first was deemed insufficient,
-        yielding five documents total:
+    <div className="space-y-4">
+      <div className="text-sm text-stone-600 leading-relaxed space-y-3">
+        <p>
+          A two-step prompting process was used to generate each rewrite. Each
+          AI system received the full client document as an attachment alongside
+          the prompts below.
+        </p>
+
+        {/* Prompt 1 */}
+        <div>
+          <p className="font-medium text-stone-700 mb-1.5">
+            Step 1: Initial test
+          </p>
+          <p className="text-stone-500 mb-2">
+            The first prompt was applied to ~900 words from the opening section
+            of the client document, attached to the message:
+          </p>
+          <div className="bg-stone-100 border-l-4 border-stone-400 rounded-r-lg p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-2">
+              Prompt 1
+            </p>
+            <p className="text-stone-800 font-mono text-xs leading-relaxed">
+              you&apos;re a researcher at a frontier AI lab. the below text is an
+              attempt from a client to explain how frontier LLM&apos;s work to
+              their corporate communications organization for the purposes of
+              education and content optimization. i get the sense it&apos;s
+              pretty innacurate. give me your feedback on it as is, and if
+              it&apos;s generally inaccurate, rewrite it:
+            </p>
+          </div>
+        </div>
+
+        {/* Prompt 2 */}
+        <div>
+          <p className="font-medium text-stone-700 mb-1.5">
+            Step 2: Full rewrite
+          </p>
+          <p className="text-stone-500 mb-2">
+            Based on the AI&apos;s performance on the initial test, the full
+            client document (~5,200 words) was attached with this follow-up
+            prompt:
+          </p>
+          <div className="bg-stone-100 border-l-4 border-stone-400 rounded-r-lg p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-2">
+              Prompt 2
+            </p>
+            <p className="text-stone-800 font-mono text-xs leading-relaxed">
+              This is a solid rewrite, good job. That was a section of a much
+              longer document. With this background in mind, evaluate the entire
+              document and rewrite it so it accurately represents how models work
+              and provides modern up-to-date guidance on best practices as of
+              today March 14 2026.
+            </p>
+          </div>
+        </div>
+
+        <p>
+          This identical two-step process was applied to the agency&apos;s
+          proprietary AI tool (&ldquo;Fergus&rdquo;), ChatGPT 5.4 Pro, and
+          Claude Opus 4.6 Extended. The Fergus output from Step 2 is evaluated
+          as <strong>Fergus v1</strong>.
+        </p>
+
+        {/* Fergus v2 prompt */}
+        <div>
+          <p className="font-medium text-stone-700 mb-1.5">
+            Fergus v2: A second attempt
+          </p>
+          <p className="text-stone-500 mb-2">
+            Fergus v1 was far shorter than the original and had stripped out
+            nearly all practical guidance. A follow-up prompt was issued in the
+            same chat to generate a more complete version:
+          </p>
+          <div className="bg-stone-100 border-l-4 border-stone-400 rounded-r-lg p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-2">
+              Fergus v2 prompt
+            </p>
+            <p className="text-stone-800 font-mono text-xs leading-relaxed">
+              This version you created is much shorter than the original full
+              document I shared with you. Rewrite it again, ensuring you evaluate
+              every section within the original Word doc I shared with you.
+              Assess the goal and role of each section and rewrite the entire
+              document so it is accurate and practically useful, based on
+              up-to-date information as of today March 14, 2026. Deliver it as a
+              Word doc.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Document results */}
+      <p className="text-sm font-medium text-stone-700 mt-2">
+        The five resulting documents:
       </p>
       <div className="space-y-2">
         {columns.map((col) => {
