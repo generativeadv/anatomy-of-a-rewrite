@@ -34,10 +34,15 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="underline hover:text-foreground"
           >via HBR</a>)
-          {" "}dangerous. Experts at the firm used AI to counter AI: scoring it,
-          rewriting it, and documenting every decision so others can learn from
-          the process. The results make the case: AI is only as good as the
-          human directing it.
+          {" "}dangerous.
+        </p>
+        <p className="text-stone-600 leading-relaxed mt-3">
+          Experts at the firm used AI to counter AI: scoring it, rewriting it,
+          and documenting every decision so others can learn from the process.
+        </p>
+        <p className="text-stone-600 leading-relaxed mt-3">
+          The results make the case: AI is only as good as the human
+          directing it.
         </p>
         <p className="text-stone-600 leading-relaxed mt-3">
           Hover over the row and column headers to get oriented, then explore
