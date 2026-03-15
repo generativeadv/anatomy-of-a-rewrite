@@ -24,7 +24,7 @@ export async function generateMetadata({
   const column = getColumn(columnId);
   if (!attribute || !column) return {};
   return {
-    title: `${attribute.label} — ${column.label} | Anatomy of a Rewrite`,
+    title: `${attribute.label} — ${column.label} | From Workslop to Working Document`,
   };
 }
 

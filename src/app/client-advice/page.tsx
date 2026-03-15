@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import EmailDraft from "@/components/client-advice/EmailDraft";
 
 export const metadata: Metadata = {
-  title: "Client Advice | Anatomy of a Rewrite",
+  title: "Client Advice | From Workslop to Working Document",
 };
 
 export default function ClientAdvicePage() {

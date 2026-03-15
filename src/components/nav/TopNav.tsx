@@ -21,7 +21,7 @@ export default function TopNav() {
           href="/"
           className="font-[family-name:var(--font-display)] text-lg font-semibold text-accent tracking-tight"
         >
-          Anatomy of a Rewrite
+          From Workslop to Working Document
         </Link>
         <div className="flex items-center gap-5">
           {links.map((link) => {

@@ -9,14 +9,17 @@ export default function HomePage() {
     <>
       <header className="mb-12 max-w-3xl">
         <h1 className="text-4xl font-bold tracking-tight mb-4">
-          Anatomy of a Rewrite
+          From Workslop to Working Document
         </h1>
         <p className="text-xl text-muted italic font-[family-name:var(--font-display)] mb-6">
-          How five AI systems tackled the same task &mdash; and what their
-          outputs reveal about evaluating AI work
+          When AI creates the problem and AI solves it, the difference is the
+          human in the loop
         </p>
         <p className="text-stone-600 leading-relaxed">
-          A client&apos;s AI-generated communications guide &mdash; classic{" "}
+          A client used AI to draft internal guidance for optimizing press
+          releases and blog posts for AI visibility. Parts of it were useful,
+          and parts were completely misleading or downright wrong &mdash; which
+          is what makes{" "}
           <a
             href="https://www.betterup.com/workslop"
             target="_blank"
@@ -31,8 +34,10 @@ export default function HomePage() {
             rel="noopener noreferrer"
             className="underline hover:text-foreground"
           >via HBR</a>)
-          {" "}&mdash; was rewritten by four AI systems using identical prompts.
-          Scores ranged from 3.3 to 8.2 out of 10.
+          {" "}dangerous. Experts at the firm used AI to counter AI: scoring it,
+          rewriting it, and documenting every decision so others can learn from
+          the process. The results make the case: AI is only as good as the
+          human directing it.
         </p>
         <p className="text-stone-600 leading-relaxed mt-3">
           Hover over the row and column headers to get oriented, then explore

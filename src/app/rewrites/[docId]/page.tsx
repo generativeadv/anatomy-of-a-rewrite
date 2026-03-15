@@ -39,7 +39,7 @@ export async function generateMetadata({
   const doc = getDocumentMeta(docId);
   if (!doc) return { title: "Not Found" };
   return {
-    title: `${doc.title} | Rewrites | Anatomy of a Rewrite`,
+    title: `${doc.title} | Rewrites | From Workslop to Working Document`,
   };
 }
 

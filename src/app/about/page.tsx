@@ -3,7 +3,7 @@ import PullQuote from "@/components/editorial/PullQuote";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | Anatomy of a Rewrite",
+  title: "About | From Workslop to Working Document",
 };
 
 export default function AboutPage() {
@@ -23,69 +23,59 @@ export default function AboutPage() {
         </h2>
         <div className="space-y-4 text-stone-700 leading-relaxed">
           <p>
-            This project is a structured, side-by-side evaluation of five
-            AI-generated versions of the same document: a corporate
-            communications guide on optimizing content for generative AI search
-            platforms. The original document was created by the client&apos;s
-            internal team using ChatGPT and Gemini. It read confidently,
-            included specific statistics, and used professional formatting
-            &mdash; but its technical model of how AI systems work was
-            fundamentally incorrect, and many of its cited figures were
-            fabricated. It is a textbook example of what has become known as
-            &ldquo;<a
+            AI is accelerating professional work in both directions. The same
+            tools that let a client produce a polished, 5,200-word
+            communications guide in hours also let that guide ship with
+            fabricated statistics, a fundamentally incorrect technical model,
+            and the confident formatting of finished work. This is{" "}
+            <a
               href="https://www.betterup.com/workslop"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-stone-900 transition-colors"
-            >workslop</a>&rdquo;
+            >workslop</a>{" "}
             (<a
               href="https://hbr.org/2025/09/ai-generated-workslop-is-destroying-productivity"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-stone-900 transition-colors"
-            >via HBR</a>): AI-generated output that has the appearance
-            and polish of professional work but is misleading or wrong.
+            >via HBR</a>)
+            {" "}&mdash; and as AI makes it faster to produce, it will arrive on
+            advisory desks with increasing frequency and increasing polish.
           </p>
           <p>
-            To test how different AI systems would handle a rewrite, the
-            document was first anonymized &mdash; all client-identifying
-            information was stripped and replaced with a fictional brand
-            &mdash; and the same two-step prompting process was then applied
-            to four tools: the advisory firm&apos;s proprietary AI platform
-            (&ldquo;Fergus,&rdquo; which produced two versions after the first
-            was deemed insufficient) and two frontier reasoning models
-            &mdash; Claude Opus 4.6 Extended and GPT 5.4 Pro &mdash; each
-            given the identical prompt with no additional coaching. The prompts
-            were written for extended-reasoning models; Fergus uses Gemini 3.0
-            Flash as a first-call orchestrator for speed, with access to deeper
-            capabilities including Deep Research and extended thinking, but
-            benefits from tailored prompting to get its best output. The results
-            varied dramatically: from a 2,100-word technical primer that
-            stripped out all practical guidance, to comprehensive 8,000+ word
-            rewrites that corrected the technical foundations while preserving
-            and expanding the document&apos;s operational utility.
+            That said, workslop is rarely all bad. The client&apos;s document
+            contained genuinely strong elements &mdash; well-constructed worked
+            examples, a practical section-by-section template, and a
+            three-audience framework that showed real strategic thinking. The
+            challenge is that these useful elements were embedded alongside
+            claims that no published platform documentation supports, making the
+            document dangerous precisely because it was partly right.
           </p>
           <p>
-            The scorecard evaluates all five versions across ten qualitative
-            attributes &mdash; including technical accuracy, practical guidance,
-            structural organization, and prose quality &mdash; using a 1&ndash;10
-            rubric developed in a Claude Opus 4.6 Extended evaluation chat.
-            Aggregate scores ranged from 3.3 to 8.2 out of 10, revealing
-            that identical prompts can produce outputs of vastly different
-            quality depending on the underlying model and architecture.
+            This project documents what happens when a team that recognized that
+            mix used AI &mdash; deliberately, iteratively, and with domain
+            expertise guiding every prompt &mdash; to separate what worked from
+            what didn&apos;t and produce a corrected deliverable that preserved
+            the best of the original. Four AI systems rewrote the same document
+            using identical prompts. Scores ranged from 3.3 to 8.2 out of 10.
+            Fergus improved markedly between its first and second iterations,
+            demonstrating that the firm&apos;s tooling rewards a more structured
+            prompting approach &mdash; and that knowing <em>what to ask for</em>{" "}
+            matters as much as the model answering. The frontier reasoning
+            models produced strong rewrites with less coaching, but required the
+            same human judgment to evaluate whether their outputs were actually
+            correct.
           </p>
           <p>
-            After all five versions were evaluated, an Ideal Composite document
-            was generated as a benchmark, combining the strongest elements from
-            each rewrite: the Opus 4.6 version&apos;s educational foundation
-            and prose quality, the GPT 5.4 version&apos;s technical publishing
-            guidance and sourced appendix, and the Client Original and Fergus
-            v2&apos;s worked examples and templates. The composite is not scored
-            (it would be grading its own homework) but serves as the reference
-            point for the detail-page comparisons. This project demonstrates
-            both the extraordinary potential and the significant variance of
-            AI-assisted knowledge work &mdash; and why critical human evaluation
-            remains essential.
+            The uncomfortable irony at the center of this experiment is that
+            workslop is not a technology problem. The AI didn&apos;t fabricate
+            those statistics on its own &mdash; a human accepted them without
+            verification and shipped them as finished work. The antidote
+            isn&apos;t less AI; it&apos;s more expertise in how to use it. This
+            case study is both a demonstration of that principle and a repeatable
+            method the firm can apply whenever workslop arrives &mdash; which,
+            increasingly, it will.
           </p>
         </div>
       </section>

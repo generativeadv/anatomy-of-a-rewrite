@@ -4,7 +4,7 @@ import ScoreBadge from "@/components/detail/ScoreBadge";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rewrites | Anatomy of a Rewrite",
+  title: "Rewrites | From Workslop to Working Document",
 };
 
 export default function RewritesPage() {

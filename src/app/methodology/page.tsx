@@ -3,7 +3,7 @@ import MethodologyFlow from "@/components/methodology/MethodologyFlow";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Methodology | Anatomy of a Rewrite",
+  title: "Methodology | From Workslop to Working Document",
 };
 
 export default function MethodologyPage() {

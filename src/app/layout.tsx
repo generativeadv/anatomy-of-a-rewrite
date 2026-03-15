@@ -14,9 +14,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Anatomy of a Rewrite",
+  title: "From Workslop to Working Document",
   description:
-    "How five AI systems tackled the same task — and what their outputs reveal about evaluating AI work",
+    "When AI creates the problem and AI solves it, the difference is the human in the loop",
 };
 
 export default function RootLayout({
