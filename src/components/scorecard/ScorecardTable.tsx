@@ -113,9 +113,12 @@ export default function ScorecardTable({ data }: { data: ScorecardData }) {
                   if (!cell) return <td key={col.id} />;
                   const colors = getScoreColorClasses(cell.score);
                   return (
-                    <td key={col.id} className="py-2 px-2 text-center">
+                    <td
+                      key={col.id}
+                      className={`${colors.bg} ${colors.border} border-x text-center p-0`}
+                    >
                       <button
-                        className={`${colors.bg} ${colors.text} w-12 h-10 rounded-lg font-semibold text-sm cursor-pointer transition-all duration-150 hover:scale-110 hover:shadow-md border ${colors.border}`}
+                        className={`${colors.text} w-full h-full py-3 font-semibold text-sm cursor-pointer transition-all duration-150 hover:brightness-110 hover:shadow-inner`}
                         onMouseEnter={(e) =>
                           handleCellEnter(attr.id, col.id, cell.hover, e)
                         }
@@ -143,12 +146,11 @@ export default function ScorecardTable({ data }: { data: ScorecardData }) {
               {data.columns_ordered.map((col) => {
                 const colors = getScoreColorClasses(col.aggregate_score);
                 return (
-                  <td key={col.id} className="py-2 px-2 text-center">
-                    <span
-                      className={`${colors.bg} ${colors.text} inline-flex items-center justify-center w-12 h-10 rounded-lg font-bold text-sm border ${colors.border}`}
-                    >
-                      {col.aggregate_score}
-                    </span>
+                  <td
+                    key={col.id}
+                    className={`${colors.bg} ${colors.text} ${colors.border} border-x py-3 text-center font-bold text-sm`}
+                  >
+                    {col.aggregate_score}
                   </td>
                 );
               })}
