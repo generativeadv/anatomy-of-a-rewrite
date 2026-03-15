@@ -15,11 +15,22 @@ export default function ClientAdvicePage() {
         Materials and recommendations for account leadership
       </p>
 
-      <p className="text-stone-600 leading-relaxed mb-10">
+      <p className="text-stone-600 leading-relaxed mb-4">
         Below is a suggested email responding to the client&apos;s original
         request for feedback on their AI &amp; External Communications guide.
-        The revised document is available for download at the bottom of this
-        page.
+      </p>
+      <p className="text-stone-600 leading-relaxed mb-10">
+        The revised{" "}
+        <a
+          href="/downloads/AI_External_Comms_Guide_Revised.docx"
+          download
+          className="underline hover:text-foreground transition-colors"
+        >
+          document
+        </a>
+        , produced through iterative evaluation across multiple frontier AI
+        models and pressure-tested against current platform documentation, is
+        available for download at the bottom of this page.
       </p>
 
       <EmailDraft />
