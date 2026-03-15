@@ -8,6 +8,7 @@ const links = [
   { href: "/methodology", label: "Methodology" },
   { href: "/rewrites", label: "Rewrites" },
   { href: "/about", label: "About" },
+  { href: "/client-advice", label: "Client Advice" },
 ];
 
 export default function TopNav() {
@@ -22,7 +23,7 @@ export default function TopNav() {
         >
           Anatomy of a Rewrite
         </Link>
-        <div className="flex items-center gap-8">
+        <div className="flex items-center gap-5">
           {links.map((link) => {
             const isActive =
               link.href === "/"
@@ -32,7 +33,7 @@ export default function TopNav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
+                className={`text-sm font-medium transition-colors whitespace-nowrap ${
                   isActive
                     ? "text-foreground"
                     : "text-muted hover:text-foreground"
