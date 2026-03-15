@@ -27,9 +27,13 @@ export default function HomePage() {
           </a>
           {" "}&mdash; was rewritten by four AI systems using identical prompts.
           Scores ranged from 3.3 to 8.2 out of 10. Explore the results below,
-          or read the{" "}
+          read the{" "}
           <Link href="/about" className="underline hover:text-foreground">
             backstory
+          </Link>
+          , or jump straight to the{" "}
+          <Link href="/client-advice" className="underline hover:text-foreground">
+            client advice
           </Link>
           .
         </p>

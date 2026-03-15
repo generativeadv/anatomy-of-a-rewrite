@@ -50,9 +50,9 @@ export default function AboutPage() {
             was deemed insufficient) and two frontier reasoning models
             &mdash; Claude Opus 4.6 Extended and GPT 5.4 Pro &mdash; each
             given the identical prompt with no additional coaching. The prompts
-            were designed with deep reasoning models in mind; it was understood
-            that Fergus, which uses Gemini 3.0 Flash, would likely be at an
-            architectural disadvantage. The results
+            were written for extended-reasoning models; Fergus, built on
+            Gemini 3.0 Flash, is optimized for speed and efficiency &mdash;
+            a different set of architectural tradeoffs. The results
             varied dramatically: from a 2,100-word technical primer that
             stripped out all practical guidance, to comprehensive 8,000+ word
             rewrites that corrected the technical foundations while preserving
