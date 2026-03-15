@@ -138,12 +138,12 @@ export default function AboutPage() {
           </h2>
           <p>
             Before sharing the document with frontier models outside the
-            firm&apos;s IT environment, the creator used Fergus to strip out all
+            firm&apos;s IT environment, Fergus was used to strip out all
             company-specific references and replace them with a fictional brand
             (&ldquo;TVs &amp; More&rdquo;). With this anonymized version in
-            hand, the creator uploaded it to ChatGPT 5.4 Pro and Claude Opus 4.6
-            Extended &mdash; with memory and training turned off &mdash; and
-            applied the exact same two-step prompting process.
+            hand, it was uploaded to ChatGPT 5.4 Pro and Claude Opus 4.6
+            Extended &mdash; with memory and training turned off &mdash; using
+            the exact same two-step prompting process.
           </p>
         </section>
 
@@ -153,8 +153,8 @@ export default function AboutPage() {
             A Note on Processing Time
           </h2>
           <p>
-            The creator observed that frontier reasoning models spend
-            dramatically longer processing requests than Fergus. Fergus generated
+            Frontier reasoning models spent dramatically longer processing
+            requests than Fergus. Fergus generated
             its response to the first prompt almost instantly, and took an
             estimated one to two minutes to render the full rewrite (beginning to
             write immediately after the prompt was entered). In contrast, GPT
@@ -177,9 +177,9 @@ export default function AboutPage() {
           </h2>
           <p>
             With outputs from four different AI systems (Fergus v1, Fergus v2,
-            GPT 5.4 Pro, and Opus 4.6 Extended) plus the Client Original, the
-            creator had the material for a structured evaluation. The scorecard
-            was created with two goals:
+            GPT 5.4 Pro, and Opus 4.6 Extended) plus the Client Original, there
+            was enough material for a structured evaluation. The scorecard
+            was designed with two goals:
           </p>
           <ol className="list-decimal list-inside mt-4 space-y-2">
             <li>
@@ -204,11 +204,11 @@ export default function AboutPage() {
             text={`You're a researcher at a frontier generative AI lab. I'm going to give you two versions of a document to evaluate. The first is an attempt from a big box retailer TVs & More to give practical educate and guidance for its corporate communications team. The second is an attempted rewrite of the document by the company's communications agency, which used their proprietary AI system, Fergus, for the revision. I want you to create a detailed comparison and assessment of both documents, including technical/quantitative aspects (length, etc), but primarily focusing on qualitative analysis (accuracy, clarity, practicality, etc). Include a summary score card of all the attributes in a table format as part of your response. Be critical but fair. Ask any clarifying questions as needed.`}
           />
           <p>
-            The creator was pleased with the initial scorecard criteria and
-            evaluation. The scorecard was then expanded iteratively: each
-            additional rewrite (GPT 5.4, Opus 4.6, Fergus v2) was fed into the
-            same evaluation chat and assessed against the established criteria,
-            with previous scores held stable.
+            The initial scorecard criteria and evaluation proved strong. The
+            scorecard was then expanded iteratively: each additional rewrite
+            (GPT 5.4, Opus 4.6, Fergus v2) was fed into the same evaluation
+            chat and assessed against the established criteria, with previous
+            scores held stable.
           </p>
         </section>
 
@@ -218,9 +218,9 @@ export default function AboutPage() {
             Building This Site
           </h2>
           <p>
-            To consolidate and present these insights, the creator asked the
-            same Opus 4.6 chat to produce the documentation and prompting inputs
-            for Claude Code to build this interactive experience. The scorecard
+            To consolidate and present these insights, the same Opus 4.6 chat
+            was used to produce the documentation and prompting inputs for
+            Claude Code to build this interactive experience. The scorecard
             data, hover text, detailed explanations, and all verbatim quotes
             were generated in that chat and exported as a structured JSON file
             that powers this application.
@@ -252,8 +252,8 @@ export default function AboutPage() {
               the firm.
             </li>
             <li>
-              Processing time observations are estimates based on the
-              creator&apos;s recollection, not precise measurements.
+              Processing time observations are estimates based on
+              recollection, not precise measurements.
             </li>
             <li>
               This evaluation reflects the state of these AI systems as of March
