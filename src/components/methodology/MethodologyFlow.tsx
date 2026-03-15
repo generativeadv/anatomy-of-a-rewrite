@@ -331,7 +331,7 @@ function Step2Content({ columns }: { columns: Column[] }) {
           extended-reasoning models. Fergus uses Gemini 3.0 Flash as a
           first-call orchestrator for speed, with access to deeper
           capabilities including Deep Research and extended thinking, but
-          benefits from tailored prompting to get its best output. Before
+          appears to benefit from tailored prompting to get its best output. Before
           testing the frontier models outside
           the firm&apos;s IT environment, the document was anonymized
           &mdash; all client-identifying information was stripped and replaced
