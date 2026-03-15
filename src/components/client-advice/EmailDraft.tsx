@@ -6,21 +6,21 @@ const EMAIL_PLAIN_TEXT = `Hi [Client Name],
 
 Thanks for sharing the AI & External Communications guide — it's clear a lot of thought went into building something practical for the team, and the instinct to ground the guidance in how AI platforms actually work is exactly right. We appreciate you asking for our input.
 
-Rather than marking up the existing document, we took a different approach: we used it as the foundation for a deeper exploration using Fergus, pressure-tested the key claims against current platform documentation, and produced a revised version of the guide that we think will serve the team well. The revised document is attached.
+Rather than marking up the existing document, we took a different approach: we used it as the foundation for a deeper exploration using Fergus, validated the recommendations against current platform documentation, and produced a revised version of the guide that we think will serve the team well. The revised document is attached.
 
 You'll find the revised guide is very close to yours in structure and goals — it's still organized around helping the comms team understand what matters to AI platforms and why, with practical section-by-section guidance for announcements. The worked examples you included were particularly strong and are a key feature we preserved and built on throughout. Here are the four most significant ways we augmented it:
 
-1. How training data and search work together. Your guide focused primarily on how AI platforms search for and retrieve content in real time. That's an important piece of the picture, but it's only one of two pathways. AI models also draw on knowledge absorbed during training — patterns learned from the vast body of text they were trained on, which persists even without a live search. The revised guide explains both pathways and how they interact, so the team can think about optimizing content for each: making it clear and well-structured enough to be absorbed into training data over time, while also ensuring it's discoverable and well-formatted for real-time search today.
+1. How training data and search work together. Your guide covered how AI platforms search for and retrieve content in real time — we expanded on this to include a second pathway. AI models also draw on knowledge absorbed during training — patterns learned from the vast body of text they were trained on, which persists even without a live search. The revised guide explains both pathways and how they interact, so the team can think about optimizing content for each: making it clear and well-structured enough to be absorbed into training data over time, while also ensuring it's discoverable and well-formatted for real-time search today.
 
-2. Section-by-section guidance with clear rationale. The revised guide walks through every component of an announcement — headline, subhead, key highlights, lede, context paragraph, quote, subsections, FAQ, boilerplate, and contact information — with explanations of why each element matters to AI platforms, not just what to include. We found that grounding each recommendation in a clear "here's why" makes the guidance easier for the team to internalize and apply with judgment, rather than treating it as a rigid checklist.
+2. Section-by-section guidance with clear rationale. The revised guide walks through every component of an announcement — headline, subhead, key highlights, lede, context paragraph, quote, subsections, FAQ, boilerplate, and contact information — with explanations of why each element matters to AI platforms. We found that grounding each recommendation in a clear "here's why" makes the guidance easier for the team to internalize and apply with judgment, rather than treating it as a rigid checklist.
 
 3. Tied to published platform documentation. We made an effort to anchor guidance to documentation published by Google, OpenAI, Anthropic, and other model providers. This gives the team a solid reference point they can hew to as the document inevitably evolves over time.
 
-4. A measurement and monitoring framework. We added a practical operating rhythm so the team isn't just publishing and hoping for the best: what to check at publish time, what to review monthly, and what to audit quarterly. This gives the team a way to track whether the guidance is actually working and to adjust as platform behavior changes.
+4. A measurement and monitoring framework. We added a practical operating rhythm — what to check at publish time, what to review monthly, and what to audit quarterly — so the team can track whether the guidance is working and adjust as platform behavior changes.
 
 The guide is meant to be a living document — AI platform behavior changes quickly, and we'd recommend reviewing it quarterly to keep it current. We're happy to walk through it together whenever works for you, and if it would be helpful, we can also put together a more detailed side-by-side comparison of your original and the revision so the team can see exactly what changed and why.
 
-Thanks again for putting this together — it gave us a great foundation to work from. Looking forward to discussing.
+Thanks again for bringing us in on this — looking forward to discussing.
 
 Best,
 [Your Name]`;
@@ -111,7 +111,7 @@ export default function EmailDraft() {
         <p>
           Rather than marking up the existing document, we took a different
           approach: we used it as the foundation for a deeper exploration
-          using Fergus, pressure-tested the key claims against current
+          using Fergus, validated the recommendations against current
           platform documentation, and produced a revised version of the guide
           that we think will serve the team well. The revised document is
           attached.
@@ -132,9 +132,9 @@ export default function EmailDraft() {
             <strong>
               How training data and search work together.
             </strong>{" "}
-            Your guide focused primarily on how AI platforms search for and
-            retrieve content in real time. That&apos;s an important piece of
-            the picture, but it&apos;s only one of two pathways. AI models
+            Your guide covered how AI platforms search for and retrieve content
+            in real time &mdash; we expanded on this to include a second
+            pathway. AI models
             also draw on knowledge absorbed during training &mdash; patterns
             learned from the vast body of text they were trained on, which
             persists even without a live search. The revised guide explains
@@ -152,7 +152,7 @@ export default function EmailDraft() {
             &mdash; headline, subhead, key highlights, lede, context
             paragraph, quote, subsections, FAQ, boilerplate, and contact
             information &mdash; with explanations of <em>why</em> each element
-            matters to AI platforms, not just what to include. We found that
+            matters to AI platforms. We found that
             grounding each recommendation in a clear &ldquo;here&apos;s
             why&rdquo; makes the guidance easier for the team to internalize
             and apply with judgment, rather than treating it as a rigid
@@ -171,11 +171,10 @@ export default function EmailDraft() {
             <strong>
               A measurement and monitoring framework.
             </strong>{" "}
-            We added a practical operating rhythm so the team isn&apos;t just
-            publishing and hoping for the best: what to check at publish time,
-            what to review monthly, and what to audit quarterly. This gives
-            the team a way to track whether the guidance is actually working
-            and to adjust as platform behavior changes.
+            We added a practical operating rhythm &mdash; what to check at
+            publish time, what to review monthly, and what to audit quarterly
+            &mdash; so the team can track whether the guidance is working and
+            adjust as platform behavior changes.
           </li>
         </ol>
 
@@ -190,7 +189,7 @@ export default function EmailDraft() {
         </p>
 
         <p>
-          Thanks again for the strong starting point. Looking forward to
+          Thanks again for bringing us in on this &mdash; looking forward to
           discussing.
         </p>
 
