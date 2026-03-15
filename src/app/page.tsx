@@ -32,8 +32,11 @@ export default function HomePage() {
             className="underline hover:text-foreground"
           >via HBR</a>)
           {" "}&mdash; was rewritten by four AI systems using identical prompts.
-          Scores ranged from 3.3 to 8.2 out of 10. Explore the results below,
-          read the{" "}
+          Scores ranged from 3.3 to 8.2 out of 10.
+        </p>
+        <p className="text-stone-600 leading-relaxed mt-3">
+          Hover over the row and column headers to get oriented, then explore
+          the results below. Or read the{" "}
           <Link href="/about" className="underline hover:text-foreground">
             backstory
           </Link>
