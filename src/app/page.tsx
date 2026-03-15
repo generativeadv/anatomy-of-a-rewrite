@@ -16,10 +16,13 @@ export default function HomePage() {
           human in the loop
         </p>
         <p className="text-stone-600 leading-relaxed">
-          A client used AI to draft internal guidance for optimizing press
-          releases and blog posts for AI visibility. Parts of it were useful,
-          and parts were completely misleading or downright wrong &mdash; which
-          is what makes{" "}
+          A client used AI to draft internal guidance for optimizing owned
+          content (press releases and blog posts) for AI visibility.
+        </p>
+        <p className="text-stone-600 leading-relaxed mt-3">
+          Parts of it were useful, and parts were misleading or downright
+          wrong, while appearing highly polished and confident &mdash; the very
+          definition of{" "}
           <a
             href="https://www.betterup.com/workslop"
             target="_blank"
@@ -33,20 +36,22 @@ export default function HomePage() {
             target="_blank"
             rel="noopener noreferrer"
             className="underline hover:text-foreground"
-          >via HBR</a>)
-          {" "}dangerous.
+          >via HBR</a>).
         </p>
         <p className="text-stone-600 leading-relaxed mt-3">
-          Experts at the firm used AI to counter AI: scoring it, rewriting it,
-          and documenting every decision so others can learn from the process.
+          One way to efficiently and effectively provide feedback on thousands
+          of words of client-generated AI workslop? Why, AI of course &ndash;
+          just implemented better and evaluated with a keen eye!
         </p>
         <p className="text-stone-600 leading-relaxed mt-3">
-          The results make the case: AI is only as good as the human
-          directing it.
+          This site documents one man&apos;s (possibly quixotic) quest to
+          develop a revision and client cover note, compare Fergus to other AI
+          systems in a real-world scenario (while respecting client
+          confidentiality), share insights with colleagues, and experiment with
+          Claude Code.
         </p>
         <p className="text-stone-600 leading-relaxed mt-3">
-          Hover over the row and column headers to get oriented, then explore
-          the results below. Or read the{" "}
+          Hover over the row and column headers to get oriented, read the{" "}
           <Link href="/about" className="underline hover:text-foreground">
             backstory
           </Link>

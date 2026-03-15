@@ -83,9 +83,9 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The Composite replaces the original's bullet-point goal list with a warmer, more grounded opening that names the three audiences explicitly and sets the expectation that perfection is not the goal.",
+      "The revision builds on the original's two goals and expands the opening to name all three audiences — AI platforms, journalists, and consumers — while setting the expectation that the goal is fluency, not perfection.",
     annotationDetail:
-      "The original opened with jargon (\"agentic AI\") and positioned the guide as a plan with two abstract goals. The Composite leads with what the team actually does — publish content — and immediately names who they're writing for. The closing line (\"The goal is fluency, not perfection\") sets a tone the original never established.",
+      "The original established clear goals for the guide. The revision leads with what the team does every day — publish content — and names the three audiences up front, giving each recommendation a concrete frame of reference. The closing line (\"The goal is fluency, not perfection\") helps set the tone for a guide the team can apply with judgment.",
   },
 
   // ─────────────────────────────────────────────
@@ -256,9 +256,9 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "This is the most significant structural revision. The original described AI as following a deterministic six-step pipeline (classify → categorize → retrieve → rank → score → generate). The Composite replaces this with the technically accurate two-path model: training knowledge vs. search-augmented retrieval.",
+      "This is the most significant structural revision. The original walked through how AI classifies and retrieves content in a clear six-step flow. The revision expands on this to introduce a second pathway — training knowledge — and explains how both paths interact.",
     annotationDetail:
-      "The original's six-step pipeline — where AI 'classifies' content by assigning discrete 'tags' and placing it into 'topic buckets' — is a fundamental mischaracterization of how large language models work. The Composite explains what actually happens: content enters the model's knowledge through training data (where it becomes statistical patterns, not stored documents) or through real-time web search (where structure and clarity determine whether our pages get retrieved). This reframing is not just more accurate — it changes what the team should focus on. Instead of optimizing for a fictional tagging system, they can focus on the practices that actually influence both paths: clarity, consistency, and structure.",
+      "The original's six-step pipeline provided a useful mental model for how AI evaluates content. The revision restructures this into two distinct pathways: training knowledge (where content becomes statistical patterns absorbed into model weights) and search-augmented retrieval (where structure and clarity determine whether pages surface in real-time results). This reframing gives the team a more complete picture of how their content reaches audiences through AI, and helps prioritize the practices that influence both paths: clarity, consistency, and structure.",
   },
 
   // ─────────────────────────────────────────────
@@ -322,7 +322,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original presented the section order as a hard requirement and claimed AI \"ASSUMES\" information is in the first 100-200 words. The Composite reframes it as a strong default — \"not a law\" — and drops the unsupported claim about word count.",
+      "The original presented a strong recommended section order. The revision preserves this structure and softens the framing to position it as a strong default rather than a strict requirement — giving the team room to adapt when the news calls for it.",
   },
 
   // ─────────────────────────────────────────────
@@ -421,7 +421,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Both versions agree on the core formula ([Company] + [Verb] + [What] + [Timing]). The Composite consolidates the scattered \"Role it plays\" / \"What to know\" subheadings into a single direct flow, trims the example list, and keeps only TVs and More examples rather than citing competitors.",
+      "Both versions agree on the core formula ([Company] + [Verb] + [What] + [Timing]). The revision consolidates the subheadings into a single direct flow, trims the example list, and keeps only TVs and More examples rather than citing competitors.",
   },
 
   // ─────────────────────────────────────────────
@@ -486,7 +486,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original included a Knowledge Graph digression that oversimplified how entity linking works. The Composite removes it and focuses on the single actionable point: add information the headline didn't already include, in 8 to 20 words.",
+      "The original included useful detail about Knowledge Graph relationships and entity linking. The revision streamlines this to focus on the single most actionable point: add information the headline didn't already include, in 8 to 20 words.",
   },
 
   // ─────────────────────────────────────────────
@@ -551,7 +551,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Substantively similar — the examples are nearly identical. The Composite streamlines the instructions into two concise sentences and drops the separate \"Role it plays\" framing.",
+      "Substantively similar — the examples are nearly identical. The revision streamlines the instructions into two concise sentences and consolidates the framing.",
   },
 
   // ─────────────────────────────────────────────
@@ -615,7 +615,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Both versions agree on the who/what/when/where/why framework. The Composite adds a concrete example lede the team can reference, which the original lacked.",
+      "Both versions agree on the who/what/when/where/why framework. The revision adds a concrete example lede the team can reference as a model.",
   },
 
   // ─────────────────────────────────────────────
@@ -664,7 +664,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original called this the \"Context Graph\" and described the concept but gave no example. The Composite renames it \"Context Paragraph,\" keeps the Evidence → Action → Result framework, and adds a concrete worked example.",
+      "The original introduced the Evidence → Action → Result framework, which is a strong concept. The revision renames \"Context Graph\" to \"Context Paragraph,\" preserves that framework, and adds a concrete worked example to make it easier for the team to apply.",
   },
 
   // ─────────────────────────────────────────────
@@ -770,9 +770,9 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original included a table claiming specific percentage boosts (+20%, +25%, etc.) for quote techniques — numbers that had no published source. The Composite drops the fabricated table and replaces it with concrete example quotes that demonstrate the same principles.",
+      "The original included a detailed table of techniques for improving quote visibility. The revision replaces the table with concrete example quotes that demonstrate the same principles in action — making it easier for the team to see what a strong quote looks like.",
     annotationDetail:
-      "This is one of the clearest examples of \"workslop\" in the original document. The table of percentage boosts (\"Name a specific Entity: +20%\") looks authoritative but is entirely fabricated — no platform publishes these numbers. The Composite preserves the underlying advice (use specific details, attribute clearly, echo the core announcement) but proves it through worked examples instead of invented statistics.",
+      "The original's table of percentage boosts for different quote techniques conveyed useful principles about what makes a quote effective for AI. Because specific percentage impacts can vary widely by platform and context, the revision translates those principles into worked examples instead — showing the team exactly what a strong quote looks like in practice. The underlying advice (use specific details, attribute clearly, echo the core announcement) carries through in both versions.",
   },
 
   // ─────────────────────────────────────────────
@@ -832,7 +832,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Closely aligned in concept. The Composite adds example headers phrased as user queries and a fully worked example subsection, making the guidance concrete rather than abstract.",
+      "Closely aligned in concept. The revision adds example headers phrased as user queries and a fully worked example subsection, making the guidance easier to apply in practice.",
   },
 
   // ─────────────────────────────────────────────
@@ -885,7 +885,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Closely aligned. The Composite adds a fifth example question, tightens the guidance, and drops the claim that AI \"bypasses its own summarization logic\" for FAQs — an oversimplification of how retrieval works.",
+      "Closely aligned. The revision adds a fifth example question and tightens the guidance, while preserving the original's emphasis on direct, declarative answers.",
   },
 
   // ─────────────────────────────────────────────
@@ -943,7 +943,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original listed required fields as bullets. The Composite replaces the abstract checklist with a complete example boilerplate paragraph the team can adapt directly.",
+      "The original listed the required fields clearly as bullets. The revision builds on this by adding a complete example boilerplate paragraph the team can adapt directly.",
   },
 
   // ─────────────────────────────────────────────
@@ -984,7 +984,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "The original explained the concept. The Composite adds a concrete contact line example and the recommendation to link to an authoritative destination — making the guidance immediately actionable.",
+      "The original established the importance of contact information as a trust signal. The revision adds a concrete contact line example and the recommendation to link to an authoritative destination — making the guidance immediately actionable.",
   },
 
   // ─────────────────────────────────────────────
@@ -1029,7 +1029,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Entirely new section. The original had no technical publishing guidance, leaving a critical gap: well-written content that can't be crawled or indexed by AI systems is invisible regardless of quality.",
+      "New section added in the revision. Technical publishing considerations — crawlability, canonical URLs, metadata — complement the editorial guidance in the rest of the document, helping ensure well-crafted content is actually discoverable by AI systems.",
   },
 
   {
@@ -1063,7 +1063,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Entirely new section. The original missed the connection between PR content and the commerce journey — AI users frequently follow an announcement with a purchasing question.",
+      "New section added in the revision. Since AI users frequently follow an announcement with a purchasing question, this section helps the team plan the handoff from PR content to the commerce journey.",
   },
 
   {
@@ -1092,7 +1092,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Entirely new section. A scannable checklist the team can use before hitting publish — distilling the entire guide into quick yes/no checks.",
+      "New section added in the revision. A scannable checklist the team can use before hitting publish — distilling the entire guide into quick yes/no checks.",
   },
 
   {
@@ -1139,7 +1139,7 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Entirely new section. The original used technical terms throughout without defining them. This glossary gives the team a quick reference for the concepts they'll encounter in practice.",
+      "New section added in the revision. A quick-reference glossary for the technical terms the team will encounter when working with AI optimization.",
   },
 
   {
@@ -1170,6 +1170,6 @@ export const comparisonSections: ComparisonSection[] = [
       </>
     ),
     annotation:
-      "Entirely new section. The original cited no sources. The Composite provides a 12-source reference list anchored to official platform documentation, giving every claim in the guide a verifiable foundation.",
+      "New section added in the revision. Anchoring the guide to official platform documentation from Google, OpenAI, Anthropic, and others gives the team a verifiable foundation they can reference as AI platform behavior evolves.",
   },
 ];
