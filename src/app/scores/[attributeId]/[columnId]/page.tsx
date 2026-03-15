@@ -8,7 +8,6 @@ import {
 import { getAdjacentCells } from "@/lib/navigation";
 import Breadcrumbs from "@/components/nav/Breadcrumbs";
 import ScoreBadge from "@/components/detail/ScoreBadge";
-import BlockQuote from "@/components/detail/BlockQuote";
 import PrevNextNav from "@/components/detail/PrevNextNav";
 
 export async function generateStaticParams() {
@@ -81,27 +80,12 @@ export default async function DetailPage({
         </section>
 
         <section>
-          <h2 className="text-xl font-semibold mb-3">From the Document</h2>
-          <BlockQuote quote={cell.example_quote} source={column.label} />
-        </section>
-
-        <section>
           <h2 className="text-xl font-semibold mb-3">
             How the Ideal Composite Handles This
           </h2>
           <p className="text-stone-700 leading-relaxed">
             {cell.composite_comparison}
           </p>
-        </section>
-
-        <section>
-          <h2 className="text-xl font-semibold mb-3">
-            From the Ideal Composite
-          </h2>
-          <BlockQuote
-            quote={cell.composite_quote}
-            source="Ideal Composite"
-          />
         </section>
       </div>
 
