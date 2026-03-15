@@ -6,7 +6,7 @@ const EMAIL_PLAIN_TEXT = `Hi [Client Name],
 
 Thanks for sharing the AI & External Communications guide and for asking us to weigh in. There's a lot to work with here — the section-by-section structure and worked examples especially. We ran it through Fergus, validated the recommendations against current platform documentation, and produced a revised version that builds on your framework; it's attached.
 
-You'll find the revised guide is very close to yours in structure and goals — it's still organized around helping the comms team understand what matters to AI platforms and why, with practical section-by-section guidance for announcements. We particularly liked the worked examples you included and preserved and built on them throughout. Here are the three most significant ways we augmented it:
+You'll find the revised guide is very close to yours in structure and goals — it's still organized around helping the comms team understand what matters to AI platforms and why, with practical section-by-section guidance for announcements. We especially liked the premise that content needs to work for multiple human audiences and AI simultaneously, and that there are few hard and fast rules — just informed tradeoffs. We preserved and built on the worked examples you included throughout. Here are the three most significant ways we augmented it:
 
 1. How training data and search work together. Your guide covered how AI platforms search for and retrieve content in real time — we expanded on this to include a second pathway. AI models also draw on knowledge absorbed during training — patterns learned from the vast body of text they were trained on, which persists even without a live search. The revised guide explains both pathways and how they interact, so the team can think about optimizing content for each: making it clear and well-structured enough to be absorbed into training data over time, while also ensuring it's discoverable and well-formatted for real-time search today.
 
@@ -14,7 +14,7 @@ You'll find the revised guide is very close to yours in structure and goals — 
 
 3. Tied to published platform documentation. We made an effort to anchor guidance to documentation published by Google, OpenAI, Anthropic, and other model providers. This gives the team a solid reference point they can hew to as the document inevitably evolves over time.
 
-The guide is meant to be a living document — AI platform behavior changes quickly, and we'd recommend reviewing it quarterly or whenever there's a significant shift in how models work, whichever comes first. We're happy to walk through it together whenever works for you, and if it would be helpful, we can also put together a more detailed side-by-side comparison of your original and the revision so the team can see exactly what changed and why.
+As we discuss the guide together, one idea worth exploring: rather than asking the team to internalize a lengthy reference document, we could build a CoPilot agent — an AI writing assistant grounded in this guide and the platform documentation it references — that provides real-time feedback and suggestions as the team drafts content. This would let the guidance live where the work actually happens, and it would stay current as platform behavior evolves. We're happy to walk through the revision whenever works for you, and we can explore the CoPilot concept further in that conversation.
 
 Thanks again for bringing us in on this — looking forward to discussing.
 
@@ -110,9 +110,11 @@ export default function EmailDraft() {
           structure and goals &mdash; it&apos;s still organized around helping
           the comms team understand what matters to AI platforms and why, with
           practical section-by-section guidance for announcements. We
-          particularly liked the worked examples you included and preserved
-          and built on them throughout. Here are the three most significant
-          ways we augmented it:
+          especially liked the premise that content needs to work for multiple
+          human audiences and AI simultaneously, and that there are few hard
+          and fast rules &mdash; just informed tradeoffs. We preserved and
+          built on the worked examples you included throughout. Here are the
+          three most significant ways we augmented it:
         </p>
 
         <ol className="list-decimal list-outside ml-6 space-y-4">
@@ -158,15 +160,16 @@ export default function EmailDraft() {
         </ol>
 
         <p>
-          The guide is meant to be a living document &mdash; AI platform
-          behavior changes quickly, and we&apos;d recommend reviewing it
-          quarterly or whenever there&apos;s a significant shift in how
-          models work, whichever comes first. We&apos;re happy to walk
-          through it
-          together whenever works for you, and if it would be helpful, we can
-          also put together a more detailed side-by-side comparison of your
-          original and the revision so the team can see exactly what changed
-          and why.
+          As we discuss the guide together, one idea worth exploring: rather
+          than asking the team to internalize a lengthy reference document, we
+          could build a CoPilot agent &mdash; an AI writing assistant
+          grounded in this guide and the platform documentation it
+          references &mdash; that provides real-time feedback and suggestions
+          as the team drafts content. This would let the guidance live where
+          the work actually happens, and it would stay current as platform
+          behavior evolves. We&apos;re happy to walk through the revision
+          whenever works for you, and we can explore the CoPilot concept
+          further in that conversation.
         </p>
 
         <p>
