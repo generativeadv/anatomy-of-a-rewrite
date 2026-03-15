@@ -4,11 +4,11 @@ import { useState, useRef, useCallback } from "react";
 
 const EMAIL_PLAIN_TEXT = `Hi [Client Name],
 
-Thanks for sharing the AI & External Communications guide — it's clear a lot of thought went into building something practical for the team, and the instinct to ground the guidance in how AI platforms actually work is exactly right. We appreciate you asking for our input.
+Thanks for sharing the AI & External Communications guide — it's clear a lot of thought went into building something practical for the team, and the instinct to ground the guidance in how AI platforms actually work is spot on. We appreciate you asking for our input.
 
-Rather than marking up the existing document, we took a different approach: we used it as the foundation for a deeper exploration using Fergus, validated the recommendations against current platform documentation, and produced a revised version of the guide that we think will serve the team well. The revised document is attached.
+Rather than marking up the existing document, we took a different approach: we ran it through Fergus, validated the recommendations against current platform documentation, and produced a revised version of the guide that we think will serve the team well. The revised document is attached.
 
-You'll find the revised guide is very close to yours in structure and goals — it's still organized around helping the comms team understand what matters to AI platforms and why, with practical section-by-section guidance for announcements. The worked examples you included were particularly strong and are a key feature we preserved and built on throughout. Here are the four most significant ways we augmented it:
+You'll find the revised guide is very close to yours in structure and goals — it's still organized around helping the comms team understand what matters to AI platforms and why, with practical section-by-section guidance for announcements. We particularly liked the worked examples you included and preserved and built on them throughout. Here are the three most significant ways we augmented it:
 
 1. How training data and search work together. Your guide covered how AI platforms search for and retrieve content in real time — we expanded on this to include a second pathway. AI models also draw on knowledge absorbed during training — patterns learned from the vast body of text they were trained on, which persists even without a live search. The revised guide explains both pathways and how they interact, so the team can think about optimizing content for each: making it clear and well-structured enough to be absorbed into training data over time, while also ensuring it's discoverable and well-formatted for real-time search today.
 
@@ -16,9 +16,7 @@ You'll find the revised guide is very close to yours in structure and goals — 
 
 3. Tied to published platform documentation. We made an effort to anchor guidance to documentation published by Google, OpenAI, Anthropic, and other model providers. This gives the team a solid reference point they can hew to as the document inevitably evolves over time.
 
-4. A measurement and monitoring framework. We added a practical operating rhythm — what to check at publish time, what to review monthly, and what to audit quarterly — so the team can track whether the guidance is working and adjust as platform behavior changes.
-
-The guide is meant to be a living document — AI platform behavior changes quickly, and we'd recommend reviewing it quarterly to keep it current. We're happy to walk through it together whenever works for you, and if it would be helpful, we can also put together a more detailed side-by-side comparison of your original and the revision so the team can see exactly what changed and why.
+The guide is meant to be a living document — AI platform behavior changes quickly, and we'd recommend reviewing it quarterly or whenever there's a significant shift in how models work, whichever comes first. We're happy to walk through it together whenever works for you, and if it would be helpful, we can also put together a more detailed side-by-side comparison of your original and the revision so the team can see exactly what changed and why.
 
 Thanks again for bringing us in on this — looking forward to discussing.
 
@@ -104,14 +102,14 @@ export default function EmailDraft() {
           Thanks for sharing the AI &amp; External Communications guide
           &mdash; it&apos;s clear a lot of thought went into building
           something practical for the team, and the instinct to ground the
-          guidance in how AI platforms actually work is exactly right. We
+          guidance in how AI platforms actually work is spot on. We
           appreciate you asking for our input.
         </p>
 
         <p>
           Rather than marking up the existing document, we took a different
-          approach: we used it as the foundation for a deeper exploration
-          using Fergus, validated the recommendations against current
+          approach: we ran it through Fergus, validated the recommendations
+          against current
           platform documentation, and produced a revised version of the guide
           that we think will serve the team well. The revised document is
           attached.
@@ -121,10 +119,10 @@ export default function EmailDraft() {
           You&apos;ll find the revised guide is very close to yours in
           structure and goals &mdash; it&apos;s still organized around helping
           the comms team understand what matters to AI platforms and why, with
-          practical section-by-section guidance for announcements. The worked
-          examples you included were particularly strong and are a key feature
-          we preserved and built on throughout. Here are the four most
-          significant ways we augmented it:
+          practical section-by-section guidance for announcements. We
+          particularly liked the worked examples you included and preserved
+          and built on them throughout. Here are the three most significant
+          ways we augmented it:
         </p>
 
         <ol className="list-decimal list-outside ml-6 space-y-4">
@@ -167,21 +165,14 @@ export default function EmailDraft() {
             the team a solid reference point they can hew to as the document
             inevitably evolves over time.
           </li>
-          <li>
-            <strong>
-              A measurement and monitoring framework.
-            </strong>{" "}
-            We added a practical operating rhythm &mdash; what to check at
-            publish time, what to review monthly, and what to audit quarterly
-            &mdash; so the team can track whether the guidance is working and
-            adjust as platform behavior changes.
-          </li>
         </ol>
 
         <p>
           The guide is meant to be a living document &mdash; AI platform
           behavior changes quickly, and we&apos;d recommend reviewing it
-          quarterly to keep it current. We&apos;re happy to walk through it
+          quarterly or whenever there&apos;s a significant shift in how
+          models work, whichever comes first. We&apos;re happy to walk
+          through it
           together whenever works for you, and if it would be helpful, we can
           also put together a more detailed side-by-side comparison of your
           original and the revision so the team can see exactly what changed

@@ -713,51 +713,6 @@ export default function IdealCompositeContent() {
         </li>
       </ul>
 
-      <h2>Measurement and Monitoring</h2>
-      <p>
-        The right question is not simply whether an announcement got a click. In
-        AI-assisted search, the better question is whether the official source
-        was findable, cited accurately, and useful when users chose to go
-        deeper.
-      </p>
-
-      <h3>What to monitor</h3>
-      <ul>
-        <li>
-          Search Console performance for newsroom and announcement URLs.
-        </li>
-        <li>
-          Whether branded and non-branded queries land on the intended
-          authoritative page.
-        </li>
-        <li>
-          Referral traffic and downstream behavior after the click.
-        </li>
-        <li>
-          Whether common AI assistants answer core questions with the correct
-          date, scope, channels, and product or program name.
-        </li>
-      </ul>
-
-      <h3>Operating rhythm</h3>
-      <ul>
-        <li>
-          <strong>At publish:</strong> Inspect the live page (not the CMS
-          preview). Confirm title, date, canonical URL, internal links, and
-          structured data.
-        </li>
-        <li>
-          <strong>Monthly:</strong> Run a small set of brand, offer, service,
-          and policy questions in major AI assistants. Note which pages are cited
-          and whether the answers are accurate.
-        </li>
-        <li>
-          <strong>Quarterly:</strong> Audit evergreen top pages, recurring
-          seasonal pages, boilerplate language, About pages, and organization
-          data for staleness.
-        </li>
-      </ul>
-
       <h2>Pre-Publication Checklist</h2>
       <p>
         Use this as a quick reference before publishing any announcement or blog
