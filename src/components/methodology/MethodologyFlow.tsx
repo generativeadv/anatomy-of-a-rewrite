@@ -328,9 +328,11 @@ function Step2Content({ columns }: { columns: Column[] }) {
           This identical two-step process was applied to the agency&apos;s
           proprietary AI tool (&ldquo;Fergus&rdquo;), ChatGPT 5.4 Pro, and
           Claude Opus 4.6 Extended. The prompts were oriented toward
-          extended-reasoning models &mdash; a different architectural profile
-          than Fergus, which is built on Gemini 3.0 Flash and optimized for
-          speed and efficiency. Before testing the frontier models outside
+          extended-reasoning models. Fergus uses Gemini 3.0 Flash as a
+          first-call orchestrator for speed, with access to deeper
+          capabilities including Deep Research and extended thinking, but
+          benefits from tailored prompting to get its best output. Before
+          testing the frontier models outside
           the firm&apos;s IT environment, the document was anonymized
           &mdash; all client-identifying information was stripped and replaced
           with a fictional brand &mdash; and memory/training features were

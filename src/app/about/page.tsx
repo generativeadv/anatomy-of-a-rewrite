@@ -56,9 +56,10 @@ export default function AboutPage() {
             was deemed insufficient) and two frontier reasoning models
             &mdash; Claude Opus 4.6 Extended and GPT 5.4 Pro &mdash; each
             given the identical prompt with no additional coaching. The prompts
-            were written for extended-reasoning models; Fergus, built on
-            Gemini 3.0 Flash, is optimized for speed and efficiency &mdash;
-            a different set of architectural tradeoffs. The results
+            were written for extended-reasoning models; Fergus uses Gemini 3.0
+            Flash as a first-call orchestrator for speed, with access to deeper
+            capabilities including Deep Research and extended thinking, but
+            benefits from tailored prompting to get its best output. The results
             varied dramatically: from a 2,100-word technical primer that
             stripped out all practical guidance, to comprehensive 8,000+ word
             rewrites that corrected the technical foundations while preserving
@@ -193,10 +194,12 @@ export default function AboutPage() {
             rewrite.
           </p>
           <p className="mt-4">
-            Fergus uses Gemini 3.0 Flash as a front-end &ldquo;orchestration&rdquo;
-            agent and calls on other specialized agents to produce outputs. The
-            performance gap is consistent with the architectural difference
-            between a fast orchestration layer and a deep reasoning model.
+            Fergus uses Gemini 3.0 Flash as a first-call orchestrator for speed,
+            which then calls on specialized agents with access to Deep Research,
+            Sonnet extended thinking, and other capabilities. The speed gap
+            reflects this architecture &mdash; though as the v2 iteration showed,
+            Fergus benefits from specific prompting strategies to fully leverage
+            its deeper capabilities.
           </p>
         </section>
 
@@ -277,9 +280,9 @@ export default function AboutPage() {
             </li>
             <li>
               &ldquo;Fergus&rdquo; is the internal name for the firm&apos;s
-              proprietary AI tool. Its underlying architecture (Gemini 3.0 Flash
-              orchestration with specialized agents) is described as disclosed by
-              the firm.
+              proprietary AI tool. It uses Gemini 3.0 Flash as a first-call
+              orchestrator, with access to specialized agents including Deep
+              Research and Sonnet extended thinking, as disclosed by the firm.
             </li>
             <li>
               Processing time observations are estimates based on
