@@ -17,8 +17,8 @@ export default function AboutPage() {
       </p>
 
       {/* Executive Summary */}
-      <section className="bg-stone-50 border border-stone-200 rounded-xl p-8 mb-12">
-        <h2 className="text-lg font-semibold text-foreground mb-4">
+      <section className="mb-12">
+        <h2 className="text-2xl font-semibold text-foreground mb-4">
           Executive Summary
         </h2>
         <div className="space-y-4 text-stone-700 leading-relaxed">
@@ -41,9 +41,11 @@ export default function AboutPage() {
             and polish of professional work but is misleading or wrong.
           </p>
           <p>
-            To test how different AI systems would handle a rewrite of this
-            document, the same two-step prompting process was applied to four
-            tools: the advisory firm&apos;s proprietary AI platform
+            To test how different AI systems would handle a rewrite, the
+            document was first anonymized &mdash; all client-identifying
+            information was stripped and replaced with a fictional brand
+            &mdash; and the same two-step prompting process was then applied
+            to four tools: the advisory firm&apos;s proprietary AI platform
             (&ldquo;Fergus,&rdquo; which produced two versions after the first
             was deemed insufficient) and two frontier reasoning models
             &mdash; Claude Opus 4.6 Extended and GPT 5.4 Pro &mdash; each
@@ -148,11 +150,14 @@ export default function AboutPage() {
           </h2>
           <p>
             Before sharing the document with frontier models outside the
-            firm&apos;s IT environment, Fergus was used to strip out all
-            company-specific references and replace them with a fictional brand
-            (&ldquo;TVs &amp; More&rdquo;). With this anonymized version in
-            hand, it was uploaded to ChatGPT 5.4 Pro and Claude Opus 4.6
-            Extended &mdash; with memory and training turned off &mdash; using
+            firm&apos;s IT environment, all client-identifying information
+            needed to be removed to protect confidentiality. Fergus was used to
+            strip out the client&apos;s company name, brand references, and any
+            details that could identify the retailer, replacing them with a
+            fictional brand (&ldquo;TVs &amp; More&rdquo;). With this
+            anonymized version in hand, it was uploaded to ChatGPT 5.4 Pro and
+            Claude Opus 4.6 Extended &mdash; with memory and training features
+            turned off to prevent the content from being retained &mdash; using
             the exact same two-step prompting process.
           </p>
         </section>

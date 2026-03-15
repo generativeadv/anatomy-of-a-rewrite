@@ -7,8 +7,8 @@ const links = [
   { href: "/", label: "Scorecard" },
   { href: "/methodology", label: "Methodology" },
   { href: "/rewrites", label: "Rewrites" },
-  { href: "/about", label: "About" },
   { href: "/client-advice", label: "Client Advice" },
+  { href: "/about", label: "About" },
 ];
 
 export default function TopNav() {

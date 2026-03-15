@@ -321,8 +321,12 @@ function Step2Content({ columns }: { columns: Column[] }) {
         <p>
           This identical two-step process was applied to the agency&apos;s
           proprietary AI tool (&ldquo;Fergus&rdquo;), ChatGPT 5.4 Pro, and
-          Claude Opus 4.6 Extended. The Fergus output from Step 2 is evaluated
-          as <strong>Fergus v1</strong>.
+          Claude Opus 4.6 Extended. Before testing the frontier models outside
+          the firm&apos;s IT environment, the document was anonymized
+          &mdash; all client-identifying information was stripped and replaced
+          with a fictional brand &mdash; and memory/training features were
+          turned off to prevent content retention. The Fergus output from
+          Step 2 is evaluated as <strong>Fergus v1</strong>.
         </p>
 
         {/* Fergus v2 prompt */}
