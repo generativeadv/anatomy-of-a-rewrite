@@ -20,7 +20,7 @@ You'll find the revised guide is very close to yours in structure and goals — 
 
 The guide is meant to be a living document — AI platform behavior changes quickly, and we'd recommend reviewing it quarterly to keep it current. We're happy to walk through it together whenever works for you, and if it would be helpful, we can also put together a more detailed side-by-side comparison of your original and the revision so the team can see exactly what changed and why.
 
-Thanks again for the strong starting point. Looking forward to discussing.
+Thanks again for putting this together — it gave us a great foundation to work from. Looking forward to discussing.
 
 Best,
 [Your Name]`;

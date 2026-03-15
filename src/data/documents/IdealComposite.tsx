@@ -758,53 +758,6 @@ export default function IdealCompositeContent() {
         </li>
       </ul>
 
-      <h2>Misconceptions to Retire</h2>
-      <p>
-        The biggest risk in AI guidance is fake precision. These are the claims
-        the team should stop repeating.
-      </p>
-      <p>
-        <strong>
-          &ldquo;AI assigns discrete classification tags and topic buckets to
-          our content.&rdquo;
-        </strong>{" "}
-        AI systems can infer likely topic, entity, and document type from a
-        page. But no public documentation supports the claim that systems assign
-        fixed hidden labels and sort content into predetermined buckets. Systems
-        work through continuous semantic representations &mdash; patterns, not
-        categories.
-      </p>
-      <p>
-        <strong>
-          &ldquo;There is a known percentage uplift from a quote, a metric, or a
-          keyword placement trick.&rdquo;
-        </strong>{" "}
-        No major platform publishes a universal citation weighting formula or
-        deterministic boost from an FAQ, quote, or bullet list. Use those
-        devices because they help users and improve clarity &mdash; not because
-        they are magic switches.
-      </p>
-      <p>
-        <strong>
-          &ldquo;The first 100&ndash;200 words determine everything.&rdquo;
-        </strong>{" "}
-        Front-loading key facts is good practice, but the full page matters.
-      </p>
-      <p>
-        <strong>
-          &ldquo;Every announcement needs FAQs and summary bullets.&rdquo;
-        </strong>{" "}
-        Use those elements when they improve clarity and help users. They are
-        optional structures, not mandatory ranking levers.
-      </p>
-      <p>
-        <strong>
-          &ldquo;AI-friendly writing means robotic writing.&rdquo;
-        </strong>{" "}
-        The goal is clear, human-first writing with explicit facts &mdash; not
-        lifeless copy.
-      </p>
-
       <h2>Pre-Publication Checklist</h2>
       <p>
         Use this as a quick reference before publishing any announcement or blog

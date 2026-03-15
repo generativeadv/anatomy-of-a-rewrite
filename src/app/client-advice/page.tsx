@@ -24,6 +24,90 @@ export default function ClientAdvicePage() {
 
       <EmailDraft />
 
+      {/* Internal Advisory: Misconceptions in the Original */}
+      <section className="border border-amber-200 bg-amber-50/40 rounded-xl p-8 mb-12">
+        <div className="flex items-start gap-3 mb-4">
+          <svg
+            className="w-5 h-5 text-amber-600 shrink-0 mt-0.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+            />
+          </svg>
+          <h2 className="text-lg font-semibold text-foreground">
+            For Internal Awareness: Claims in the Original That Don&apos;t
+            Hold Up
+          </h2>
+        </div>
+        <p className="text-stone-600 leading-relaxed mb-5">
+          The email above is deliberately diplomatic &mdash; it focuses on
+          what we added rather than what was wrong. But the account team should
+          be aware that the client&apos;s original document contained several
+          specific claims that are not supported by published platform
+          documentation. These were quietly corrected in the revision. Whether
+          and how to surface this with the client is a judgment call for the
+          account lead &mdash; the information below is here so the team has
+          it in their back pocket.
+        </p>
+        <ul className="space-y-4 text-stone-700 leading-relaxed">
+          <li>
+            <strong className="text-stone-800">
+              &ldquo;AI assigns discrete classification tags and topic
+              buckets.&rdquo;
+            </strong>{" "}
+            The original described a system where AI assigns fixed hidden
+            labels and sorts content into predetermined categories. In
+            reality, AI systems work through continuous semantic
+            representations &mdash; patterns, not discrete tags. No public
+            platform documentation supports this claim.
+          </li>
+          <li>
+            <strong className="text-stone-800">
+              Specific percentage uplifts for content elements.
+            </strong>{" "}
+            The original included a table claiming, for example, that naming
+            a specific entity provides a +20% boost to AI visibility, or
+            that including a metric provides +25%. No major platform publishes
+            a universal citation weighting formula or deterministic boost
+            from any content element. These figures appear to be fabricated.
+          </li>
+          <li>
+            <strong className="text-stone-800">
+              &ldquo;The first 100&ndash;200 words determine
+              everything.&rdquo;
+            </strong>{" "}
+            The original presented this as a hard rule. Front-loading key
+            facts is good practice, but the full page matters &mdash; it
+            is not a binary threshold.
+          </li>
+          <li>
+            <strong className="text-stone-800">
+              Every announcement needs FAQs and summary bullets.
+            </strong>{" "}
+            The original treated these as mandatory. They are optional
+            structures that should be used when they improve clarity and help
+            users &mdash; not as ranking levers.
+          </li>
+          <li>
+            <strong className="text-stone-800">
+              A six-step &ldquo;retrieval pipeline&rdquo; presented as
+              how AI works internally.
+            </strong>{" "}
+            The original described a deterministic classification &rarr;
+            categorization &rarr; retrieval &rarr; ranking &rarr; weighting
+            &rarr; generation pipeline. This misrepresents how models
+            actually process content and gives a false sense of precision
+            about an opaque system.
+          </li>
+        </ul>
+      </section>
+
       {/* Download Section */}
       <section>
         <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">
