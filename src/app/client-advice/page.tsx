@@ -69,6 +69,17 @@ export default function ClientAdvicePage() {
         <ul className="space-y-4 text-stone-700 leading-relaxed">
           <li>
             <strong className="text-stone-800">
+              A six-step &ldquo;retrieval pipeline&rdquo; presented as
+              how AI works internally.
+            </strong>{" "}
+            The original described a deterministic classification &rarr;
+            categorization &rarr; retrieval &rarr; ranking &rarr; weighting
+            &rarr; generation pipeline. This misrepresents how models
+            actually process content and gives a false sense of precision
+            about an opaque system.
+          </li>
+          <li>
+            <strong className="text-stone-800">
               &ldquo;AI assigns discrete classification tags and topic
               buckets.&rdquo;
             </strong>{" "}
@@ -104,17 +115,6 @@ export default function ClientAdvicePage() {
             The original treated these as mandatory. They are optional
             structures that should be used when they improve clarity and help
             users &mdash; not as ranking levers.
-          </li>
-          <li>
-            <strong className="text-stone-800">
-              A six-step &ldquo;retrieval pipeline&rdquo; presented as
-              how AI works internally.
-            </strong>{" "}
-            The original described a deterministic classification &rarr;
-            categorization &rarr; retrieval &rarr; ranking &rarr; weighting
-            &rarr; generation pipeline. This misrepresents how models
-            actually process content and gives a false sense of precision
-            about an opaque system.
           </li>
         </ul>
       </section>
