@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import TopNav from "@/components/nav/TopNav";
+import ChatProvider from "@/components/chat/ChatProvider";
+import ChatPanel from "@/components/chat/ChatPanel";
 import "./globals.css";
 
 const inter = Inter({
@@ -27,8 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="antialiased">
-        <TopNav />
-        <main className="max-w-6xl mx-auto px-6 py-12">{children}</main>
+        <ChatProvider>
+          <TopNav />
+          <main className="max-w-6xl mx-auto px-6 py-12">{children}</main>
+          <ChatPanel />
+        </ChatProvider>
       </body>
     </html>
   );

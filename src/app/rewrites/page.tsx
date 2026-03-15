@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { documents } from "@/data/documents";
 import ScoreBadge from "@/components/detail/ScoreBadge";
+import ChatCTA from "@/components/chat/ChatCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -84,6 +85,9 @@ export default function RewritesPage() {
           </div>
         </Link>
       ))}
+
+      {/* The Rewrite Desk CTA */}
+      <ChatCTA />
 
       {/* Scored documents */}
       <h2 className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">
