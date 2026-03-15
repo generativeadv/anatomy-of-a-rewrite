@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Scorecard" },
-  { href: "/about", label: "About" },
   { href: "/methodology", label: "Methodology" },
+  { href: "/rewrites", label: "Rewrites" },
+  { href: "/about", label: "About" },
 ];
 
 export default function TopNav() {

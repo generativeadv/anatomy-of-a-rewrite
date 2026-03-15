@@ -11,9 +11,68 @@ export default function AboutPage() {
       <h1 className="text-4xl font-bold tracking-tight mb-4">
         Background and Methodology
       </h1>
-      <p className="text-xl text-muted italic font-[family-name:var(--font-display)] mb-12">
+      <p className="text-xl text-muted italic font-[family-name:var(--font-display)] mb-8">
         How this evaluation was created, and why it matters
       </p>
+
+      {/* Executive Summary */}
+      <section className="bg-stone-50 border border-stone-200 rounded-xl p-8 mb-12">
+        <h2 className="text-lg font-semibold text-foreground mb-4">
+          Executive Summary
+        </h2>
+        <div className="space-y-4 text-stone-700 leading-relaxed">
+          <p>
+            This project is a structured, side-by-side evaluation of five
+            AI-generated versions of the same document: a corporate
+            communications guide on optimizing content for generative AI search
+            platforms. The original document was created by the client&apos;s
+            internal team using ChatGPT and Gemini. It read confidently,
+            included specific statistics, and used professional formatting
+            &mdash; but its technical model of how AI systems work was
+            fundamentally incorrect, and many of its cited figures were
+            fabricated. It is a textbook example of what has become known as
+            &ldquo;workslop&rdquo;: AI-generated output that has the appearance
+            and polish of professional work but is misleading or wrong.
+          </p>
+          <p>
+            To test how different AI systems would handle a rewrite of this
+            document, the same two-step prompting process was applied to four
+            tools: the advisory firm&apos;s proprietary AI platform
+            (&ldquo;Fergus,&rdquo; which produced two versions after the first
+            was deemed insufficient) and two frontier reasoning models
+            &mdash; Claude Opus 4.6 Extended and GPT 5.4 Pro &mdash; each
+            given the identical prompt with no additional coaching. The results
+            varied dramatically: from a 2,100-word technical primer that
+            stripped out all practical guidance, to comprehensive 8,000+ word
+            rewrites that corrected the technical foundations while preserving
+            and expanding the document&apos;s operational utility.
+          </p>
+          <p>
+            The scorecard evaluates all five versions across ten qualitative
+            attributes &mdash; including technical accuracy, practical guidance,
+            structural organization, and prose quality &mdash; using a 1&ndash;10
+            rubric developed in a Claude Opus 4.6 Extended evaluation chat.
+            Aggregate scores ranged from 3.3 to 8.2 out of 10, revealing
+            that identical prompts can produce outputs of vastly different
+            quality depending on the underlying model and architecture.
+          </p>
+          <p>
+            After all five versions were evaluated, an Ideal Composite document
+            was generated as a benchmark, combining the strongest elements from
+            each rewrite: the Opus 4.6 version&apos;s educational foundation
+            and prose quality, the GPT 5.4 version&apos;s technical publishing
+            guidance and sourced appendix, and the Client Original and Fergus
+            v2&apos;s worked examples and templates. The composite is not scored
+            (it would be grading its own homework) but serves as the reference
+            point for the detail-page comparisons. This project demonstrates
+            both the extraordinary potential and the significant variance of
+            AI-assisted knowledge work &mdash; and why critical human evaluation
+            remains essential.
+          </p>
+        </div>
+      </section>
+
+      <hr className="border-stone-200 mb-12" />
 
       <div className="space-y-8 text-stone-700 leading-relaxed">
         <p>
