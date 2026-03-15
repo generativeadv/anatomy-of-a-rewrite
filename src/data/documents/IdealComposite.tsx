@@ -820,41 +820,64 @@ export default function IdealCompositeContent() {
       </p>
       <ul>
         <li>
-          Google Search Central &mdash; AI features and your website
+          <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central &mdash; AI features and your website
+          </a>
         </li>
         <li>
-          Google Search Central &mdash; In-depth guide to how Google Search
-          works
+          <a href="https://developers.google.com/search/docs/fundamentals/how-search-works" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central &mdash; In-depth guide to how Google Search works
+          </a>
         </li>
         <li>
-          Google Search Central &mdash; Creating helpful, reliable, people-first
-          content
+          <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central &mdash; Creating helpful, reliable, people-first content
+          </a>
         </li>
         <li>
-          Google Search Central Blog &mdash; Top ways to ensure your content
-          performs well in Google&apos;s AI experiences
+          <a href="https://developers.google.com/search/blog/2025/03/ai-overviews-content-tips" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central Blog &mdash; Top ways to ensure your content performs well in Google&apos;s AI experiences
+          </a>
         </li>
         <li>
-          Google Search Central &mdash; FAQPage structured data
+          <a href="https://developers.google.com/search/docs/appearance/structured-data/faqpage" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central &mdash; FAQPage structured data
+          </a>
         </li>
         <li>
-          Google Search Central &mdash; Article structured data
+          <a href="https://developers.google.com/search/docs/appearance/structured-data/article" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central &mdash; Article structured data
+          </a>
         </li>
         <li>
-          Google Search Central &mdash; Organization structured data
+          <a href="https://developers.google.com/search/docs/appearance/structured-data/organization" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central &mdash; Organization structured data
+          </a>
         </li>
         <li>
-          OpenAI Help &mdash; ChatGPT search
+          <a href="https://help.openai.com/en/articles/9015669-chatgpt-search" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            OpenAI Help &mdash; ChatGPT search
+          </a>
         </li>
         <li>
-          OpenAI Developers &mdash; Overview of OpenAI Crawlers
+          <a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            OpenAI Developers &mdash; Overview of OpenAI Crawlers
+          </a>
         </li>
         <li>
-          OpenAI Developers &mdash; Web search guide
+          <a href="https://platform.openai.com/docs/guides/search" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            OpenAI Developers &mdash; Web search guide
+          </a>
         </li>
-        <li>Anthropic Docs &mdash; Web search tool</li>
         <li>
-          Google Search Central &mdash; Snippets and robots preview controls
+          <a href="https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/web-search" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Anthropic Docs &mdash; Web search tool
+          </a>
+        </li>
+        <li>
+          <a href="https://developers.google.com/search/docs/appearance/snippet" target="_blank" rel="noopener noreferrer" className="underline hover:text-stone-900 transition-colors">
+            Google Search Central &mdash; Snippets and robots preview controls
+          </a>
         </li>
       </ul>
       <p className="text-sm text-muted italic mt-8">
