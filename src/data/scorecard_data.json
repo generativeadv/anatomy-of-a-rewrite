@@ -10,7 +10,7 @@
       "label": "Fergus v1",
       "aggregate_score": 4.3,
       "word_count": 822,
-      "description": "The first rewrite by the client's communications agency. At 822 words it was the shortest version, replacing the original's practical guidance with an academic primer on LLM architecture and RAG systems. It was technically more literate about model internals but failed to address the actual problem: how to structure press releases for AI-mediated web search.",
+      "description": "The first rewrite by the client's communications agency. At 822 words it was the shortest version, replacing the original's practical guidance with an academic primer on LLM architecture and RAG systems. Note: the prompts were designed for deep reasoning models; Fergus's underlying architecture (Gemini 3.0 Flash) was a known disadvantage. It was technically more literate about model internals but failed to address the actual problem: how to structure press releases for AI-mediated web search.",
       "model_or_source": "FGS Agency (initial attempt)"
     },
     {

@@ -321,7 +321,10 @@ function Step2Content({ columns }: { columns: Column[] }) {
         <p>
           This identical two-step process was applied to the agency&apos;s
           proprietary AI tool (&ldquo;Fergus&rdquo;), ChatGPT 5.4 Pro, and
-          Claude Opus 4.6 Extended. Before testing the frontier models outside
+          Claude Opus 4.6 Extended. The prompts were oriented toward
+          token-intensive reasoning models; it was known that Fergus uses
+          Gemini 3.0 Flash, and that this prompting style was unlikely to
+          play to its strengths. Before testing the frontier models outside
           the firm&apos;s IT environment, the document was anonymized
           &mdash; all client-identifying information was stripped and replaced
           with a fictional brand &mdash; and memory/training features were

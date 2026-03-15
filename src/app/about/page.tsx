@@ -49,7 +49,10 @@ export default function AboutPage() {
             (&ldquo;Fergus,&rdquo; which produced two versions after the first
             was deemed insufficient) and two frontier reasoning models
             &mdash; Claude Opus 4.6 Extended and GPT 5.4 Pro &mdash; each
-            given the identical prompt with no additional coaching. The results
+            given the identical prompt with no additional coaching. The prompts
+            were designed with deep reasoning models in mind; it was understood
+            that Fergus, which uses Gemini 3.0 Flash, would likely be at an
+            architectural disadvantage. The results
             varied dramatically: from a 2,100-word technical primer that
             stripped out all practical guidance, to comprehensive 8,000+ word
             rewrites that corrected the technical foundations while preserving
