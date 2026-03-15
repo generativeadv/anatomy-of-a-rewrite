@@ -4,9 +4,7 @@ import { useState, useRef, useCallback } from "react";
 
 const EMAIL_PLAIN_TEXT = `Hi [Client Name],
 
-Thanks for sharing the AI & External Communications guide — it's clear a lot of thought went into building something practical for the team, and the instinct to ground the guidance in how AI platforms actually work is spot on. We appreciate you asking for our input.
-
-Rather than marking up the existing document, we took a different approach: we ran it through Fergus, validated the recommendations against current platform documentation, and produced a revised version of the guide that we think will serve the team well. The revised document is attached.
+Thanks for sharing the AI & External Communications guide and for asking us to weigh in. There's a lot to work with here — the section-by-section structure and worked examples especially. We ran it through Fergus, validated the recommendations against current platform documentation, and produced a revised version that builds on your framework; it's attached.
 
 You'll find the revised guide is very close to yours in structure and goals — it's still organized around helping the comms team understand what matters to AI platforms and why, with practical section-by-section guidance for announcements. We particularly liked the worked examples you included and preserved and built on them throughout. Here are the three most significant ways we augmented it:
 
@@ -99,20 +97,12 @@ export default function EmailDraft() {
         <p>Hi [Client Name],</p>
 
         <p>
-          Thanks for sharing the AI &amp; External Communications guide
-          &mdash; it&apos;s clear a lot of thought went into building
-          something practical for the team, and the instinct to ground the
-          guidance in how AI platforms actually work is spot on. We
-          appreciate you asking for our input.
-        </p>
-
-        <p>
-          Rather than marking up the existing document, we took a different
-          approach: we ran it through Fergus, validated the recommendations
-          against current
-          platform documentation, and produced a revised version of the guide
-          that we think will serve the team well. The revised document is
-          attached.
+          Thanks for sharing the AI &amp; External Communications guide and
+          for asking us to weigh in. There&apos;s a lot to work with here
+          &mdash; the section-by-section structure and worked examples
+          especially. We ran it through Fergus, validated the recommendations
+          against current platform documentation, and produced a revised
+          version that builds on your framework; it&apos;s attached.
         </p>
 
         <p>
